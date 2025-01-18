@@ -2,26 +2,161 @@
 <search>
   <entry>
     <title>Hello World</title>
-    <url>/2025/01/16/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a class="link"   href="https://hexo.io/" >Hexo<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>! This is your very first post. Check <a class="link"   href="https://hexo.io/docs/" >documentation<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> for more info. If you get any problems when using Hexo, you can find the answer in <a class="link"   href="https://hexo.io/docs/troubleshooting.html" >troubleshooting<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> or you can ask me on <a class="link"   href="https://github.com/hexojs/hexo/issues" >GitHub<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/writing.html" >Writing<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/server.html" >Server<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/generating.html" >Generating<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><div class="code-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure></div>
-
-<p>More info: <a class="link"   href="https://hexo.io/docs/one-command-deployment.html" >Deployment<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
-]]></content>
+    <url>/Coding/hello-world/</url>
+    <content><![CDATA[<div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Hello World&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>]]></content>
       <categories>
-        <category>Document</category>
+        <category>Coding</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>Go</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Go 面试题</title>
+    <url>/Interview/go-interview/</url>
+    <content><![CDATA[<h1 id="Go基础"><a href="#Go基础" class="headerlink" title="Go基础"></a>Go基础</h1><h2 id="golang的特点和优势"><a href="#golang的特点和优势" class="headerlink" title="golang的特点和优势"></a>golang的特点和优势</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>语法简单</li><li>天然支持高并发</li><li>内置垃圾回收</li></ul>
+              </div>
+            </details>
+
+<h2 id="golang和java对比"><a href="#golang和java对比" class="headerlink" title="golang和java对比"></a>golang和java对比</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>应用方面</strong><ul><li>Java广泛应用于大型企业应用、Android应用、大规模分布式系统和企业级应用。</li><li>Go适用于构建高性能、高并发的后端服务、网络应用、云服务以及分布式系统。</li></ul></li><li><strong>并发方面</strong><ul><li>Java通过线程和锁来处理并发。</li><li>Go语言并发特性的核心是goroutine和channel。</li></ul></li><li><strong>语言设计方面</strong><ul><li>Java是一门功能丰富、面向对象的语言，支持面向对象编程、泛型等高级特性。</li><li>Go语言的设计注重简洁和清晰，具有简单的语法和类型系统，它摒弃了一些复杂的特性，强调代码的可读性。</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="golang数据类型"><a href="#golang数据类型" class="headerlink" title="golang数据类型"></a>golang数据类型</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>基础类型</strong><ul><li>布尔型 bool</li><li>整形 int</li><li>浮点型 float</li><li>字符串型 string</li><li>复数类型 complex</li><li>错误类型 error</li></ul></li><li><strong>复合类型</strong><ul><li>指针 pointer</li><li>数组 array</li><li>切片 slice</li><li>映射 map</li><li>通道 channel</li><li>结构体 struct</li><li>接口 interface</li><li>函数 function</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="golang的引用类型包括哪些"><a href="#golang的引用类型包括哪些" class="headerlink" title="golang的引用类型包括哪些"></a>golang的引用类型包括哪些</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>slice</li><li>map</li><li>channel</li><li><strong>interface</strong></li></ul>
+              </div>
+            </details>
+
+<h2 id="new和make的区别"><a href="#new和make的区别" class="headerlink" title="new和make的区别"></a>new和make的区别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>共同点</strong><ul><li>给变量分配内存&#x2F;进行初始化</li></ul></li><li><strong>不同点</strong><ul><li><strong>返回类型不同</strong><ul><li>new返回该类型的指针</li><li>make返回该类型本身</li></ul></li><li><strong>作用类型不同</strong><ul><li>new可以作用于所有类型</li><li>make只能作用于slice、map、channel</li></ul></li><li><strong>初始化方式不同</strong><ul><li>new是直接将指针所指向的内存空间清零</li><li>make可以根据变量类型来进行初始化</li></ul></li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="string和-byte的区别"><a href="#string和-byte的区别" class="headerlink" title="string和[]byte的区别"></a>string和[]byte的区别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><p><strong>不可变性</strong></p><ul><li><p>string是不可变的数据类型，一旦创建就不能被修改。任何修改string的操作都会产生一个新的 string，而原始的string保持不变。</p></li><li><p>[]byte是可变的切片，可以通过索引直接修改切片中的元素。</p></li></ul></li><li><p><strong>内存分配</strong></p><ul><li><p>string是一个不可变的视图，底层数据是只读的，string的内存分配和释放由runtime管理</p></li><li><p>[]byte是一个可变的切片，底层数据是可以修改的，[]byte的内存管理由程序员负责</p></li></ul></li><li><p><strong>应用场景</strong></p><ul><li><p>如果需要频繁地修改字符串内容，或者处理二进制数据，使用[]byte 更为合适</p></li><li><p>如果字符串内容基本保持不变并且主要处理文本数据，那么使用 string 更为方便</p></li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="byte和rune的区别"><a href="#byte和rune的区别" class="headerlink" title="byte和rune的区别"></a>byte和rune的区别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>byte表示字节，是uint8的别名，rune表示字符，是int32的别名</li><li>byte表示ASCII码字符，rune表示Unicode字符</li><li>在遍历字符串时，如果字符串含有中文，需要使用rune</li></ul>
+              </div>
+            </details>
+
+<h2 id="函数返回局部变量的指针是否安全"><a href="#函数返回局部变量的指针是否安全" class="headerlink" title="函数返回局部变量的指针是否安全"></a>函数返回局部变量的指针是否安全</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>和c&#x2F;cpp不同，由于go语言会进行内存逃逸分析，go语言中返回局部变量的指针是被允许的</li></ul>
+              </div>
+            </details>
+
+<h2 id="for-range时k、v的地址是否发生变化"><a href="#for-range时k、v的地址是否发生变化" class="headerlink" title="for range时k、v的地址是否发生变化"></a>for range时k、v的地址是否发生变化</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>不会</li></ul>
+              </div>
+            </details>
+
+<h2 id="关于defer"><a href="#关于defer" class="headerlink" title="关于defer"></a>关于defer</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>作用</strong><ul><li>起延迟执行的作用，可以用来进行资源释放和收尾工作</li></ul></li><li><strong>特点</strong><ul><li>和栈一样后进先出，先出现的defer后执行</li></ul></li><li><strong>使用场景</strong><ul><li>释放锁</li><li>关闭文件</li><li>配合recover捕获panic</li></ul></li></ul><blockquote><p><em><strong>Tip</strong></em></p><ul><li>defer后面跟有参函数时会直接在defer声明处进行参数传递</li><li>defer在retrun后执行，返回值为无名返回值时，返回值结果不会被修改；但是当返回值类型为有名返回值或指针时，返回值结果可能被修改</li></ul></blockquote>
+              </div>
+            </details>
+
+<h2 id="golang参数传递"><a href="#golang参数传递" class="headerlink" title="golang参数传递"></a>golang参数传递</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>golang中所有传参都是值传递，即传入的是实际参数的副本</li><li>所以传递引用类型（如slice、map、channel）也是值传递，只是副本和实际参数引用的底层数据是相同的。比如传入切片，副本切片引用的是和原切片相同的底层数组，所以对副本进行修改操作时原切片也会受到影响</li></ul>
+              </div>
+            </details>
+
+<h2 id="golang面向对象"><a href="#golang面向对象" class="headerlink" title="golang面向对象"></a>golang面向对象</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>封装</strong><ul><li>首字母大写的字段和方法是公有的，可以被其他包访问</li><li>首字母小写的字段和方法是私有的，只能在当前包中使用</li></ul></li><li><strong>继承</strong><ul><li>go使用结构体嵌套的方式实现继承，嵌入的匿名结构体称为嵌入类型</li><li>具有字段提升的特性，可以把父类型的字段和方法注入到子类型中去</li><li>另外go语言支持多重继承</li></ul></li><li><strong>多态</strong><ul><li>go通过interface来实现多态</li><li>一个类型的实例可以赋值给它所实现的任意接口</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="如何高效拼接字符串"><a href="#如何高效拼接字符串" class="headerlink" title="如何高效拼接字符串"></a>如何高效拼接字符串</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>方式</strong><ul><li><code>+</code></li><li><code>fmt.Sprintf()</code></li><li><code>strings.Builder()</code></li><li><code>bytes.Buffer()</code></li><li><code>strings.Join()</code></li></ul></li><li><strong>性能</strong><ul><li><code>strings.Join()</code> ≈ <code>strings.Builder()</code> &gt; <code>bytes.Buffer()</code> &gt;<code>+</code>+ &gt; <code>fmt.Sprintf()</code></li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="空struct-的作用"><a href="#空struct-的作用" class="headerlink" title="空struct{}的作用"></a>空struct{}的作用</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>作用</strong><ul><li>因为空struct{}的实例（struct{}{}）本身不占用内存空间，所以可以用来当作占位符使用</li></ul></li><li><strong>使用场景</strong><ul><li>go语言没有set类型，可以利用map来实现，map的key为需要存储的元素，value可以使用stuct{}{}</li><li>协程之间使用channel进行通信时，如果不在乎通信的内容，仅仅只是接受一个信号，那么可以使用struct{}{}</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="int和int32是同一个概念吗"><a href="#int和int32是同一个概念吗" class="headerlink" title="int和int32是同一个概念吗"></a>int和int32是同一个概念吗</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>int32仅仅表示32位的无符号整数</li><li>int底层基于操作系统实现，其大小取决于操作系统的位数<ul><li>int在32位系统中的int和int32是相同的，在64位系统则表示64位整数</li><li>int基于操作系统的底层实现是golang能够在不同平台运行的基础</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="golang程序初始化执行顺序"><a href="#golang程序初始化执行顺序" class="headerlink" title="golang程序初始化执行顺序"></a>golang程序初始化执行顺序</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>import –&gt; const –&gt; var –&gt;init()–&gt;main()</li><li>单个源文件存在多个init时，从上至下依次执行</li><li>相同包下多个源文件都存在init时，根据文件名的字典序执行</li><li>import导包过程中<ul><li>有依赖关系：递归执行上述流程</li><li>无依赖关系：按照导包顺序依次执行</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="struct能否比较"><a href="#struct能否比较" class="headerlink" title="struct能否比较"></a>struct能否比较</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>不同类型的struct不能比较</li><li>相同类型的struct分为两种情况<ul><li>若struct内所有成员均可比较，则该struct的不同实例可以比较</li><li>反之，如含有slice、map、function，则不能比较</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="interface能否比较"><a href="#interface能否比较" class="headerlink" title="interface能否比较"></a>interface能否比较</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>可以进行比较</li><li>只在两种情况下相等：<ul><li>两个interface均等于nil</li><li>两个interface内部的类型和值都相等</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="两个nil可能不相等吗"><a href="#两个nil可能不相等吗" class="headerlink" title="两个nil可能不相等吗"></a>两个nil可能不相等吗</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>只有在类型相同时两个nil才相等</li></ul><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> p1, p2 *<span class="type">int</span></span><br><span class="line"><span class="keyword">var</span> p3 *<span class="type">float64</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// p1==p3 类型不同，编译不通过</span></span><br><span class="line">fmt.Println(p1 == <span class="literal">nil</span>, p2 == <span class="literal">nil</span>, p1 == p2) <span class="comment">// true true true</span></span><br><span class="line">fmt.Println(a == <span class="literal">nil</span>, p == <span class="literal">nil</span>, a == p) <span class="comment">// true true false</span></span><br></pre></td></tr></table></figure></div>
+              </div>
+            </details>
+
+<h2 id="值类型T和指针类型-T可以互相调用方法吗"><a href="#值类型T和指针类型-T可以互相调用方法吗" class="headerlink" title="值类型T和指针类型*T可以互相调用方法吗"></a>值类型T和指针类型*T可以互相调用方法吗</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>使用值类型T调用*T的方法，只有当此T是可寻址的情况下才可以。比如常量就无法寻址，也就无法对其进行取地址操作。</li><li>反过来，*T只有在不是空指针的情况下才可以调用值类型T的方法。</li></ul><div class="tabs" id="tab-first-unique-name"><ul class="nav-tabs"><li class="tab active"><a class="#first-unique-name-1">T调用*T的方法</a></li><li class="tab"><a class="#first-unique-name-2">*T调用T的方法</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-unique-name-1"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> myInt <span class="type">int</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(m *myInt)</span></span> f() &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;ok&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// ⬇️会报错，因为3无法寻址</span></span><br><span class="line">	<span class="comment">// myInt(3).f()</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> a myInt = <span class="number">3</span></span><br><span class="line">	a.f()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div><div class="tab-pane" id="first-unique-name-2"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> T <span class="keyword">struct</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(*test)</span></span> f1() &#123;</span><br><span class="line">	fmt.Println(<span class="string">&quot;f1 ok&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(test)</span></span> f2() &#123;</span><br><span class="line">	fmt.Println(<span class="string">&quot;f2 ok&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> t1 *T</span><br><span class="line">	t1.f1()</span><br><span class="line">    <span class="comment">// ⬇️ *T调用T的方法时会自动解引用，而*T解引用后是nil，nil调用方法会报错</span></span><br><span class="line">	<span class="comment">// t1.f2()</span></span><br><span class="line">	<span class="keyword">var</span> t2 T</span><br><span class="line">	t2.f1()</span><br><span class="line">	t2.f2()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div></div>
+              </div>
+            </details>
+
+<h2 id="值接收者和指针接收者实现接口的区别"><a href="#值接收者和指针接收者实现接口的区别" class="headerlink" title="值接收者和指针接收者实现接口的区别"></a>值接收者和指针接收者实现接口的区别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>使用值接收者实现接口之后，不管是值类型的变量还是指针类型的变量都可以赋值给接口变量，因为对一个不为空的对象进行解引用总是合法的</li><li>但使用指针接收者实现接口后，只能将指针类型的变量赋值给接口变量，如果使用值类型进行赋值，在接口转换过程中，该值类型可能无法被取地址，会导致无法调用指针方法，因此在编译阶段就杜绝了这种行为</li></ul>
+              </div>
+            </details>
+
+<h2 id="v、-v、-v的区别"><a href="#v、-v、-v的区别" class="headerlink" title="%v、%+v、%#v的区别"></a>%v、%+v、%#v的区别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>%v 只输出所有的值</li><li>%+v 先输出字段类型，再输出该字段的值</li><li>%#v 先输出结构体名字值，再输出结构体（字段类型+字段的值）</li></ul><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> student <span class="keyword">struct</span> &#123;</span><br><span class="line">    name <span class="type">string</span></span><br><span class="line">    id <span class="type">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    s := &amp;student&#123;<span class="string">&quot;luxiao&quot;</span>, <span class="number">123456</span>&#125;</span><br><span class="line">    fmt.Printf(<span class="string">&quot;%%v的方式  = %v\n&quot;</span>, s)</span><br><span class="line">    fmt.Printf(<span class="string">&quot;%%+v的方式 = %+v\n&quot;</span>, s)</span><br><span class="line">    fmt.Printf(<span class="string">&quot;%%#v的方式 = %#v\n&quot;</span>, s)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// output:</span></span><br><span class="line"><span class="comment">// %v的方式  = &amp;&#123;luxiao 123456&#125;</span></span><br><span class="line"><span class="comment">// %+v的方式 = &amp;&#123;name:&quot;luxiao&quot; id:123456&#125;</span></span><br><span class="line"><span class="comment">// %#v的方式 = &amp;main.student&#123;name:&quot;luxiao&quot;, id:123456&#125;</span></span><br></pre></td></tr></table></figure></div>
+              </div>
+            </details>
+
+<h2 id="指针的作用"><a href="#指针的作用" class="headerlink" title="指针的作用"></a>指针的作用</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>函数传参或者方法中传递接收者时，如果要对原值进行修改，一般传递指针参数</li><li>如果结构体比较大的话，使用指针可以节省空间并提高效率</li></ul>
+              </div>
+            </details>
+]]></content>
+      <categories>
+        <category>Interview</category>
+      </categories>
+      <tags>
+        <tag>Go</tag>
       </tags>
   </entry>
 </search>

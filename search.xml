@@ -130,7 +130,7 @@
 
 <h2 id="值类型T和指针类型-T可以互相调用方法吗"><a href="#值类型T和指针类型-T可以互相调用方法吗" class="headerlink" title="值类型T和指针类型*T可以互相调用方法吗"></a>值类型T和指针类型*T可以互相调用方法吗</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
               <div class='content'>
-              <ul><li>使用值类型T调用*T的方法，只有当此T是可寻址的情况下才可以。比如常量就无法寻址，也就无法对其进行取地址操作。</li><li>反过来，*T只有在不是空指针的情况下才可以调用值类型T的方法。</li></ul><div class="tabs" id="tab-first-unique-name"><ul class="nav-tabs"><li class="tab active"><a class="#first-unique-name-1">T调用*T的方法</a></li><li class="tab"><a class="#first-unique-name-2">*T调用T的方法</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-unique-name-1"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> myInt <span class="type">int</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(m *myInt)</span></span> f() &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;ok&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// ⬇️会报错，因为3无法寻址</span></span><br><span class="line">	<span class="comment">// myInt(3).f()</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> a myInt = <span class="number">3</span></span><br><span class="line">	a.f()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div><div class="tab-pane" id="first-unique-name-2"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> T <span class="keyword">struct</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(*test)</span></span> f1() &#123;</span><br><span class="line">	fmt.Println(<span class="string">&quot;f1 ok&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(test)</span></span> f2() &#123;</span><br><span class="line">	fmt.Println(<span class="string">&quot;f2 ok&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> t1 *T</span><br><span class="line">	t1.f1()</span><br><span class="line">    <span class="comment">// ⬇️ *T调用T的方法时会自动解引用，而*T解引用后是nil，nil调用方法会报错</span></span><br><span class="line">	<span class="comment">// t1.f2()</span></span><br><span class="line">	<span class="keyword">var</span> t2 T</span><br><span class="line">	t2.f1()</span><br><span class="line">	t2.f2()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div></div>
+              <ul><li>使用值类型T调用*T的方法，只有当此T是可寻址的情况下才可以。比如常量就无法寻址，也就无法对其进行取地址操作。</li><li>反过来，*T只有在不是空指针的情况下才可以调用值类型T的方法。</li></ul><div class="tabs" id="tab-first"><ul class="nav-tabs"><li class="tab active"><a class="#first-1">T调用*T的方法</a></li><li class="tab"><a class="#first-2">*T调用T的方法</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-1"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> myInt <span class="type">int</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(m *myInt)</span></span> f() &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;ok&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// ⬇️会报错，因为3无法寻址</span></span><br><span class="line">	<span class="comment">// myInt(3).f()</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> a myInt = <span class="number">3</span></span><br><span class="line">	a.f()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div><div class="tab-pane" id="first-2"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> T <span class="keyword">struct</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(*test)</span></span> f1() &#123;</span><br><span class="line">	fmt.Println(<span class="string">&quot;f1 ok&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(test)</span></span> f2() &#123;</span><br><span class="line">	fmt.Println(<span class="string">&quot;f2 ok&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> t1 *T</span><br><span class="line">	t1.f1()</span><br><span class="line">    <span class="comment">// ⬇️ *T调用T的方法时会自动解引用，而*T解引用后是nil，nil调用方法会报错</span></span><br><span class="line">	<span class="comment">// t1.f2()</span></span><br><span class="line">	<span class="keyword">var</span> t2 T</span><br><span class="line">	t2.f1()</span><br><span class="line">	t2.f2()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div></div>
               </div>
             </details>
 
@@ -149,6 +149,104 @@
 <h2 id="指针的作用"><a href="#指针的作用" class="headerlink" title="指针的作用"></a>指针的作用</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
               <div class='content'>
               <ul><li>函数传参或者方法中传递接收者时，如果要对原值进行修改，一般传递指针参数</li><li>如果结构体比较大的话，使用指针可以节省空间并提高效率</li></ul>
+              </div>
+            </details>
+
+<h1 id="Slice"><a href="#Slice" class="headerlink" title="Slice"></a>Slice</h1><h2 id="数组和切片的区别"><a href="#数组和切片的区别" class="headerlink" title="数组和切片的区别"></a>数组和切片的区别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>长度是否可变</strong><ul><li>数组是一个长度固定的数据类型，其长度在定义时就已经确定，不能动态改变</li><li>切片是一个长度可变的数据类型，其长度在定义时可以为空，也可以指定一个初始长度（和容量），后续可以自动扩容</li></ul></li><li><strong>内存分配时机</strong><ul><li>数组在编译时期确定内存分配</li><li>切片在运行时期动态分配内存</li></ul></li><li><strong>参数传递方式</strong><ul><li>本质上数组和切片都是值传递</li><li>当数组作为函数参数时，函数操作的是数组的一个副本，不会影响原始数组</li><li>当切片作为函数参数时，函数操作的是切片中底层数组的引用，会影响原始切片，<strong>但是存在特例</strong>，当切片在函数中进行扩容时，会导致这个切片的底层指针指向新的底层数组，不再和原切片共享一个底层数组，发生扩容后函数修改切片不会对原切片造成影响</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="slice底层原理"><a href="#slice底层原理" class="headerlink" title="slice底层原理"></a>slice底层原理</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><p><strong>组成</strong></p><ul><li>指针、长度和容量。指针指向底层数组，长度代表slice当前的长度，容量代表底层数组的长度</li></ul></li><li><p><strong>append追加原则</strong></p><ul><li>假如slice容量够用，则追加新元素进去，返回原来的slice</li><li>若原容量不够，则slice 先扩容，扩容之后得到新的slice，将元素追加进新的slice，最后返回新的slice</li></ul></li><li><p><strong>扩容规则</strong></p><ul><li><p><strong>1.18之前</strong>：当切片容量小于1024时，扩容为原来的2倍，这样可以避免频繁扩容；当切片容量大于等于1024时，扩容为原来的1.25倍，这样可以避免内存浪费；如果扩容后还不够，则直接使用需要的容量</p></li><li><p>**1.18及之后：**当切片容量小于256时，扩容为原来的两倍；当切片容量大于等于256时，按照公式进行扩容<code>newcap+=(newcap+3*256)/4</code>；如果扩容后还不够，则直接使用需要的容量</p></li><li><p>改版之后扩容过程相对于原来更为平缓</p></li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="切片的深浅拷贝"><a href="#切片的深浅拷贝" class="headerlink" title="切片的深浅拷贝"></a>切片的深浅拷贝</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>深浅拷贝都是进行复制，本质区别就是复制出来的对象与原对象的底层数组指针是否会指向同一个地址<ul><li>深拷贝会在内存中重新开辟一块内存，再让底层指针指向这片新的内存</li><li>浅拷贝会和原切片共享同一个底层数组</li></ul></li><li>具体应用<ul><li>使用**&#x3D;操作符<strong>和</strong>[ : ]下标**的方式拷贝切片是浅拷贝</li><li>使用<strong>copy()函数</strong>复制是深拷贝</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="零切片、nil切片、空切片"><a href="#零切片、nil切片、空切片" class="headerlink" title="零切片、nil切片、空切片"></a>零切片、nil切片、空切片</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>零切片</strong><ul><li>切片元素为相应的零值的切片</li></ul></li><li><strong>nil切片</strong><ul><li>长度和容量都为0</li><li>和nil比较的结果为true</li></ul></li><li><strong>空切片</strong><ul><li>长度和容量也都为0</li><li>和nil的比较结果为false，因为所有的空切片的底层指针都指向同一个地址</li></ul></li></ul><div class="tabs" id="tab-second"><ul class="nav-tabs"><li class="tab active"><a class="#second-1">零切片</a></li><li class="tab"><a class="#second-2">nil切片</a></li><li class="tab"><a class="#second-3">空切片</a></li></ul><div class="tab-content"><div class="tab-pane active" id="second-1"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line">slice := <span class="built_in">make</span>([]<span class="type">int</span>,<span class="number">5</span>) <span class="comment">// 0 0 0 0 0</span></span><br><span class="line">slice := <span class="built_in">make</span>([]*<span class="type">int</span>,<span class="number">5</span>) <span class="comment">// nil nil nil nil nil</span></span><br></pre></td></tr></table></figure></div></div><div class="tab-pane" id="second-2"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> slice []<span class="type">int</span></span><br><span class="line"><span class="keyword">var</span> slice = *<span class="built_in">new</span>([]<span class="type">int</span>)</span><br></pre></td></tr></table></figure></div></div><div class="tab-pane" id="second-3"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> slice = []<span class="type">int</span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> slice = <span class="built_in">make</span>([]<span class="type">int</span>, <span class="number">0</span>)</span><br></pre></td></tr></table></figure></div></div></div></div>
+              </div>
+            </details>
+
+<h2 id="判断两个切片是否相等"><a href="#判断两个切片是否相等" class="headerlink" title="判断两个切片是否相等"></a>判断两个切片是否相等</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>可以调用reflect包下的DeepEqual()，但并不建议这么做，因为其底层使用了反射进行判断，比较影响性能</li><li>在知道切片类型的情况下，自己实现循环比较的性能更佳</li></ul>
+              </div>
+            </details>
+
+<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><h2 id="map常识"><a href="#map常识" class="headerlink" title="map常识"></a>map常识</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>map基于key的维度进行去重</li><li>map的遍历是无序的，若想要顺序遍历，则需要先对key排序，再按照key的顺序遍历map</li><li>对map进行读、写、删的操作的时间复杂度为O(1)</li><li>key必须为可比较类型，go语言中slice、map、func三种类型不可比较</li><li>map不是并发安全的，读map时可以并发读，但是写map时并发读写都不被允许。若要实现map的并发读写，有两种方式<ul><li>map+互斥锁&#x2F;读写锁</li><li>使用go自带的并发安全的sync.Map</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="map为什么是无序的"><a href="#map为什么是无序的" class="headerlink" title="map为什么是无序的"></a>map为什么是无序的</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>其一，map在进行扩容的过程中可能打乱原始键值对的顺序</li><li>其二，官方在for-range遍历map时做了随机播种</li></ul>
+              </div>
+            </details>
+
+<h2 id="map中删除一个key，它的内存会释放么"><a href="#map中删除一个key，它的内存会释放么" class="headerlink" title="map中删除一个key，它的内存会释放么"></a>map中删除一个key，它的内存会释放么</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>如果删除的元素是值类型，如int，float，bool，string以及数组和struct，map的内存不会自动释放</li><li>如果删除的元素是引用类型，如指针，slice，map，chan等，map的内存会自动释放，但释放的内存是子元素应用类型的内存占用</li><li>将map设置为nil后，内存被回收</li></ul>
+              </div>
+            </details>
+
+<h2 id="map底层结构"><a href="#map底层结构" class="headerlink" title="map底层结构"></a>map底层结构</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>map在底层算法上通过哈希表实现</li><li>每个map都是一个指针，指向hmap结构体，hmap主要包含一个桶数组的指针（buckets），以及维护这个桶数组所需的一些字段</li><li>桶数组中每个元素都是一个bmap结构体，也就是所谓的桶，每个桶固定可以存放8个kv键值对以及一个指向下一个溢出桶的指针</li><li>每个kv键值对数据包含tophash(key的高8位哈希值)、key、val三部分</li></ul><div class="tabs" id="tab-third"><ul class="nav-tabs"><li class="tab active"><a class="#third-1">数据结构</a></li><li class="tab"><a class="#third-2">图示</a></li></ul><div class="tab-content"><div class="tab-pane active" id="third-1"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> hmap <span class="keyword">struct</span> &#123;</span><br><span class="line">	count     <span class="type">int</span>    <span class="comment">// map中kv键值对总数</span></span><br><span class="line">	flags     <span class="type">uint8</span>  <span class="comment">// 状态标志，标识出map是否被并发读写</span></span><br><span class="line">	B         <span class="type">uint8</span>  <span class="comment">// 桶数组长度的指数，桶数组长度为2^B</span></span><br><span class="line">	noverflow <span class="type">uint16</span> <span class="comment">// 溢出桶的数量</span></span><br><span class="line">	hash0     <span class="type">uint32</span> <span class="comment">// 随机因子，生成key的hash值时会用到</span></span><br><span class="line"></span><br><span class="line">	buckets    unsafe.Pointer <span class="comment">// 桶数组的指针</span></span><br><span class="line">	oldbuckets unsafe.Pointer <span class="comment">// 扩容过程中旧的桶数组</span></span><br><span class="line">	nevacuate  <span class="type">uintptr</span>        <span class="comment">// 扩容进度标识，小于此地址的buckets代表已搬迁完成。</span></span><br><span class="line"></span><br><span class="line">	extra *mapextra <span class="comment">// 预申请的溢出桶</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div><div class="tab-pane" id="third-2"><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/post/map-structure.png"
+                      alt="map structure"
+                ></p></div></div></div>
+              </div>
+            </details>
+
+<h2 id="map读写过程"><a href="#map读写过程" class="headerlink" title="map读写过程"></a>map读写过程</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><p><strong>读流程</strong></p><ol><li>根据key取hash值</li><li>根据hash值以及B对桶数组长度取模，确定所在的桶</li><li>沿着桶链表依次遍历各个桶内的kv键值对</li><li>命中相同的key则返回value，若key不存在则返回零值</li></ol></li><li><p><strong>写流程</strong></p><ul><li>基本一致，只是如果发现map处在扩容过程中则会帮助推进渐进式扩容</li></ul></li></ul><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/post/map-process.png"
+                      alt="map process"
+                ></p>
+              </div>
+            </details>
+
+<h2 id="哈希冲突"><a href="#哈希冲突" class="headerlink" title="哈希冲突"></a>哈希冲突</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>产生原因</strong><ul><li>由于输入域（key）无穷大，输出域（hash 值）有限，因此必然存在不同 key 映射到相同 hash 值的情况，称之为 hash 冲突</li><li>再者，hash 值会对桶数组长度取模，因此不同 hash 值可能被打到同一个桶中</li></ul></li><li><strong>常见解决办法</strong><ul><li><strong>拉链法</strong><ul><li>将命中同一个位置的元素通过链表的形式进行链接</li><li>无需预先为元素分配内存，便于动态扩展</li></ul></li><li><strong>开放寻址法</strong><ul><li>在插入新条目时，会基于一定的探测策略持续寻找，直到找到一个可用于存放数据的空位为止</li><li>无需额外的指针用于链接元素；内存地址完全连续，可以基于局部性原理，充分利用 CPU 高速缓存</li></ul></li></ul></li><li><strong>go语言的处理方法</strong>（结合拉链法和开放寻址法两种思路）<ul><li>当 key 命中一个桶时，首先根据开放寻址法，在桶的 8 个位置中寻找空位进行插入</li><li>倘若桶的 8 个位置都已被占满，则基于桶的溢出桶指针，找到下一个桶，重复第上一步</li><li>倘若遍历到链表尾部，仍未找到空位，则基于拉链法，在桶链表尾部续接新桶，并插入kv对</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="扩容策略"><a href="#扩容策略" class="headerlink" title="扩容策略"></a>扩容策略</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>渐进式扩容</strong><ul><li>每次写操作都会帮助推进扩容的过程，避免因为一次性的全量数据迁移引发性能抖动</li></ul></li><li><strong>扩容类型</strong><ul><li><strong>增量扩容</strong><ul><li>扩容后，桶数组的长度增长为原长度的 2 倍</li><li>目的是降低每个桶中 key-value 对的数量，优化 map 操作的时间复杂度</li></ul></li><li><strong>等量扩容</strong><ul><li>扩容后，桶数组的长度和之前保持一致，但是溢出桶的数量会下降</li><li>目的是提高桶主体结构的数据填充率，减少溢出桶数量，避免发生内存泄漏</li></ul></li></ul></li><li><strong>扩容时机</strong><ul><li><strong>装载因子超出阈值6.5</strong><ul><li>map 中 key-value 对的数量超过 8 个，且大于桶数组长度的 6.5 倍，则进入增量扩容</li></ul></li><li><strong>溢出桶数量过多</strong><ul><li>若溢出桶的数量大于 2^B 个（即桶数组的长度；B 大于 15 时取15），则进入等量扩容</li></ul></li></ul></li></ul><div class="tabs" id="tab-fourth"><ul class="nav-tabs"><li class="tab active"><a class="#fourth-1">增量扩容</a></li><li class="tab"><a class="#fourth-2">等量扩容</a></li></ul><div class="tab-content"><div class="tab-pane active" id="fourth-1"><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/post/map-double-incr.png"
+                      alt="double incr"
+                ></p></div><div class="tab-pane" id="fourth-2"><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/post/map-equal-incr.png"
+                      alt="equal incr"
+                ></p></div></div></div>
+              </div>
+            </details>
+
+<h2 id="扩容过程"><a href="#扩容过程" class="headerlink" title="扩容过程"></a>扩容过程</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ol><li>计算新的存储桶数量：当map 的元素数量达到负载因子 (load factor)的上限时，会触发扩容。新的存储桶数量通常会是当前存储桶数量的两倍。</li><li>分配新的存储桶：创建新的存储桶和散列数组，大小为新的存储桶数量</li><li>重新散列元素：遍历当前 map 的每个存储桶，将其中的元素重新散列到新的存储桶中，这个过程是渐进式的</li><li>切换到新的存储桶：将 map 的内部数据结构指向新的存储桶和散列数组，这个过程是原子的，以确保在切换期间不会影响并发访问。</li><li>释放旧的存储桶：释放的存储桶和散列数组的内存空间，避免内存泄漏</li></ol>
               </div>
             </details>
 ]]></content>

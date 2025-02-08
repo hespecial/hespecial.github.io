@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Lu Xiao">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/interview/mysql-interview/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="Welcome to My Blog.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL面试题">
+<meta property="og:url" content="http://example.com/Interview/mysql-interview/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Welcome to My Blog.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/common/wall-paper-light.webp">
+<meta property="article:published_time" content="2025-02-05T06:28:27.000Z">
+<meta property="article:modified_time" content="2025-02-08T10:13:04.160Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Mysql">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/common/wall-paper-light.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/other/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/other/favicon.png">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/other/favicon.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+            MySQL面试题 | Hespecial
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+        
+<script src="/js/build/libs/anime.min.js"></script>
+
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":false},"author_label":{"enable":false,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":true,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wall-paper-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":false},"website_counter":{"url":"https://cn.vercount.one/js","enable":false,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":true,"custom_message":"Just A Moment"},"open_graph":{"enable":true,"image":"/images/common/wall-paper-light.webp","description":"Welcome to My Blog."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/common/wall-paper-light.webp","dark":"/images/common/wall-paper-dark.webp"},"title":"Hello World","subtitle":{"text":["The Night is Young","The Music is Loud","夜未央","乐未殇"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":60,"backing_speed":40,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":false},"text_color":{"light":"#1f3134","dark":"#eeeeee"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"center","links":{"github":"https://github.com/hespecial","instagram":null,"zhihu":null,"twitter":null,"email":"1478488313@qq.com"},"qrs":{"weixin":"/images/other/weixin-qrcode.jpeg","qq":"/images/other/qq-qrcode.jpeg"}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":false,"color":{"left":"#ffffff","right":"#000000","transparency":35},"width":{"home":"1200px","pages":"1200px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"},"Album":{"path":"/album","icon":"fa-solid fa-image"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":false,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"YYYY-MM-DD","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2025/1/16 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":true};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+	<span class="scroll-progress-bar"></span>
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        Just A Moment
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({ loop: true })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [20, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                filter: ['blur(5px)', 'blur(0px)'],
+                easing: "easeOutExpo",
+                duration: 1200,
+                delay: (el, i) => 300 + 20 * i,
+            })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [0, -20],
+                opacity: [1, 0],
+                filter: ['blur(0px)', 'blur(5px)'],
+                easing: "easeInExpo",
+                duration: 1000,
+                delay: (el, i) => 15 * i,
+                complete: function() {
+                    hidePreloader();
+                }
+            }, '-=700');
+
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Hespecial
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    ARCHIVES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/tags"
+                                        >
+                                    <i class="fa-regular fa-tags fa-fw"></i>
+                                    TAGS
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    CATEGORIES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/album"
+                                        >
+                                    <i class="fa-solid fa-image fa-fw"></i>
+                                    ALBUM
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                ARCHIVES
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/tags"
+                        >
+                            <span>
+                                TAGS
+                            </span>
+                            
+                                <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                CATEGORIES
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/album"
+                        >
+                            <span>
+                                ALBUM
+                            </span>
+                            
+                                <i class="fa-solid fa-image fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">2</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">2</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">MySQL面试题</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/common/avatar.jpeg">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">Lu Xiao</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2025-02-05 Wednesday</span>
+        <span class="mobile">2025-02-05 Wednesday</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-02-08 Saturday</span>
+            <span class="mobile">2025-02-08 Saturday</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/Interview/">Interview</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Mysql/">Mysql</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>5.2k Words</span>
+        </span>
+    
+    
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="基础部分"><a href="#基础部分" class="headerlink" title="基础部分"></a>基础部分</h1><h2 id="MySQL数据类型"><a href="#MySQL数据类型" class="headerlink" title="MySQL数据类型"></a>MySQL数据类型</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <div class="tabs" id="tab-first"><ul class="nav-tabs"><li class="tab active"><a class="#first-1">数值类型</a></li><li class="tab"><a class="#first-2">日期时间类型</a></li><li class="tab"><a class="#first-3">字符串类型</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-1"><ul><li><strong>整数类型</strong>：<ul><li><code>TINYINT</code>：1 字节</li><li><code>SMALLINT</code>：2 字节</li><li><code>MEDIUMINT</code>：3 字节</li><li><code>INT</code> 或 <code>INTEGER</code>：4 字节</li><li><code>BIGINT</code>：8 字节</li></ul></li><li><strong>浮点数类型</strong>：<ul><li><code>FLOAT</code>：4 字节</li><li><code>DOUBLE</code>：8 字节</li></ul></li><li><strong>定点数类型</strong>：<ul><li><code>DECIMAL(M, D)</code>：精确小数，M 为总位数，D 为小数位数。</li></ul></li></ul></div><div class="tab-pane" id="first-2"><ul><li><code>DATE</code>：日期，格式为 <code>YYYY-MM-DD</code>。</li><li><code>TIME</code>：时间，格式为 <code>HH:MM:SS</code>。</li><li><code>DATETIME</code>：日期和时间，格式为 <code>YYYY-MM-DD HH:MM:SS</code>。</li><li><code>TIMESTAMP</code>：时间戳，范围从 <code>1970-01-01 00:00:01</code> UTC 到 <code>2038-01-19 03:14:07</code> UTC。</li><li><code>YEAR</code>：年份，格式为 <code>YYYY</code>。</li></ul></div><div class="tab-pane" id="first-3"><ul><li><p><strong>常用：</strong></p><ul><li><p><code>CHAR(M)</code>：固定长度字符串，M 为字符数，最多 255 个字符。</p></li><li><p><code>VARCHAR(M)</code>：可变长度字符串，M 为最大字符数，最多 65535 个字符。</p></li></ul></li><li><p><strong>文本类型</strong>：</p><ul><li><code>TINYTEXT</code>：最大长度 255 个字符。</li><li><code>TEXT</code>：最大长度 65535 个字符。</li><li><code>MEDIUMTEXT</code>：最大长度 16777215 个字符。</li><li><code>LONGTEXT</code>：最大长度 4294967295 个字符。</li></ul></li><li><p><strong>二进制大对象（BLOB）</strong>：</p><ul><li><code>TINYBLOB</code>：最大长度 255 字节。</li><li><code>BLOB</code>：最大长度 65535 字节。</li><li><code>MEDIUMBLOB</code>：最大长度 16777215 字节。</li><li><code>LONGBLOB</code>：最大长度 4294967295 字节。</li></ul></li></ul></div></div></div>
+              </div>
+            </details>
+
+<h2 id="CHAR和VARCHAR的区别"><a href="#CHAR和VARCHAR的区别" class="headerlink" title="CHAR和VARCHAR的区别"></a>CHAR和VARCHAR的区别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>主要区别</strong><ul><li>CHAR 是定长的</li><li>VARCHAR 是变长的</li><li>效率上CHAR更高</li></ul></li><li><strong>存储和检索方式</strong><ul><li>CHAR 在存储时会在右边填充空格以达到指定的长度，检索时会去掉空格</li><li>VARCHAR 在存储时需要使用 1 或 2 个额外字节记录字符串的长度，检索时不需要处理</li></ul></li><li><strong>使用场景</strong><ul><li>CHAR 更适合存储长度较短或者长度都差不多的字符串，例如 Bcrypt 算法、MD5 算法加密后的密码、身份证号码</li><li>VARCHAR 适合存储长度不确定或者差异较大的字符串，例如用户昵称、文章标题等。</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="DATETIME-和-TIMESTAMP-的区别是什么"><a href="#DATETIME-和-TIMESTAMP-的区别是什么" class="headerlink" title="DATETIME 和 TIMESTAMP 的区别是什么"></a>DATETIME 和 TIMESTAMP 的区别是什么</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>格式区别</strong><ul><li>TIMESTAMP 和时区有关</li><li>DATETIME 类型没有时区信息</li></ul></li><li><strong>存储大小</strong><ul><li>TIMESTAMP 使用 4 个字节的存储空间</li><li>DATETIME 使用 8 个字节的存储空间</li></ul></li><li><strong>表示范围</strong><ul><li>TIMESTAMP：1970-01-01 00:00:01 ~ 2037-12-31 23:59:59</li><li>DATETIME：1000-01-01 00:00:00 ~ 9999-12-31 23:59:59</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="三大范式"><a href="#三大范式" class="headerlink" title="三大范式"></a>三大范式</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>第一范式（1NF）</strong><ul><li>字段（或属性）是不可分割的最小单元，即不会有重复的列，体现原子性</li></ul></li><li><strong>第二范式（2NF）</strong><ul><li>满足 1NF 前提下，存在一个候选码，非主属性全部依赖该候选码，即存在主键，体现唯一性，专业术语则是消除部分函数依赖</li></ul></li><li><strong>第三范式（3NF）</strong><ul><li>满足 2NF 前提下，非主属性必须互不依赖，消除传递依赖</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="INT-n-中的n如何理解"><a href="#INT-n-中的n如何理解" class="headerlink" title="INT(n)中的n如何理解"></a>INT(n)中的n如何理解</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong><code>n</code> 是显示宽度</strong>，不是存储位数或范围</li><li>如果没有使用 <code>ZEROFILL</code>，<code>n</code> 的作用可以忽略</li><li><code>INT(n)</code> 的存储空间和范围与 <code>n</code> 无关</li></ul>
+              </div>
+            </details>
+
+<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><h2 id="事务的特性"><a href="#事务的特性" class="headerlink" title="事务的特性"></a>事务的特性</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>原子性（Atomicity）</strong><ul><li>事务中的所有操作要么全部完成，要么全部不完成，不会结束在中间某个点。这意味着事务是一个不可分割的工作单元。</li></ul></li><li><strong>一致性（Consistency）</strong><ul><li>事务必须保证数据库从一个一致的状态转移到另一个一致的状态。事务执行的结果必须符合所有预定义的规则和约束。</li></ul></li><li><strong>隔离性（Isolation）</strong><ul><li>并发执行的事务之间不会互相影响。每个事务都像是在系统上独立运行，即使有多个事务同时进行，它们也应该是隔离的，以防止数据损坏。</li></ul></li><li><strong>持久性（Durability）</strong><ul><li>一旦事务提交，它对数据库的改变就是永久性的，即使系统发生故障，这些改变也不会丢失。</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="并发事务的问题"><a href="#并发事务的问题" class="headerlink" title="并发事务的问题"></a>并发事务的问题</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>脏读（Dirty Read）</strong><ul><li>一个事务读取了另一个事务未提交的数据。如果那个事务最终回滚了，那么读取的数据就是无效的。</li></ul></li><li><strong>不可重复读（Non-repeatable Read）</strong><ul><li>在一个事务中，多次读取同一数据集合时，由于其他事务的介入，可能会得到不同的结果。这种情况通常发生在读已提交或更低的隔离级别。</li></ul></li><li><strong>幻读（Phantom Read）</strong><ul><li>一个事务在读取某个范围内的记录时，由于其他事务的插入操作，再次读取时发现原本不存在的“幻影”记录。</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="事务的隔离级别"><a href="#事务的隔离级别" class="headerlink" title="事务的隔离级别"></a>事务的隔离级别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>读未提交（Read Uncommitted）</strong><ul><li>事务可以读取到其他未提交事务的更改</li><li>可能导致脏读，即读取到其他事务未提交的数据</li></ul></li><li><strong>读已提交（Read Committed）</strong><ul><li>事务只能读取到其他事务已经提交的更改，避免了脏读</li><li>但可能遇到不可重复读的问题，即在同一事务中，由于其他事务的更新，两次读取到的数据不一致。</li></ul></li><li><strong>可重复读（Repeatable Read）</strong><ul><li>事务在整个过程中可以看到一致的快照数据，解决了不可重复读的问题</li><li>但是不能防止幻读，即当事务重新读取先前已经检索过的数据集时，发现其他事务插入了满足其检索条件的新行</li></ul></li><li><strong>串行化（Serializable）</strong><ul><li>最高的隔离级别，通过完全串行化执行事务来避免脏读、不可重复读和幻读</li><li>在这个级别，事务将被序列化，依次单独执行，从而提供了最严格的隔离</li><li>但是这也可能导致较慢的性能</li></ul></li></ul><blockquote><p><em><strong>Tip</strong></em></p><p>MySQL InnoDB 引擎的默认隔离级别虽然是「可重复读」，但是它很大程度上避免了幻读现象</p><ul><li>针对快照读（普通 select 语句），是通过 MVCC 方式解决了幻读，因为可重复读隔离级别下，事务执行过程中看到的数据，一直跟这个事务启动时看到的数据是一致的，即使中途有其他事务插入了一条数据，是查询不出来这条数据的，所以就很好了避免幻读问题</li><li>针对当前读（select … for update 等语句），是通过 next-key lock（记录锁+间隙锁）方式解决了幻读，因为当执行 select … for update 语句的时候，会加上 next-key lock，如果有其他事务在 next-key lock 锁范围内插入了一条记录，那么这个插入语句就会被阻塞，无法成功插入，所以就很好了避免幻读问题</li></ul><p>但是如果同时存在快照读和当前读，那么依然会存在幻读的问题</p></blockquote>
+              </div>
+            </details>
+
+<h2 id="四种隔离级别是如何实现的"><a href="#四种隔离级别是如何实现的" class="headerlink" title="四种隔离级别是如何实现的"></a>四种隔离级别是如何实现的</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>读未提交</strong><ul><li>直接读取最新的数据</li></ul></li><li><strong>串行化</strong><ul><li>通过加读写锁的方式来避免并行访问</li></ul></li><li><strong>读已提交&amp;可重复读</strong><ul><li>它们是通过 Read View 来实现的，它们的区别在于<strong>创建 Read View 的时机不同</strong></li><li>读已提交是在<strong>每次读取数据时</strong>重新生成一个 Read View</li><li>可重复读是在<strong>启动事务时</strong>生成一个 Read View，然后整个事务期间都在用这个 Read View</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="Read-View的实现原理"><a href="#Read-View的实现原理" class="headerlink" title="Read View的实现原理"></a>Read View的实现原理</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <div class="tabs" id="tab-second"><ul class="nav-tabs"><li class="tab active"><a class="#second-1">数据结构</a></li><li class="tab"><a class="#second-2">工作原理</a></li></ul><div class="tab-content"><div class="tab-pane active" id="second-1"><ul><li>Read View本质上是一个<strong>保存事务ID的列表</strong></li><li><strong>四个重要字段</strong><ul><li>m_ids：创建 Read View 时，当前数据库中「活跃事务」的事务 id 列表，注意是一个列表，「活跃事务」指的是启动了但还没提交的事务</li><li>min_trx_id：在创建 Read View 时，当前数据库中「活跃事务」中事务 id 最小的事务，也就是 m_ids 的最小值</li><li>max_trx_id：这个并不是 m_ids 的最大值，而是创建 Read View 时当前数据库中应该给下一个事务的 id 值，也就是全局事务中最大的事务 id 值 + 1</li><li>creator_trx_id ：指的是创建该 Read View 的事务的事务 id</li></ul></li><li><strong>两个隐藏字段</strong><ul><li>trx_id：当一个事务对某条聚簇索引记录进行改动时，就会把该事务的事务 id 记录在 trx_id 隐藏列里</li><li>roll_pointer：每次对某条聚簇索引记录进行改动时，都会把旧版本的记录写入到 undo log中，这个隐藏列是个指针，指向每一个旧版本记录，于是就可以通过它找到修改前的记录</li></ul></li></ul></div><div class="tab-pane" id="second-2"><ul><li><p>一个事务去访问记录时，自己的更新记录总是可见的</p></li><li><p>如果记录的 trx_id 值小于 Read View 中的 min_trx_id 值，表示这个版本的记录是在创建 Read View 前已经提交的事务生成的，所以该版本的记录对当前事务可见</p></li><li><p>如果记录的 trx_id 值大于等于 Read View 中的 max_trx_id 值，表示这个版本的记录是在创建 Read View 后才启动的事务生成的，所以该版本的记录对当前事务不可见</p></li><li><p>如果记录的 trx_id 值在 Read View 的 min_trx_id 和 max_trx_id 之间，需要判断 trx_id 是否在 m_ids 列表中</p><ul><li><p>如果记录的 trx_id 在 m_ids 列表中，表示生成该版本记录的活跃事务依然活跃着（还没提交事务），所以该版本的记录对当前事务不可见。</p></li><li><p>如果记录的 trx_id 不在 m_ids列表中，表示生成该版本记录的活跃事务已经被提交，所以该版本的记录对当前事务可见</p></li></ul></li></ul><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/post/read-view.png"
+                      alt="read-view"
+                ></p></div></div></div>
+              </div>
+            </details>
+
+<h2 id="事务是如何实现的"><a href="#事务是如何实现的" class="headerlink" title="事务是如何实现的"></a>事务是如何实现的</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>实现事务就是要实现事务的<strong>四大特性ACID</strong><ul><li>原子性通过undo log保证 （日志 4）</li><li>持久性通过redo log保证 （日志 5）</li><li>隔离性通过锁和MVCC保证</li><li>一致性由原子性、持久性、隔离性共同保证</li></ul></li></ul>
+              </div>
+            </details>
+
+<h1 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h1><h2 id="如何选择存储引擎"><a href="#如何选择存储引擎" class="headerlink" title="如何选择存储引擎"></a>如何选择存储引擎</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>InnoDB</strong><ul><li>需要事务（如支付系统）</li><li>高并发写入（如电商订单）</li><li>要求数据完整性和崩溃恢复</li></ul></li><li><strong>MyISAM</strong><ul><li>读多写少（如新闻网站的文章表）</li></ul></li><li><strong>MEMORY</strong><ul><li>临时数据或缓存（如会话存储）</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="InnoDB和MyISAM的区别"><a href="#InnoDB和MyISAM的区别" class="headerlink" title="InnoDB和MyISAM的区别"></a>InnoDB和MyISAM的区别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/post/mysql-innodb-vs-myisam.png"
+                      alt="innodb-vs-myisam"
+                ></p>
+              </div>
+            </details>
+
+<h2 id="如何优化InnoDB的性能"><a href="#如何优化InnoDB的性能" class="headerlink" title="如何优化InnoDB的性能"></a>如何优化InnoDB的性能</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>调整缓冲池大小<ul><li>增加缓存以减少磁盘I&#x2F;O</li></ul></li><li>调整日志文件大小<ul><li>由于Redo Log采用WAL（Write-Ahead Logging）机制，先写日志再更新数据，日志文件大小决定了更新数据的频率</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="为什么InnoDB在并发写入时性能更好"><a href="#为什么InnoDB在并发写入时性能更好" class="headerlink" title="为什么InnoDB在并发写入时性能更好"></a>为什么InnoDB在并发写入时性能更好</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>行级锁</strong><ul><li>仅锁定涉及的行，其他行仍可操作，减少锁冲突</li></ul></li><li><strong>MVCC（多版本并发控制）</strong><ul><li>通过版本链实现非阻塞读，读写操作互不阻塞</li></ul></li></ul>
+              </div>
+            </details>
+
+<h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><h2 id="索引的分类"><a href="#索引的分类" class="headerlink" title="索引的分类"></a>索引的分类</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><p>数据结构上分为</p><ul><li>B+树索引</li><li>哈希索引</li></ul></li><li><p>物理结构上分为</p><ul><li>聚集索引</li><li>二级索引</li></ul></li><li><p>应用上分为：</p><ul><li><p>主键索引</p></li><li><p>普通索引</p></li><li><p>唯一索引</p></li><li><p>联合索引</p></li><li><p>全文索引</p></li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="索引的优缺点"><a href="#索引的优缺点" class="headerlink" title="索引的优缺点"></a>索引的优缺点</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><p>优点</p><ul><li><p>加快数据的检索速度</p></li><li><p>加快表和表之间的连接速度</p></li><li><p>可以显著减少查询中分组和排序的时间</p></li></ul></li><li><p>缺点</p><ul><li><p>创建和维护索引需要耗费时间，这种时间随着数据量的增加而增加，这样就降低了数据的维护速度</p></li><li><p>索引需要占物理空间，本质上是空间换时间</p></li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="索引的设计原则"><a href="#索引的设计原则" class="headerlink" title="索引的设计原则"></a>索引的设计原则</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><p>什么时候需要创建索引</p><ul><li><p>对于很大的表且存在频繁用于查询条件的列，考虑建立索引提高查询速度</p></li><li><p>具有唯一性的数据可以创建索引，可以更快速的通过该索引来确定某条记录</p></li><li><p>频繁使用排序、分组和联合操作的列，执行这些操作时，排序操作会浪费很多时间。如果为其建立索引，可以有效地避免排序操作</p></li></ul></li><li><p>什么时候不需要创建索引</p><ul><li><p>小表不建议索引，由于数据较小，直接查询花费的时间可能比遍历索引的时间还要短，索引可能不会产生优化效果</p></li><li><p>经常进行更新的字段不需要创建索引，这样会破环B+树的结构，重新调整的开销大</p></li><li><p>字段中存在大量重复数据，不需要创建索引，比如性别字段</p></li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="B树和B-树的区别"><a href="#B树和B-树的区别" class="headerlink" title="B树和B+树的区别"></a>B树和B+树的区别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><p><strong>数据存储位置</strong>：</p><ul><li><p><strong>B树</strong>：所有节点都存储数据，包括内部节点和叶子节点。</p></li><li><p><strong>B+树</strong>：仅叶子节点存储数据，内部节点只存储键值，用于索引。</p></li></ul></li><li><p><strong>叶子节点结构</strong>：</p><ul><li><p><strong>B树</strong>：叶子节点独立，不相互连接。</p></li><li><p><strong>B+树</strong>：叶子节点通过指针相连，形成有序链表，便于范围查询。</p></li></ul></li><li><p><strong>查询效率</strong>：</p><ul><li><p><strong>B树</strong>：由于数据分布在所有节点，查询时间不稳定，可能很快找到数据，也可能需要遍历多层。</p></li><li><p><strong>B+树</strong>：查询路径长度固定，必须到达叶子节点，因此查询时间更稳定。</p></li></ul></li><li><p><strong>空间利用率</strong>：</p><ul><li><strong>B树</strong>：每个节点都存储数据，空间利用率相对较低。</li><li><strong>B+树</strong>：内部节点仅存储键值，能容纳更多索引，空间利用率更高。</li></ul></li><li><p><strong>适用场景</strong>：</p><ul><li><strong>B树</strong>：适合随机读写较多的场景。</li><li><strong>B+树</strong>：适合范围查询和顺序访问较多的场景，如数据库索引和文件系统。</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="B-树为什么比B树更适合用与数据库索引"><a href="#B-树为什么比B树更适合用与数据库索引" class="headerlink" title="B+树为什么比B树更适合用与数据库索引"></a>B+树为什么比B树更适合用与数据库索引</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>B+ 树减少了 IO 次数</strong><ul><li>由于索引文件很大因此索引文件存储在磁盘上，B+ 树的非叶子结点只存关键字不存数据，因而单个页可以存储更多的关键字，即一次性读入内存的需要查找的关键字也就越多，磁盘的随机 I&#x2F;O 读取次数相对就减少了。</li></ul></li><li><strong>B+ 树查询效率更稳定</strong><ul><li>由于B+树数据只存在在叶子结点上，所以查找效率固定为 O(log n)，而B树的数据分布在所有节点，查询时间存在抖动，所以 B+ 树的查询效率相比B树更加稳定。</li></ul></li><li><strong>B+ 树更加适合范围查找</strong><ul><li>B+ 树叶子结点之间用链表有序连接，所以扫描全部数据只需扫描一遍叶子结点，利于扫库和范围查询；B 树由于非叶子结点也存数据，所以只能通过中序遍历按序来扫。也就是说，对于范围查询和有序遍历而言，B+ 树的效率更高。</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="B-树相对于二叉树和Hash的优势"><a href="#B-树相对于二叉树和Hash的优势" class="headerlink" title="B+树相对于二叉树和Hash的优势"></a>B+树相对于二叉树和Hash的优势</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>相对于二叉树，B+树的层数更少，查询效率更高</li><li>相对于Hash，B+树支持范围匹配和排序操作</li></ul>
+              </div>
+            </details>
+
+<h2 id="B-树查询数据的过程"><a href="#B-树查询数据的过程" class="headerlink" title="B+树查询数据的过程"></a>B+树查询数据的过程</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>定位根节点<ul><li>从根节点开始，通过二分法快速定位到符合页内范围包含查询值的页</li></ul></li><li>内部节点遍历<ul><li>在内部节点中，继续定位到合适的子节点，并移动到该子节点，循环此过程直至到达叶子节点</li></ul></li><li>叶子节点遍历<ul><li>在叶子节点中，由于数据已排序，可以直接使用二分查找或顺序查找定位到具体的数据记录</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="最左匹配原则"><a href="#最左匹配原则" class="headerlink" title="最左匹配原则"></a>最左匹配原则</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>最左匹配原则主要用来处理使用联合索引时可能出现的一些问题</li><li>最左匹配原则要求查询条件中的列应该从索引的最左边的列开始，并且不能跳过中间的列</li><li>如果查询条件不按照索引的顺序进行匹配，那么索引可能会失效或者部分失效</li></ul>
+              </div>
+            </details>
+
+<h2 id="回表查询和覆盖索引"><a href="#回表查询和覆盖索引" class="headerlink" title="回表查询和覆盖索引"></a>回表查询和覆盖索引</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>回表查询</strong><ul><li>因为二级索引只有索引和id字段的信息，如果要获取到其他字段，就需要通过id字段到聚簇索引中再次查询，这个过程就叫回表查询</li></ul></li><li><strong>覆盖索引</strong><ul><li>将select中的列包含在索引之中，这样在查找时就可以直接返回对应的字段信息，避免了回表查询</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="前缀索引"><a href="#前缀索引" class="headerlink" title="前缀索引"></a>前缀索引</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>原理</strong><ul><li>对于较长的文本字段，直接对整个字段创建索引会占用大量存储空间，并且索引维护的开销较大。</li><li>前缀索引只对字段的前 <code>N</code> 个字符创建索引，从而减少索引大小，节省空间并提高查询效率。</li><li>例如，对 <code>desc VARCHAR(255)</code> 的字段，可以只对前 10 个字符创建索引<code>CREATE INDEX index_name ON table_name (desc(10))</code>。</li></ul></li><li><strong>注意事项</strong><ul><li><strong>区分度不足</strong>：如果前缀长度过短，可能导致大量重复值，降低查询效率。</li><li><strong>查询条件匹配</strong>：查询条件必须使用前缀匹配（如 <code>LIKE &#39;abc%&#39;</code>），否则无法利用前缀索引。</li><li><strong>排序和分组</strong>：前缀索引不支持 <code>ORDER BY</code> 和 <code>GROUP BY</code> 操作。</li><li><strong>覆盖索引</strong>：前缀索引无法覆盖查询，因为只索引了部分字段。</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="索引下推"><a href="#索引下推" class="headerlink" title="索引下推"></a>索引下推</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>在使用非主键索引进行查询时，如果索引列中存在某些判断条件时，会优先通过这些判断条件过滤掉不满足条件的数据，之后再进行回表操作进一步确定满足条件的数据</li><li>可以有效减少回表查询的次数，大大提升查询的效率</li></ul>
+              </div>
+            </details>
+
+<h2 id="索引失效的情况"><a href="#索引失效的情况" class="headerlink" title="索引失效的情况"></a>索引失效的情况</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>查询条件中有or且条件字段多于一个时，即使有部分条件带索引也会失效</li><li>like查询是以%开头</li><li>字段类型不匹配时索引会失效</li><li>索引列参与计算会导致索引失效</li><li>违背最左匹配原则</li></ul>
+              </div>
+            </details>
+
+<h2 id="索引优化"><a href="#索引优化" class="headerlink" title="索引优化"></a>索引优化</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>选择合适的索引类型和列</strong><ul><li>单列索引</li><li>复合索引</li><li>全文索引</li></ul></li><li><strong>避免索引失效和冗余</strong><ul><li>见索引失效的情况</li><li>删除重复或冗余的索引，如果已有索引 <code>(a, b)</code>，则索引 <code>(a)</code> 可能是冗余的</li></ul></li><li><strong>合理利用覆盖索引和前缀索引</strong><ul><li>见覆盖索引和前缀索引</li></ul></li></ul>
+              </div>
+            </details>
+
+<h1 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h1><h2 id="MySQL锁的类型"><a href="#MySQL锁的类型" class="headerlink" title="MySQL锁的类型"></a>MySQL锁的类型</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <div class="tabs" id="tab-third"><ul class="nav-tabs"><li class="tab active"><a class="#third-1">全局锁</a></li><li class="tab"><a class="#third-2">表级锁</a></li><li class="tab"><a class="#third-3">字符串类型</a></li></ul><div class="tab-content"><div class="tab-pane active" id="third-1"><ul><li><p><strong>作用</strong></p><ul><li>使<strong>整个数据库</strong>处于<strong>只读状态</strong></li></ul></li><li><p><strong>使用方法</strong></p><ul><li>开启全局锁：<code>flush tables with read lock</code></li><li>释放全局锁：<code>unlock tables</code></li></ul></li><li><p><strong>优缺点</strong></p><ul><li>开启全局锁后所有对数据的修改操作都不允许，保证了数据的一致性，适合做全库逻辑备份</li><li>全局锁开启期间，所有写操作都会被阻塞，容易导致业务停滞</li></ul></li></ul><blockquote><p><em><strong>Tip</strong></em></p><p>如果数据库的存储引擎支持事务的可重复读隔离级别，那么就可以避免全局锁导致的写操作阻塞，因为在可重复读的隔离级别下，即使其他事务更新了表的数据，也不会影响备份数据库时的 Read View</p></blockquote></div><div class="tab-pane" id="third-2"><ul><li><p><strong>表锁</strong></p><ul><li>锁定整张表</li><li>通过 <code>LOCK TABLES table_name READ/WRITE</code> 添加表级共享锁（读锁）&#x2F;独占锁（写锁）</li><li>读锁允许其他事务读取表，但阻止写操作；写锁阻止其他事务的读、写操作。</li></ul></li><li><p><strong>元数据锁</strong></p><ul><li><strong>保护表结构，防止在表结构变更时进行读写操作，反之亦然</strong></li><li>对数据库表进行操作时，会自动给这个表加上 MDL，在<strong>事务提交后才会释放</strong><ul><li>对一张表进行 CRUD 操作时，加的是 MDL 读锁</li><li>对一张表做结构变更操作的时候，加的是 MDL 写锁</li></ul></li></ul></li><li><p><strong>意向锁</strong></p><ul><li><strong>用来快速判断表里是否有记录被加锁</strong></li><li>也分为<strong>意向共享锁</strong>和<strong>意向独占锁</strong></li><li>意向共享锁和意向独占锁是表级锁，不会和行级的共享锁和独占锁发生冲突，而且意向锁之间也不会发生冲突，只会和共享表锁<code>lock tables ... read</code>或独占表锁发<code>lock tables ... write</code>生冲突</li><li>因为在使用 InnoDB 引擎的表里对某些记录加上「共享锁&#x2F;独占锁」之前，需要先在表级别加上一个「意向共享锁&#x2F;意向独占锁」，那么再给表加「独占表锁」时，会先检查该表是否存在「意向共享锁&#x2F;意向独占锁」，如果有就意味着表里已经有记录被加了「共享锁&#x2F;独占锁」，这样就避免了加「独占表锁」时去遍历全部数据来判断表里是否有记录被加了锁</li></ul><blockquote><p><em><strong>Tip</strong></em></p><p>普通的 select 语句是利用 MVCC 实现一致性读，是无锁的，但是也有办法对记录加「共享锁&#x2F;独占锁」</p><p><code>select ... lock in share mode</code>——先在表上加上「意向共享锁」，然后对记录加「共享锁」</p><p><code>select ... for update</code>——先在表上加上「意向独占锁」，然后对记录加「独占锁」 </p></blockquote></li><li><p><strong>自增锁</strong></p></li></ul></div><div class="tab-pane" id="third-3"></div></div></div>
+              </div>
+            </details>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> MySQL面试题</li>
+        <li><strong>Author:</strong> Lu Xiao</li>
+        <li><strong>Created at
+                :</strong> 2025-02-05 Wednesday</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2025-02-08 Saturday
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://hespecial.github.io/Interview/mysql-interview/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/Mysql/">#Mysql</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/Interview/go-interview/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">Go 面试题</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">MySQL面试题</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E9%83%A8%E5%88%86"><span class="nav-number">1.</span> <span class="nav-text">基础部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.1.</span> <span class="nav-text">MySQL数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CHAR%E5%92%8CVARCHAR%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.2.</span> <span class="nav-text">CHAR和VARCHAR的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DATETIME-%E5%92%8C-TIMESTAMP-%E7%9A%84%E5%8C%BA%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.3.</span> <span class="nav-text">DATETIME 和 TIMESTAMP 的区别是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E5%A4%A7%E8%8C%83%E5%BC%8F"><span class="nav-number">1.4.</span> <span class="nav-text">三大范式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#INT-n-%E4%B8%AD%E7%9A%84n%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3"><span class="nav-number">1.5.</span> <span class="nav-text">INT(n)中的n如何理解</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1"><span class="nav-number">2.</span> <span class="nav-text">事务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E7%9A%84%E7%89%B9%E6%80%A7"><span class="nav-number">2.1.</span> <span class="nav-text">事务的特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B6%E5%8F%91%E4%BA%8B%E5%8A%A1%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">2.2.</span> <span class="nav-text">并发事务的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E7%9A%84%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB"><span class="nav-number">2.3.</span> <span class="nav-text">事务的隔离级别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E7%A7%8D%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB%E6%98%AF%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E7%9A%84"><span class="nav-number">2.4.</span> <span class="nav-text">四种隔离级别是如何实现的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Read-View%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="nav-number">2.5.</span> <span class="nav-text">Read View的实现原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E5%8A%A1%E6%98%AF%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E7%9A%84"><span class="nav-number">2.6.</span> <span class="nav-text">事务是如何实现的</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="nav-number">3.</span> <span class="nav-text">存储引擎</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E9%80%89%E6%8B%A9%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E"><span class="nav-number">3.1.</span> <span class="nav-text">如何选择存储引擎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#InnoDB%E5%92%8CMyISAM%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">3.2.</span> <span class="nav-text">InnoDB和MyISAM的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96InnoDB%E7%9A%84%E6%80%A7%E8%83%BD"><span class="nav-number">3.3.</span> <span class="nav-text">如何优化InnoDB的性能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88InnoDB%E5%9C%A8%E5%B9%B6%E5%8F%91%E5%86%99%E5%85%A5%E6%97%B6%E6%80%A7%E8%83%BD%E6%9B%B4%E5%A5%BD"><span class="nav-number">3.4.</span> <span class="nav-text">为什么InnoDB在并发写入时性能更好</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95"><span class="nav-number">4.</span> <span class="nav-text">索引</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">4.1.</span> <span class="nav-text">索引的分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number">4.2.</span> <span class="nav-text">索引的优缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="nav-number">4.3.</span> <span class="nav-text">索引的设计原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B%E6%A0%91%E5%92%8CB-%E6%A0%91%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">4.4.</span> <span class="nav-text">B树和B+树的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-%E6%A0%91%E4%B8%BA%E4%BB%80%E4%B9%88%E6%AF%94B%E6%A0%91%E6%9B%B4%E9%80%82%E5%90%88%E7%94%A8%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E7%B4%A2%E5%BC%95"><span class="nav-number">4.5.</span> <span class="nav-text">B+树为什么比B树更适合用与数据库索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-%E6%A0%91%E7%9B%B8%E5%AF%B9%E4%BA%8E%E4%BA%8C%E5%8F%89%E6%A0%91%E5%92%8CHash%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="nav-number">4.6.</span> <span class="nav-text">B+树相对于二叉树和Hash的优势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#B-%E6%A0%91%E6%9F%A5%E8%AF%A2%E6%95%B0%E6%8D%AE%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="nav-number">4.7.</span> <span class="nav-text">B+树查询数据的过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%B7%A6%E5%8C%B9%E9%85%8D%E5%8E%9F%E5%88%99"><span class="nav-number">4.8.</span> <span class="nav-text">最左匹配原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E8%A1%A8%E6%9F%A5%E8%AF%A2%E5%92%8C%E8%A6%86%E7%9B%96%E7%B4%A2%E5%BC%95"><span class="nav-number">4.9.</span> <span class="nav-text">回表查询和覆盖索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%BC%80%E7%B4%A2%E5%BC%95"><span class="nav-number">4.10.</span> <span class="nav-text">前缀索引</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E4%B8%8B%E6%8E%A8"><span class="nav-number">4.11.</span> <span class="nav-text">索引下推</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E5%A4%B1%E6%95%88%E7%9A%84%E6%83%85%E5%86%B5"><span class="nav-number">4.12.</span> <span class="nav-text">索引失效的情况</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B4%A2%E5%BC%95%E4%BC%98%E5%8C%96"><span class="nav-number">4.13.</span> <span class="nav-text">索引优化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%94%81"><span class="nav-number">5.</span> <span class="nav-text">锁</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL%E9%94%81%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="nav-number">5.1.</span> <span class="nav-text">MySQL锁的类型</span></a></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2025</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Lu Xiao</a>
+            
+        </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="fa-regular fa-arrow-up"></i>
+		</li>
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/build/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+    
+<script src="/js/build/libs/minimasonry.min.js"></script>
+
+    
+<script src="/js/build/plugins/masonry.js" type="module"></script>
+
+
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+    
+<script src="/js/build/libs/pangu.min.js"></script>
+
+<script src="/js/build/plugins/pangu.js"></script>
+
+
+
+
+	
+</body>
+
+</html>

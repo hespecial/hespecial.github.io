@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/common/wall-paper-light.webp">
 <meta property="article:published_time" content="2025-01-18T03:19:50.000Z">
-<meta property="article:modified_time" content="2025-02-08T14:05:58.723Z">
+<meta property="article:modified_time" content="2025-03-07T14:28:37.022Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Go">
 <meta name="twitter:card" content="summary">
@@ -516,7 +516,7 @@
 
         <div class="statistics flex justify-around my-2.5">
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">2</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
         <div class="label text-third-text-color text-sm">Tags</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
@@ -524,7 +524,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">4</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -573,8 +573,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-02-08 Saturday</span>
-            <span class="mobile">2025-02-08 Saturday</span>
+            <span class="desktop">2025-03-07 Friday</span>
+            <span class="mobile">2025-03-07 Friday</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -660,7 +660,7 @@
 
 <h2 id="string和-byte的区别"><a href="#string和-byte的区别" class="headerlink" title="string和[]byte的区别"></a>string和[]byte的区别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
               <div class='content'>
-              <ul><li><p><strong>不可变性</strong></p><ul><li><p>string是不可变的数据类型，一旦创建就不能被修改。任何修改string的操作都会产生一个新的 string，而原始的string保持不变。</p></li><li><p>[]byte是可变的切片，可以通过索引直接修改切片中的元素。</p></li></ul></li><li><p><strong>内存分配</strong></p><ul><li><p>string是一个不可变的视图，底层数据是只读的，string的内存分配和释放由runtime管理</p></li><li><p>[]byte是一个可变的切片，底层数据是可以修改的，[]byte的内存管理由程序员负责</p></li></ul></li><li><p><strong>应用场景</strong></p><ul><li><p>如果需要频繁地修改字符串内容，或者处理二进制数据，使用[]byte 更为合适</p></li><li><p>如果字符串内容基本保持不变并且主要处理文本数据，那么使用 string 更为方便</p></li></ul></li></ul>
+              <ul><li><strong>不可变性</strong><ul><li>string是不可变的数据类型，一旦创建就不能被修改。任何修改string的操作都会产生一个新的 string，而原始的string保持不变。</li><li>[]byte是可变的切片，可以通过索引直接修改切片中的元素。</li></ul></li><li><strong>内存分配</strong><ul><li>string是一个不可变的视图，底层数据是只读的，string的内存分配和释放由runtime管理</li><li>[]byte是一个可变的切片，底层数据是可以修改的，[]byte的内存管理由程序员负责</li></ul></li><li><strong>应用场景</strong><ul><li>如果需要频繁地修改字符串内容，或者处理二进制数据，使用[]byte 更为合适</li><li>如果字符串内容基本保持不变并且主要处理文本数据，那么使用 string 更为方便</li></ul></li></ul>
               </div>
             </details>
 
@@ -768,7 +768,7 @@
 
 <h2 id="介绍一下context"><a href="#介绍一下context" class="headerlink" title="介绍一下context"></a>介绍一下context</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
               <div class='content'>
-              <ul><li><p>context用来管理上下文，具体有如下作用</p><ul><li><p>传递取消信号：可以用来传递取消信号，让一个正在执行的函数知道它应该提前终止</p></li><li><p>超时控制：可以设定一个超时时间，自动取消超过执行时间的操作</p></li><li><p>截止时间：与超时类似，但是是设定一个绝对时间点，而不是时间段</p></li><li><p>值传递：可以安全地在请求的上下文中传递数据，避免了使用全局变量或者参数列表不断增长</p></li></ul></li><li><p>Context是一个接口，该接口定义了四个需要实现的方法</p><ul><li><p>Deadline方法需要返回当前Context被取消的时间，也就是完成工作的截止时间（deadline）</p></li><li><p>Done方法需要返回一个Channel，这个Channel会在当前工作完成或者上下文被取消之后关闭，多次调用Done方法会返回同一个Channel</p></li><li><p>Err方法会返回当前Context结束的原因，它只会在Done返回的Channel被关闭时才会返回非空的值；</p></li><li><p>Value方法会从Context中返回键对应的值</p></li></ul></li><li><p>可以使用Background或Todo创建顶层上下文，使用WithCancel、WithDeadline、WithTimeout或WithValue创建派生上下文</p></li><li><p>当一个上下文被取消时，它派生的所有上下文也被取消</p></li></ul><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Context <span class="keyword">interface</span> &#123;</span><br><span class="line">    Deadline() (deadline time.Time, ok <span class="type">bool</span>)</span><br><span class="line">    Done() &lt;-<span class="keyword">chan</span> <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line">    Err() <span class="type">error</span></span><br><span class="line">    Value(key <span class="keyword">interface</span>&#123;&#125;) <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+              <ul><li>context用来管理上下文，具体有如下作用<ul><li>传递取消信号：可以用来传递取消信号，让一个正在执行的函数知道它应该提前终止</li><li>超时控制：可以设定一个超时时间，自动取消超过执行时间的操作</li><li>截止时间：与超时类似，但是是设定一个绝对时间点，而不是时间段</li><li>值传递：可以安全地在请求的上下文中传递数据，避免了使用全局变量或者参数列表不断增长</li></ul></li><li>Context是一个接口，该接口定义了四个需要实现的方法<ul><li>Deadline方法需要返回当前Context被取消的时间，也就是完成工作的截止时间（deadline）</li><li>Done方法需要返回一个Channel，这个Channel会在当前工作完成或者上下文被取消之后关闭，多次调用Done方法会返回同一个Channel</li><li>Err方法会返回当前Context结束的原因，它只会在Done返回的Channel被关闭时才会返回非空的值；</li><li>Value方法会从Context中返回键对应的值</li></ul></li><li>可以使用Background或Todo创建顶层上下文，使用WithCancel、WithDeadline、WithTimeout或WithValue创建派生上下文</li><li>当一个上下文被取消时，它派生的所有上下文也被取消</li></ul><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> Context <span class="keyword">interface</span> &#123;</span><br><span class="line">    Deadline() (deadline time.Time, ok <span class="type">bool</span>)</span><br><span class="line">    Done() &lt;-<span class="keyword">chan</span> <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line">    Err() <span class="type">error</span></span><br><span class="line">    Value(key <span class="keyword">interface</span>&#123;&#125;) <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
               </div>
             </details>
 
@@ -780,7 +780,7 @@
 
 <h2 id="slice底层原理"><a href="#slice底层原理" class="headerlink" title="slice底层原理"></a>slice底层原理</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
               <div class='content'>
-              <ul><li><p><strong>组成</strong></p><ul><li>指针、长度和容量。指针指向底层数组，长度代表slice当前的长度，容量代表底层数组的长度</li></ul></li><li><p><strong>append追加原则</strong></p><ul><li>假如slice容量够用，则追加新元素进去，返回原来的slice</li><li>若原容量不够，则slice 先扩容，扩容之后得到新的slice，将元素追加进新的slice，最后返回新的slice</li></ul></li><li><p><strong>扩容规则</strong></p><ul><li><p><strong>1.18之前</strong>：当切片容量小于1024时，扩容为原来的2倍，这样可以避免频繁扩容；当切片容量大于等于1024时，扩容为原来的1.25倍，这样可以避免内存浪费；如果扩容后还不够，则直接使用需要的容量</p></li><li><p>**1.18及之后：**当切片容量小于256时，扩容为原来的两倍；当切片容量大于等于256时，按照公式进行扩容<code>newcap+=(newcap+3*256)/4</code>；如果扩容后还不够，则直接使用需要的容量</p></li><li><p>改版之后扩容过程相对于原来更为平缓</p></li></ul></li></ul>
+              <ul><li><strong>组成</strong><ul><li>指针、长度和容量。指针指向底层数组，长度代表slice当前的长度，容量代表底层数组的长度</li></ul></li><li><strong>append追加原则</strong><ul><li>假如slice容量够用，则追加新元素进去，返回原来的slice</li><li>若原容量不够，则slice 先扩容，扩容之后得到新的slice，将元素追加进新的slice，最后返回新的slice</li></ul></li><li><strong>扩容规则</strong><ul><li><strong>1.18之前</strong>：当切片容量小于1024时，扩容为原来的2倍，这样可以避免频繁扩容；当切片容量大于等于1024时，扩容为原来的1.25倍，这样可以避免内存浪费；如果扩容后还不够，则直接使用需要的容量</li><li>**1.18及之后：**当切片容量小于256时，扩容为原来的两倍；当切片容量大于等于256时，按照公式进行扩容<code>newcap+=(newcap+3*256)/4</code>；如果扩容后还不够，则直接使用需要的容量</li><li>改版之后扩容过程相对于原来更为平缓</li></ul></li></ul>
               </div>
             </details>
 
@@ -872,13 +872,13 @@
 
 <h1 id="Channel"><a href="#Channel" class="headerlink" title="Channel"></a>Channel</h1><h2 id="无缓冲的channel和有缓冲的channel的区别"><a href="#无缓冲的channel和有缓冲的channel的区别" class="headerlink" title="无缓冲的channel和有缓冲的channel的区别"></a>无缓冲的channel和有缓冲的channel的区别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
               <div class='content'>
-              <ul><li><p><strong>无缓冲channel是同步的，有缓冲channel是异步的</strong></p></li><li><p>对于无缓冲的channel</p><ul><li>发送方向channel发送数据，但没有接收方接受数据时，发送方阻塞</li><li>接收方从channel接收数据，但没有发送方发送数据时，接收方阻塞</li></ul></li><li><p>对于有缓冲的channel</p><ul><li><p>发送方只有在缓冲区满时阻塞</p></li><li><p>接收方只有在缓冲区空时阻塞</p></li></ul></li><li><p>无缓冲的channel其实可以看作缓冲区大小为0的channel，从这个角度看，无缓冲channel兼具了缓冲区满和缓冲区空的特点</p></li></ul>
+              <ul><li><strong>无缓冲channel是同步的，有缓冲channel是异步的</strong></li><li>对于无缓冲的channel<ul><li>发送方向channel发送数据，但没有接收方接受数据时，发送方阻塞</li><li>接收方从channel接收数据，但没有发送方发送数据时，接收方阻塞</li></ul></li><li>对于有缓冲的channel<ul><li>发送方只有在缓冲区满时阻塞</li><li>接收方只有在缓冲区空时阻塞</li></ul></li><li>无缓冲的channel其实可以看作缓冲区大小为0的channel，从这个角度看，无缓冲channel兼具了缓冲区满和缓冲区空的特点</li></ul>
               </div>
             </details>
 
 <h2 id="channel的底层原理"><a href="#channel的底层原理" class="headerlink" title="channel的底层原理"></a>channel的底层原理</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
               <div class='content'>
-              <ul><li><p>channel的底层数据结构实际上是一个循环数组，每个channel都对应一个hchan结构体，结构体中包含一些维护这个循环数组的字段</p></li><li><p>比较重要的几个字段</p><ul><li><p>buf 指向底层循环数组，只有缓冲型的 channel 才有。</p></li><li><p>sendx，recvx 均指向底层循环数组，表示当前可以发送和接收的元素位置索引值（相对于底层数组）。</p></li><li><p>sendq，recvq 分别表示被阻塞的 goroutine的等待队列，这些 goroutine 由于尝试读取 channel 或向 channel 发送数据而被阻塞。</p></li><li><p>lock 用来保证每个读 channel 或写 channel 的操作都是原子的。</p></li></ul></li></ul><div class="tabs" id="tab-fifth"><ul class="nav-tabs"><li class="tab active"><a class="#fifth-1">channel数据结构</a></li><li class="tab"><a class="#fifth-2">图示</a></li></ul><div class="tab-content"><div class="tab-pane active" id="fifth-1"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> hchan <span class="keyword">struct</span> &#123;</span><br><span class="line">    <span class="comment">// chan 里元素数量</span></span><br><span class="line">    qcount <span class="type">uint</span></span><br><span class="line">    <span class="comment">// chan 底层循环数组的长度</span></span><br><span class="line">    dataqsiz <span class="type">uint</span></span><br><span class="line">    <span class="comment">// 指向底层循环数组的指针</span></span><br><span class="line">    <span class="comment">// 只针对有缓冲的 channel</span></span><br><span class="line">    buf unsafe.Pointer</span><br><span class="line">    <span class="comment">// chan 中元素大小</span></span><br><span class="line">    elemsize <span class="type">uint16</span></span><br><span class="line">    <span class="comment">// chan 是否被关闭的标志</span></span><br><span class="line">    closed <span class="type">uint32</span></span><br><span class="line">    <span class="comment">// chan 中元素类型</span></span><br><span class="line">    elemtype *_type  <span class="comment">// element type</span></span><br><span class="line">    <span class="comment">// 已发送元素在循环数组中的索引</span></span><br><span class="line">    sendx <span class="type">uint</span>  <span class="comment">// send index</span></span><br><span class="line">    <span class="comment">// 已接收元素在循环数组中的索引</span></span><br><span class="line">    recvx <span class="type">uint</span>  <span class="comment">// receive index</span></span><br><span class="line">    <span class="comment">// 等待接收的 goroutine 队列</span></span><br><span class="line">    recvq waitq  <span class="comment">// list of recv waiters</span></span><br><span class="line">    <span class="comment">// 等待发送的 goroutine 队列</span></span><br><span class="line">    sendq waitq  <span class="comment">// list of send waiters</span></span><br><span class="line">    <span class="comment">// 保护 hchan 中所有字段</span></span><br><span class="line">    lock mutex</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div><div class="tab-pane" id="fifth-2"><p><img  
+              <ul><li>channel的底层数据结构实际上是一个循环数组，每个channel都对应一个hchan结构体，结构体中包含一些维护这个循环数组的字段</li><li>比较重要的几个字段<ul><li>buf 指向底层循环数组，只有缓冲型的 channel 才有。</li><li>sendx，recvx 均指向底层循环数组，表示当前可以发送和接收的元素位置索引值（相对于底层数组）。</li><li>sendq，recvq 分别表示被阻塞的 goroutine的等待队列，这些 goroutine 由于尝试读取 channel 或向 channel 发送数据而被阻塞。</li><li>lock 用来保证每个读 channel 或写 channel 的操作都是原子的。</li></ul></li></ul><div class="tabs" id="tab-fifth"><ul class="nav-tabs"><li class="tab active"><a class="#fifth-1">channel数据结构</a></li><li class="tab"><a class="#fifth-2">图示</a></li></ul><div class="tab-content"><div class="tab-pane active" id="fifth-1"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> hchan <span class="keyword">struct</span> &#123;</span><br><span class="line">    <span class="comment">// chan 里元素数量</span></span><br><span class="line">    qcount <span class="type">uint</span></span><br><span class="line">    <span class="comment">// chan 底层循环数组的长度</span></span><br><span class="line">    dataqsiz <span class="type">uint</span></span><br><span class="line">    <span class="comment">// 指向底层循环数组的指针</span></span><br><span class="line">    <span class="comment">// 只针对有缓冲的 channel</span></span><br><span class="line">    buf unsafe.Pointer</span><br><span class="line">    <span class="comment">// chan 中元素大小</span></span><br><span class="line">    elemsize <span class="type">uint16</span></span><br><span class="line">    <span class="comment">// chan 是否被关闭的标志</span></span><br><span class="line">    closed <span class="type">uint32</span></span><br><span class="line">    <span class="comment">// chan 中元素类型</span></span><br><span class="line">    elemtype *_type  <span class="comment">// element type</span></span><br><span class="line">    <span class="comment">// 已发送元素在循环数组中的索引</span></span><br><span class="line">    sendx <span class="type">uint</span>  <span class="comment">// send index</span></span><br><span class="line">    <span class="comment">// 已接收元素在循环数组中的索引</span></span><br><span class="line">    recvx <span class="type">uint</span>  <span class="comment">// receive index</span></span><br><span class="line">    <span class="comment">// 等待接收的 goroutine 队列</span></span><br><span class="line">    recvq waitq  <span class="comment">// list of recv waiters</span></span><br><span class="line">    <span class="comment">// 等待发送的 goroutine 队列</span></span><br><span class="line">    sendq waitq  <span class="comment">// list of send waiters</span></span><br><span class="line">    <span class="comment">// 保护 hchan 中所有字段</span></span><br><span class="line">    lock mutex</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div><div class="tab-pane" id="fifth-2"><p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/images/post/channel-structure.png"
@@ -889,7 +889,7 @@
 
 <h2 id="channel发送和接收数据的过程"><a href="#channel发送和接收数据的过程" class="headerlink" title="channel发送和接收数据的过程"></a>channel发送和接收数据的过程</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
               <div class='content'>
-              <ul><li><p>goroutine向channel发送数据</p><ul><li><p>goroutine首先获取channel的锁</p></li><li><p>如果channel缓冲区未满，则直接将数写入缓冲区，并更新sendx</p></li><li><p>如果缓冲区已满，则将当前goroutine挂到sendq等待队列中，并释放锁，等到有goroutine接受数据才会被唤醒</p></li></ul></li><li><p>channel从goroutine接收数据</p><ul><li><p>goroutine首先获取channel的锁</p></li><li><p>如果channel缓冲区非空，则直接从缓冲区读取数据，并更新recvx</p></li><li><p>如果缓冲区为空，则将当前goroutine挂到recvq等待队列中，并释放锁，等到有goroutine写入数据才会被唤醒</p></li></ul></li></ul>
+              <ul><li>goroutine向channel发送数据<ul><li>goroutine首先获取channel的锁</li><li>如果channel缓冲区未满，则直接将数写入缓冲区，并更新sendx</li><li>如果缓冲区已满，则将当前goroutine挂到sendq等待队列中，并释放锁，等到有goroutine接受数据才会被唤醒</li></ul></li><li>channel从goroutine接收数据<ul><li>goroutine首先获取channel的锁</li><li>如果channel缓冲区非空，则直接从缓冲区读取数据，并更新recvx</li><li>如果缓冲区为空，则将当前goroutine挂到recvq等待队列中，并释放锁，等到有goroutine写入数据才会被唤醒</li></ul></li></ul>
               </div>
             </details>
 
@@ -913,7 +913,7 @@
 
 <h1 id="GMP"><a href="#GMP" class="headerlink" title="GMP"></a>GMP</h1><h2 id="什么是GMP"><a href="#什么是GMP" class="headerlink" title="什么是GMP"></a>什么是GMP</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
               <div class='content'>
-              <ul><li><p><strong>Goroutine (G)</strong></p><ul><li><p>Goroutine是Go语言中的轻量级线程，能够与其他goroutine并发执行。</p></li><li><p>与传统的线程相比，goroutine的创建和销毁成本非常低。</p></li><li><p>Goroutine由Go的运行时系统调度，不依赖于操作系统的线程调度。</p></li></ul></li><li><p><strong>Machine (M)</strong></p><ul><li><p>Machine代表操作系统的线程。</p></li><li><p>M负责执行Goroutine。</p></li></ul></li><li><p><strong>Processor (P)</strong></p><ul><li><p>Processor是一个逻辑处理器，负责Goroutine的调度。</p></li><li><p>P维护一个本地队列，其中保存了准备运行的Goroutine。</p></li><li><p>每个P都绑定到一个M上，如果绑定后的M获取不到可执行的G，那么该M就会自旋，而其他绑定不到P的M会休眠</p></li></ul></li></ul><p><img  
+              <ul><li><strong>Goroutine (G)</strong><ul><li>Goroutine是Go语言中的轻量级线程，能够与其他goroutine并发执行。</li><li>与传统的线程相比，goroutine的创建和销毁成本非常低。</li><li>Goroutine由Go的运行时系统调度，不依赖于操作系统的线程调度。</li></ul></li><li><strong>Machine (M)</strong><ul><li>Machine代表操作系统的线程。</li><li>M负责执行Goroutine。</li></ul></li><li><strong>Processor (P)</strong><ul><li>Processor是一个逻辑处理器，负责Goroutine的调度。</li><li>P维护一个本地队列，其中保存了准备运行的Goroutine。</li><li>每个P都绑定到一个M上，如果绑定后的M获取不到可执行的G，那么该M就会自旋，而其他绑定不到P的M会休眠</li></ul></li></ul><p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/images/post/gmp.jpg"
@@ -924,7 +924,7 @@
 
 <h2 id="GMP的工作原理"><a href="#GMP的工作原理" class="headerlink" title="GMP的工作原理"></a>GMP的工作原理</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
               <div class='content'>
-              <ul><li><p>首先通过go func()创建一个Goroutine</p></li><li><p>这个创建的G会优先放入当前P的本地队列中，如果本地队列满了，则会把本地队列中一半的G和这个创建的G放入全局队列中</p></li><li><p>然后M从P的本地队列中获取一个G来执行，如果本地队列已经没有可运行的G，则会从全局队列中获取，如果全局队列中获取不到，则采取work stealing机制，从其他P的本地队列中偷取一半的G，如果偷取不到，那么该M会进入自旋状态，等待新的goroutine执行</p></li><li><p>M在执行goroutine时会遇到3种情况</p><ul><li><p>正常情况下，当前goroutine执行完成后，M上运行的goroutine会切换成G0，G0负责调度时的协程切换，G0会从P的本地队列中再获取G，然后M从G0切换到这个G，并开始运行它</p></li><li><p>如果当前goroutine运行时间超过10ms，因为是抢占式调度，M会暂停执行该goroutine，将其放回本地队列尾部，转而执行其他的goroutine</p></li><li><p>如果M执行G时发生了阻塞，那么就会采用hand off机制，M会释放当前绑定的P，然后创建一个新的M服务这个P（如果有空闲的M就直接复用），当原来的M退出阻塞状态之后，它会尝试获取之前释放的P，如果无法获取，则获取空闲的P，如果依然没有，那么挂载在这个M上的G会被标记为可运行状态，放回到全局队列中，这个M进入休眠状态</p></li></ul></li></ul>
+              <ul><li>首先通过go func()创建一个Goroutine</li><li>这个创建的G会优先放入当前P的本地队列中，如果本地队列满了，则会把本地队列中一半的G和这个创建的G放入全局队列中</li><li>然后M从P的本地队列中获取一个G来执行，如果本地队列已经没有可运行的G，则会从全局队列中获取，如果全局队列中获取不到，则采取work stealing机制，从其他P的本地队列中偷取一半的G，如果偷取不到，那么该M会进入自旋状态，等待新的goroutine执行</li><li>M在执行goroutine时会遇到3种情况<ul><li>正常情况下，当前goroutine执行完成后，M上运行的goroutine会切换成G0，G0负责调度时的协程切换，G0会从P的本地队列中再获取G，然后M从G0切换到这个G，并开始运行它</li><li>如果当前goroutine运行时间超过10ms，因为是抢占式调度，M会暂停执行该goroutine，将其放回本地队列尾部，转而执行其他的goroutine</li><li>如果M执行G时发生了阻塞，那么就会采用hand off机制，M会释放当前绑定的P，然后创建一个新的M服务这个P（如果有空闲的M就直接复用），当原来的M退出阻塞状态之后，它会尝试获取之前释放的P，如果无法获取，则获取空闲的P，如果依然没有，那么挂载在这个M上的G会被标记为可运行状态，放回到全局队列中，这个M进入休眠状态</li></ul></li></ul>
               </div>
             </details>
 
@@ -984,7 +984,7 @@
 
 <h2 id="如何控制goroutine的生命周期"><a href="#如何控制goroutine的生命周期" class="headerlink" title="如何控制goroutine的生命周期"></a>如何控制goroutine的生命周期</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
               <div class='content'>
-              <ul><li><p><strong>启动</strong></p><ul><li>使用go关键字创建一个新的goroutine</li></ul></li><li><p><strong>退出</strong></p><ul><li><p>等待退出：使用sync.WaitGroup来实现等待进程自行结束</p></li><li><p>阻塞退出：通过channel发送一个信号使阻塞状态的goroutine退出</p></li><li><p>手动退出：使用context.WithCancel()手动结束goroutine</p></li><li><p>超时退出：使用context.WithTimeOut()可以实现超时强制退出</p></li></ul></li></ul>
+              <ul><li><strong>启动</strong><ul><li>使用go关键字创建一个新的goroutine</li></ul></li><li><strong>退出</strong><ul><li>等待退出：使用sync.WaitGroup来实现等待进程自行结束</li><li>阻塞退出：通过channel发送一个信号使阻塞状态的goroutine退出</li><li>手动退出：使用context.WithCancel()手动结束goroutine</li><li>超时退出：使用context.WithTimeOut()可以实现超时强制退出</li></ul></li></ul>
               </div>
             </details>
 
@@ -1002,7 +1002,7 @@
 
 <h2 id="GC垃圾回收"><a href="#GC垃圾回收" class="headerlink" title="GC垃圾回收"></a>GC垃圾回收</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
               <div class='content'>
-              <ul><li>标记清除法（Go 1.3） </li><li>三色标记法（Go 1.5）</li><li>三色标记法+混合写屏障（Go 1.8）</li></ul><div class="tabs" id="tab-sixth"><ul class="nav-tabs"><li class="tab active"><a class="#sixth-1">标记清除法</a></li><li class="tab"><a class="#sixth-2">三色标记法</a></li><li class="tab"><a class="#sixth-3">三色标记法+混合写屏障</a></li></ul><div class="tab-content"><div class="tab-pane active" id="sixth-1"><ul><li><p>过程</p><ul><li><p>进行 STW（stop the world 即暂停程序业务逻辑），然后从 main 函数开始找到不可达的对象和可达的对象</p></li><li><p>开始标记，程序找出可达对象并做标记</p></li><li><p>标记结束清除未标记的对象</p></li><li><p>结束 STW 停止暂停，让程序继续运行，循环该过程直到 main 生命周期结束</p></li></ul></li><li><p>缺点</p><ul><li><p>STW会让程序暂停，程序会出现卡顿</p></li><li><p>进行标记需要扫描整个堆栈信息，效率低下</p></li></ul></li></ul></div><div class="tab-pane" id="sixth-2"><ul><li><p><strong>含义</strong></p><ul><li>三色标记算法将程序中的对象分成白色、黑色和灰色三类</li><li>白色对象表示暂无对象引用的潜在垃圾，灰色表示待处理的对象，黑色表示活跃的对象</li></ul></li><li><p><strong>过程</strong></p><ul><li><p>将所有对象标记为白色</p></li><li><p>从程序根节点集合出发，将第一次遍历到的节点标记为灰色放入集合列表中</p></li><li><p>遍历灰色集合，将灰色节点遍历到的白色节点标记为灰色，并把灰色节点标记为黑色</p></li><li><p>循环这个过程，直到灰色节点集合为空</p></li><li><p>回收所有的白色节点</p></li></ul></li><li><p><strong>缺陷</strong></p><ul><li><p>因为三色标记法是动态进行的，回收过程中若<strong>同时满足下面两个条件</strong>，则会出现<strong>丢失对象</strong>的问题</p><ul><li><p>一个白色对象被黑色对象引用</p></li><li><p>同时灰色对象到该白色对象的可达关系被破环</p></li></ul></li></ul></li><li><p><strong>应对办法</strong></p><ul><li><p>插入写屏障：</p><ul><li><p>对象被引用时触发的机制，当白色对象被黑色对象引用时，白色对象被标记为灰色</p></li><li><p>实现了强三色不变式，即不允许黑色对象引用白色对象（破坏第一个条件）</p></li><li><p>缺点是栈区没有屏障机制，最后会对栈执行STW，进行二次扫描</p></li></ul></li><li><p>删除写屏障：</p><ul><li><p>对象被删除时触发的机制，灰色对象对白色对象的引用被删除时，白色对象会被标记为灰色</p></li><li><p>实现了弱三色不变式，即黑色对象可以引用白色，但是该白色对象要处在灰色对象可达的链路当中（破坏第二个条件）</p></li><li><p>缺点是回收精度比较低，有些垃圾对象会到下一轮检测才被回收；同时也会进行STW二次扫描进行快照对比</p></li></ul></li></ul></li></ul></div><div class="tab-pane" id="sixth-3"><ul><li><p><strong>思想</strong></p><ul><li>结合了插入写屏障和删除写屏障的优点，通过变形的弱三色不变式，解决了STW所带来的性能瓶颈</li></ul></li><li><p><strong>过程</strong></p><ul><li><p>GC 开始时将栈上可达对象全部标记为黑色（不需要二次扫描，无需 STW）</p></li><li><p>GC 期间，任何栈上创建的新对象均为黑色</p></li><li><p>被删除引用的对象标记为灰色</p></li><li><p>被添加引用的对象标记为灰色</p></li></ul></li></ul></div></div></div>
+              <ul><li>标记清除法（Go 1.3） </li><li>三色标记法（Go 1.5）</li><li>三色标记法+混合写屏障（Go 1.8）</li></ul><div class="tabs" id="tab-sixth"><ul class="nav-tabs"><li class="tab active"><a class="#sixth-1">标记清除法</a></li><li class="tab"><a class="#sixth-2">三色标记法</a></li><li class="tab"><a class="#sixth-3">三色标记法+混合写屏障</a></li></ul><div class="tab-content"><div class="tab-pane active" id="sixth-1"><ul><li><strong>过程</strong><ul><li>进行 STW（stop the world 即暂停程序业务逻辑），然后从 main 函数开始找到不可达的对象和可达的对象</li><li>开始标记，程序找出可达对象并做标记</li><li>标记结束清除未标记的对象</li><li>结束 STW 停止暂停，让程序继续运行，循环该过程直到 main 生命周期结束</li></ul></li><li><strong>缺点</strong><ul><li>STW会让程序暂停，程序会出现卡顿</li><li>进行标记需要扫描整个堆栈信息，效率低下</li></ul></li></ul></div><div class="tab-pane" id="sixth-2"><ul><li><strong>含义</strong><ul><li>三色标记算法将程序中的对象分成白色、黑色和灰色三类</li><li>白色对象表示暂无对象引用的潜在垃圾，灰色表示待处理的对象，黑色表示活跃的对象</li></ul></li><li><strong>过程</strong><ul><li>将所有对象标记为白色</li><li>从程序根节点集合出发，将第一次遍历到的节点标记为灰色放入集合列表中</li><li>遍历灰色集合，将灰色节点遍历到的白色节点标记为灰色，并把灰色节点标记为黑色</li><li>循环这个过程，直到灰色节点集合为空</li><li>回收所有的白色节点</li></ul></li><li><strong>缺陷</strong><ul><li>因为三色标记法是动态进行的，回收过程中若<strong>同时满足下面两个条件</strong>，则会出现<strong>丢失对象</strong>的问题<ul><li>一个白色对象被黑色对象引用</li><li>同时灰色对象到该白色对象的可达关系被破环</li></ul></li></ul></li><li><strong>应对办法</strong><ul><li>插入写屏障：<ul><li>对象被引用时触发的机制，当白色对象被黑色对象引用时，白色对象被标记为灰色</li><li>实现了强三色不变式，即不允许黑色对象引用白色对象（破坏第一个条件）</li><li>缺点是栈区没有屏障机制，最后会对栈执行STW，进行二次扫描</li></ul></li><li>删除写屏障：<ul><li>对象被删除时触发的机制，灰色对象对白色对象的引用被删除时，白色对象会被标记为灰色</li><li>实现了弱三色不变式，即黑色对象可以引用白色，但是该白色对象要处在灰色对象可达的链路当中（破坏第二个条件）</li><li>缺点是回收精度比较低，有些垃圾对象会到下一轮检测才被回收；同时也会进行STW二次扫描进行快照对比</li></ul></li></ul></li></ul></div><div class="tab-pane" id="sixth-3"><ul><li><strong>思想</strong><ul><li>结合了插入写屏障和删除写屏障的优点，通过变形的弱三色不变式，解决了STW所带来的性能瓶颈</li></ul></li><li><strong>过程</strong><ul><li>GC 开始时将栈上可达对象全部标记为黑色（不需要二次扫描，无需 STW）</li><li>GC 期间，任何栈上创建的新对象均为黑色</li><li>被删除引用的对象标记为灰色</li><li>被添加引用的对象标记为灰色</li></ul></li></ul></div></div></div>
               </div>
             </details>
 
@@ -1019,7 +1019,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2025-02-08 Saturday
+                    :</strong> 2025-03-07 Friday
             </li>
         
         <li>
@@ -1062,7 +1062,7 @@
 						<i class="fa-solid fa-chevron-left"></i>
 					</span>
 					<span class="title flex justify-center items-center">
-						<span class="post-nav-title-item">MySQL面试题</span>
+						<span class="post-nav-title-item">MySQL 面试题</span>
 						<span class="post-nav-item">Prev posts</span>
 					</span>
 				</a>

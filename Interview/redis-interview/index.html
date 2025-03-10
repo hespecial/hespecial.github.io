@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Lu Xiao">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/interview/redis-interview/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="Welcome to My Blog.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis 面试题">
+<meta property="og:url" content="http://example.com/Interview/redis-interview/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Welcome to My Blog.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/common/wall-paper-light.webp">
+<meta property="article:published_time" content="2025-03-06T08:46:33.000Z">
+<meta property="article:modified_time" content="2025-03-08T16:20:25.488Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Redis">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/common/wall-paper-light.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/other/favicon.png" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/other/favicon.png">
+    <meta name="theme-color" content="#000000">
+    <link rel="shortcut icon" href="/images/other/favicon.png">
+    <!--- Page Info-->
+    
+    <title>
+        
+            Redis 面试题 | Hespecial
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+        
+<script src="/js/build/libs/anime.min.js"></script>
+
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":false},"author_label":{"enable":false,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":true,"expand":true,"init_open":true},"copyright":{"enable":true,"default":"cc_by_nc_sa"},"lazyload":true,"pangu_js":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wall-paper-light.webp","skip_dirs":[]}},"colors":{"primary":"#000000","secondary":null,"default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":true,"percentage":false},"website_counter":{"url":"https://cn.vercount.one/js","enable":false,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":true,"custom_message":"Just A Moment"},"open_graph":{"enable":true,"image":"/images/common/wall-paper-light.webp","description":"Welcome to My Blog."},"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/common/wall-paper-light.webp","dark":"/images/common/wall-paper-dark.webp"},"title":"Hello World","subtitle":{"text":["The Night is Young","The Music is Loud","夜未央","乐未殇"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":60,"backing_speed":40,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":false},"text_color":{"light":"#1f3134","dark":"#eeeeee"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"style":"center","links":{"github":"https://github.com/hespecial","instagram":null,"zhihu":null,"twitter":null,"email":"1478488313@qq.com"},"qrs":{"weixin":"/images/other/weixin-qrcode.jpeg","qq":"/images/other/qq-qrcode.jpeg"}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"11.4.1"}},"version":"2.8.2","navbar":{"auto_hide":false,"color":{"left":"#ffffff","right":"#000000","transparency":35},"width":{"home":"1200px","pages":"1200px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"},"Album":{"path":"/album","icon":"fa-solid fa-image"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":false,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}}},"article_date_format":"YYYY-MM-DD","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2025/1/16 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":true};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+	<span class="scroll-progress-bar"></span>
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        Just A Moment
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({ loop: true })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [20, 0],
+                translateZ: 0,
+                opacity: [0, 1],
+                filter: ['blur(5px)', 'blur(0px)'],
+                easing: "easeOutExpo",
+                duration: 1200,
+                delay: (el, i) => 300 + 20 * i,
+            })
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [0, -20],
+                opacity: [1, 0],
+                filter: ['blur(0px)', 'blur(5px)'],
+                easing: "easeInExpo",
+                duration: 1000,
+                delay: (el, i) => 15 * i,
+                complete: function() {
+                    hidePreloader();
+                }
+            }, '-=700');
+
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Hespecial
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    ARCHIVES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/tags"
+                                        >
+                                    <i class="fa-regular fa-tags fa-fw"></i>
+                                    TAGS
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    CATEGORIES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/album"
+                                        >
+                                    <i class="fa-solid fa-image fa-fw"></i>
+                                    ALBUM
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                ARCHIVES
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/tags"
+                        >
+                            <span>
+                                TAGS
+                            </span>
+                            
+                                <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                CATEGORIES
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/album"
+                        >
+                            <span>
+                                ALBUM
+                            </span>
+                            
+                                <i class="fa-solid fa-image fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">3</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">2</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">4</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Redis 面试题</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/common/avatar.jpeg">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">Lu Xiao</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2025-03-06 Thursday</span>
+        <span class="mobile">2025-03-06 Thursday</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-03-09 Sunday</span>
+            <span class="mobile">2025-03-09 Sunday</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/Interview/">Interview</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Redis/">Redis</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fa-regular fa-typewriter"></i>&nbsp;<span>5.8k Words</span>
+        </span>
+    
+    
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h1 id="基础部分"><a href="#基础部分" class="headerlink" title="基础部分"></a>基础部分</h1><h2 id="Redis为什么快"><a href="#Redis为什么快" class="headerlink" title="Redis为什么快"></a>Redis为什么快</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>基于内存</strong><ul><li>避免了磁盘IO，提高了操作的速度</li></ul></li><li><strong>单线程</strong><ul><li>单线程操作省去了上下文切换带来的开销和CPU的消耗，同时不存在资源竞争，避免了死锁现象的发生</li></ul></li><li><strong>IO多路复用</strong><ul><li>采用IO多路复用机制，允许一个线程同时监听多个Socket请求，根据Socket上的事件来选择对应的事件处理器进行处理</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="Redis数据类型"><a href="#Redis数据类型" class="headerlink" title="Redis数据类型"></a>Redis数据类型</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <div class="tabs" id="tab-redis-data-type-common"><ul class="nav-tabs"><li class="tab active"><a class="#redis-data-type-common-1">String</a></li><li class="tab"><a class="#redis-data-type-common-2">List</a></li><li class="tab"><a class="#redis-data-type-common-3">Hash</a></li><li class="tab"><a class="#redis-data-type-common-4">Set</a></li><li class="tab"><a class="#redis-data-type-common-5">ZSet</a></li></ul><div class="tab-content"><div class="tab-pane active" id="redis-data-type-common-1"><ul><li>String 是最基本的 key-value 结构，底层的数据结构由 <strong>int 和 SDS</strong>（简单动态字符串）实现<ul><li>如果value是整数，那么就使用int类型存放</li><li>否则使用SDS存放</li></ul></li><li><strong>应用场景</strong><ul><li>缓存对象的json</li><li>计数场景<ul><li>如访问次数、点赞、转发</li></ul></li></ul></li></ul></div><div class="tab-pane" id="redis-data-type-common-2"><ul><li>List是简单的字符串列表，按照插入顺序排序，可以从头部或尾部向 List 列表添加元素，底层数据结构由<strong>quickList</strong>实现</li><li><strong>应用场景</strong><ul><li>消息队列</li></ul></li></ul></div><div class="tab-pane" id="redis-data-type-common-3"><ul><li>Hash是一个key-value键值对的集合，底层数据结构由<strong>listpack或哈希表</strong>实现<ul><li>默认情况下，如果哈希类型元素个数小于512个，所有值小于64B，Redis会使用listpack作为Hash类型的底层实现</li><li>否则使用哈希表作为Hash类型的底层实现</li></ul></li><li><strong>应用场景</strong><ul><li>缓存对象<ul><li>相比于使用String缓存对象的json，Hash更适合缓存数据量比较大的对象或某些字段需要频繁修改的对象</li></ul></li></ul></li></ul></div><div class="tab-pane" id="redis-data-type-common-4"><ul><li>Set是一个无序且唯一的字符串集合，底层数据结构由<strong>整数集合或哈希表</strong>实现<ul><li>默认情况下，如果集合中所有元素都是整数且元素个素小于512个，Redis会使用整数集合作为Set类型的底层实现</li><li>否则使用哈希表作为Set类型的底层实现</li></ul></li><li><strong>应用场景</strong><ul><li>点赞<ul><li>保证一个用户只能点一个赞</li></ul></li><li>共同关注<ul><li>使用交集运算，可以用来计算好友共同关注的对象</li><li>使用差集运算，A给B推荐B没有关注的对象</li></ul></li></ul></li></ul></div><div class="tab-pane" id="redis-data-type-common-5"><ul><li>ZSet相比Set多了一个分数属性，保留了Set元素唯一的特性，不同的是ZSet中的元素可以通过分数排序，底层数据结构由<strong>listpack或跳表</strong>实现<ul><li>如果ZSet中元素个数小于128个，并且每个元素的值小于64B时，Redis会使用listpack作为ZSet类型的底层实现</li><li>否则使用跳表作为Set类型的底层实现</li></ul></li><li><strong>应用场景</strong><ul><li>排行榜</li></ul></li></ul></div></div></div><div class="tabs" id="tab-redis-data-type-other"><ul class="nav-tabs"><li class="tab active"><a class="#redis-data-type-other-1">BitMap</a></li><li class="tab"><a class="#redis-data-type-other-2">HyperLogLog</a></li><li class="tab"><a class="#redis-data-type-other-3">GEO</a></li><li class="tab"><a class="#redis-data-type-other-4">Stream</a></li></ul><div class="tab-content"><div class="tab-pane active" id="redis-data-type-other-1"><ul><li>位图，是一段二级制串，可以通过最小的单位bit来设置元素的状态，特别适合一些数据量大且使用二值统计的场景，底层由String类型实现</li><li><strong>应用场景</strong><ul><li>签到统计</li><li>判断用户的登录状态</li></ul></li></ul></div><div class="tab-pane" id="redis-data-type-other-2"><ul><li>一种用于统计基数的数据集合类型，即统计一个集合中不重复的元素个数，其优点是在输入元素的数量或者体积非常非常大时，计算基数所需的内存空间总是固定的、并且是很小的，但是缺点是存在误差，约为0.81%</li><li><strong>应用场景</strong><ul><li>百万级网页UV计数</li></ul></li></ul></div><div class="tab-pane" id="redis-data-type-other-3"><ul><li>用于存储地理位置信息，即经纬度信息，底层使用ZSet实现</li><li>应用场景<ul><li>滴滴打车<ul><li>先存入车辆的经纬度，当乘客打车时查找乘客经纬度5km内的车辆信息</li></ul></li></ul></li></ul></div><div class="tab-pane" id="redis-data-type-other-4"><ul><li>用于实现消息队列</li></ul></div></div></div>
+              </div>
+            </details>
+
+<h2 id="Redis数据结构"><a href="#Redis数据结构" class="headerlink" title="Redis数据结构"></a>Redis数据结构</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <div class="tabs" id="tab-redis-data-structure"><ul class="nav-tabs"><li class="tab active"><a class="#redis-data-structure-1">SDS</a></li><li class="tab"><a class="#redis-data-structure-2">压缩列表</a></li><li class="tab"><a class="#redis-data-structure-3">哈希表</a></li><li class="tab"><a class="#redis-data-structure-4">跳表</a></li><li class="tab"><a class="#redis-data-structure-5">quicklist</a></li><li class="tab"><a class="#redis-data-structure-6">listpack</a></li></ul><div class="tab-content"><div class="tab-pane active" id="redis-data-structure-1"><ul><li>对比C语言中的字符串来说，其主要增加了len和alloc两个字段，即长度和容量，这么做有以下好处：<ul><li>获取字符串的长度的时间复杂度为O1，直接通过len获取即可</li><li>因为有len来记录长度，也就不用使用‘\0’来作为字符串的结束标志，所以redis中的字符串可以存储任意格式的二进制数据，保证了二进制安全</li><li>对字符串进行修改时，可以通过alloc-len来判断缓冲区是否会溢出，如果会溢出，redis将自动扩大SDS的空间大小</li></ul></li></ul></div><div class="tab-pane" id="redis-data-structure-2"><ul><li>顾名思义，压缩列表是 Redis 为了节约内存而开发的，其结构类似于数组，但每个元素的长度可变</li><li>压缩列表的结构<ul><li><strong>zlbytes</strong>：整个压缩列表的总字节数</li><li><strong>zltail</strong>：尾节点相对于起始地址的偏移量，用于快速定位尾部</li><li><strong>zllen</strong>：列表中entry（条目）的数量</li><li><strong>entry</strong>：实际存储的数据，每个entry大小动态变化</li><li><strong>zlend</strong>：结束标志，固定为0xFF</li></ul></li><li>每个条目包含三个部分<ul><li><strong>prevlen</strong>：记录了前一个节点的长度，用来反向遍历</li><li><strong>encoding</strong>：记录了数据的类型和长度</li><li><strong>data</strong>：记录了实际数据</li></ul></li><li>缺点是查找效率较低，且存在连锁更新的问题，Redis7.0后逐步引入listpack取代压缩列表<ul><li>连锁更新<ul><li>因为entry中prevlen字段是变长编码的，修改一个条目时，该条目长度的变化可能导致其后一个条目的prevlen字段变化，导致条目长度也随之变化，又因为内存是连续的，后续的条目可能都需要移动来适应这个变化，由此引发连锁更新</li><li>因为连锁更新出现的情况并不多见，所以prevlen使用变长编码设计带来的内存优化收益更高</li></ul></li></ul></li></ul><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/post/redis-ziplist.png"
+                      alt="redis-ziplist"
+                ></p></div><div class="tab-pane" id="redis-data-structure-3"><ul><li>Redis在实际使用哈希表时，定义了一个dict结构体，里面包含两个哈希表，这是哈希扩容的基础（rehash）</li><li>正常服务请求阶段，插入的数据都会写入到哈希表1，哈希表2并没有分配空间，随着数据增多，触发扩容条件，扩容过程分三步：<ul><li>首先给哈希表2分配空间，一般是哈希表1的两倍大小</li><li>然后将哈希表1的数据迁移到哈希表2中<ul><li>为避免一次性全量数据迁移引起性能抖动，扩容过程是渐进式的</li><li>每次对哈希表元素进行操作时，Redis除了完成对应操作之外，还会推进扩容进程，将哈希表1的元素映射到哈希表2上</li><li>随着处理的请求增多，最终在某一时刻完全完成数据迁移</li></ul></li><li>迁移完成后，哈希表1的空间被释放，并吧哈希表2设置为哈希表1，然后重新创建一个空白的哈希表2，为下次扩容做准备</li></ul></li><li>扩容触发条件<ul><li><code>负载因子=哈希表中的元素个数/哈希表的大小</code></li><li>当负载因子大于1，且Redis此时没有进行持久化操作时，会触发扩容</li><li>当负载因子大于5时，说明哈希冲突非常严重了，会强制触发哈希扩容</li></ul></li><li>扩容过程中如果有读请求，会先到哈希表1中查找，如果没找到再到哈希表2中查找</li></ul></div><div class="tab-pane" id="redis-data-structure-4"><ul><li>跳表是在链表的基础上改进过来的，其增加了多级索引，是一种多层级的有序链表，作用上可以简单理解为支持二分查找的双向链表，数据量很大时，跳表的时间复杂度就是O(logn)</li><li>因为有高度的限制，redis中最高为64层，所以其空间复杂度为O(n)</li><li>跳表在检索数据时会从高层级的链表往低层级的链表检索，层级越高，每次跨越的节点数越多</li><li>redis实现的跳表中每个节点的层级是随机的，在创建节点时候，会生成范围为[0-1]的一个随机数，如果这个随机数小于 0.25（相当于概率 25%），那么层数就增加 1 层，然后继续生成下一个随机数，直到随机数的结果大于 0.25 结束，最终确定该节点的层数</li></ul><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/post/redis-skiplist.png"
+                      alt="redis-skiplist"
+                ></p><blockquote><p><em><strong>Tip</strong></em></p><p>为什么使用跳表而不是红黑树或者B+树？</p><ul><li>对比红黑树<ul><li>查找性能上跳表和红黑树差不多</li><li>进行插入和删除操作时，红黑树可能需要平衡调整，逻辑复杂，而跳表只需要修改相邻节点的指针就行了，方便快速</li><li>进行范围查找时，跳表的效率更高，红黑树的范围查找需要通过中序遍历来实现，过程比较复杂，而跳表只需要找到最小值后顺序遍历就行了</li><li>此外，从算法实现难度上来说，跳表比红黑树要简单得多</li></ul></li><li>对比B+树<ul><li>跳表操作更简单，实现难度更低</li><li>B+树更加契合磁盘io读取数据地场景，在MySQL中更适用，而redis是基于内存的，不需要磁盘io</li></ul></li></ul></blockquote></div><div class="tab-pane" id="redis-data-structure-5"><ul><li>实际上就是压缩列表+双向链表</li><li>链表中每个节点都包含一个指向压缩链表的指针，通过控制每个压缩列表大小或者元素个数，尽可能减少连锁更新带来的问题</li></ul><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/post/redis-quicklist.png"
+                      alt="redis-quicklist"
+                ></p></div><div class="tab-pane" id="redis-data-structure-6"><ul><li>因为快表依然存在连锁更新的问题，所以在Redis 5.0新设计了一个数据结构listpack来替代压缩列表，彻底解决了连锁更新的问题</li><li>listpack的结构<ul><li><strong>total_bytes</strong>：整个listpack的字节数</li><li><strong>num_elements</strong>：元素个数</li><li><strong>entry</strong>：条目，即实际存储的数据</li><li><strong>end</strong>：结束标志</li></ul></li><li>每个条目包含三部分<ul><li><strong>encoding</strong>：记录了数据的类型和长度</li><li><strong>data</strong>：记录了实际数据</li><li><strong>len</strong>：记录了当前条目encoding+data的总长度</li></ul></li><li>其最大特点是 listpack 中每个节点不再包含前一个节点的长度了，压缩列表每个节点正因为需要保存前一个节点的长度字段，就会有连锁更新的隐患，现在每个节点只存储自己的长度，也就解决了这个问题</li></ul><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/post/redis-listpack.png"
+                      alt="redis-listpack"
+                ></p></div></div></div>
+              </div>
+            </details>
+
+<h2 id="如何实现Redis原子性"><a href="#如何实现Redis原子性" class="headerlink" title="如何实现Redis原子性"></a>如何实现Redis原子性</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>使用Lua脚本，将多个操作写到一个Lua脚本中，Redis会把整个Lua脚本当作一个操作执行，以此来保证原子性</li><li>值得注意的是，Redis本身也有事务相关的命令，使用MULTI和EXEC可以开启和提交一个事务，但是这个所谓的事物并不能完全保证命令的原子性，因为如果事物执行过程中出现错误，Redis无法进行回滚</li></ul>
+              </div>
+            </details>
+
+<h1 id="持久化机制"><a href="#持久化机制" class="headerlink" title="持久化机制"></a>持久化机制</h1><h2 id="Redis有哪些持久化机制"><a href="#Redis有哪些持久化机制" class="headerlink" title="Redis有哪些持久化机制"></a>Redis有哪些持久化机制</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <div class="tabs" id="tab-redis-persistence"><ul class="nav-tabs"><li class="tab active"><a class="#redis-persistence-1">AOF日志</a></li><li class="tab"><a class="#redis-persistence-2">RDB快照</a></li><li class="tab"><a class="#redis-persistence-3">混合持久化</a></li></ul><div class="tab-content"><div class="tab-pane active" id="redis-persistence-1"><ul><li><strong>核心思路</strong><ul><li>每执行一条<strong>写操作</strong>命令，就把该命令以追加的方式写入到一个文件里</li></ul></li><li><strong>优点</strong><ul><li>使用AOF日志持久化可以较大程度保证数据安全性，因为它默认每接收到一个写命令就会追加到文件末尾，即使Redis服务器宕机，也只会丢失最后一次写入前的数据</li></ul></li><li><strong>缺点</strong><ul><li>因为记录了每一次操作，所以AOF文件通常比较大，而且频繁的io会对redis性能造成影响</li><li>通过AOF恢复数据时，因为要重新执行所有命令，速度较慢</li></ul></li><li><strong>三种写回策略</strong><ul><li>Always<ul><li>每次写操作命令执行完后，同步将 AOF 日志数据写回硬盘</li></ul></li><li>Everysec<ul><li>每次写操作命令执行完后，先将命令写入到 AOF文件的内核缓冲区，然后每隔一秒会有一个异步的线程将缓冲区里的内容写回到硬盘</li></ul></li><li>No<ul><li>不由 Redis 控制写回硬盘的时机，即每次写操作命令执行完后，先将命令写入到 AOF 文件的内核缓冲区，再由操作系统决定何时将缓冲区内容写回硬盘</li></ul></li></ul></li></ul><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/post/redis-AOF.png"
+                      alt="redis-AOF"
+                ></p></div><div class="tab-pane" id="redis-persistence-2"><ul><li><strong>核心思路</strong><ul><li>将某一时刻的内存数据，以二进制的方式写入磁盘</li></ul></li><li><strong>优点</strong><ul><li>文件体积小，备份和恢复的速度非常快</li></ul></li><li><strong>缺点</strong><ul><li>RDB方式在两次快照之间，如果Redis服务器发生故障，这段时间的数据将会丢失</li></ul></li></ul></div><div class="tab-pane" id="redis-persistence-3"><ul><li><strong>核心思路</strong><ul><li>将RDB文件的内容和增量的AOF日志文件存在一起，AOF日志不再记录全量的日志，而是RDB久化开始 到RDB持久化结束的这段时间发生的增量AOF日志，通常这部分AOF日志很小</li></ul></li><li><strong>优点</strong><ul><li>重启 Redis 加载数据的时候，由于前半部分是 RDB 内容，这样加载的时候速度会很快</li><li>加载完 RDB 的内容后，才会加载后半部分的 AOF 内容，这样在保存RDB快照期间，Redis宕机丢失的数据更少</li></ul></li></ul></div></div></div>
+              </div>
+            </details>
+
+<h2 id="AOF重写机制"><a href="#AOF重写机制" class="headerlink" title="AOF重写机制"></a>AOF重写机制</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>为什么要有重写机制</strong><ul><li>为了避免 AOF 文件越写越大，当 AOF 文件的大小超过所设定的阈值后，Redis 就会启用 AOF 重写机制，来压缩 AOF 文件</li></ul></li><li><strong>如何进行重写</strong><ul><li>Redis会读取当前数据库中所有的键值对，然后将每一个键值对用一条命令记录到<strong>新的AOF文件</strong>中，等到全部记录完后，用新的AOF文件替换掉旧的AOF文件即可</li><li>这个过程有点类似于RDB快照，只是RDB记录的是二进制数据，而AOF记录的是Redis命令</li></ul></li><li><strong>为什么不直接覆写现有的AOF文件</strong><ul><li>为避免AOF重写过程中出现错误，重写失败，导致现有AOF文件被污染</li><li>写到新的AOF文件中，即使出现错误，直接删掉这个AOF文件即可</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="执行AOF重写或RDB快照时，数据可以被修改吗"><a href="#执行AOF重写或RDB快照时，数据可以被修改吗" class="headerlink" title="执行AOF重写或RDB快照时，数据可以被修改吗"></a>执行AOF重写或RDB快照时，数据可以被修改吗</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>结论</strong><ul><li>可以被修改</li></ul></li><li><strong>原因</strong><ul><li>执行AOF重写或RDB快照时，都会通过<code>fork()</code>创建子进程来进行处理，此时子进程和父进程还是共享同一片内存数据，只有在发生修改内存数据的情况时，被影响的内存块才会被复制一份，以此减少创建子进程时的性能损耗</li><li>创建子进程后，如果主线程（父进程）执行的是读操作，那么父进程和子进程之间互不影响，内存数据不会发生变动</li><li>如果执行的是写操作，那么被修改的内存数据所在的内存块就会复制一份，主线程在这个复制的内存块中进行修改操作，而原本的内存数据不受影响，子进程保存的依然是原内存数据</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="大Key对持久化的影响"><a href="#大Key对持久化的影响" class="headerlink" title="大Key对持久化的影响"></a>大Key对持久化的影响</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>对AOF的影响<ul><li>使用Always策略时，每次执行完命令后，主线程将命令写入AOF文件并立即刷入磁盘，如果写入的是一个大key，这个过程会非常耗时，导致主线程出现阻塞，影响后续命令执行</li><li>使用Everysec策略时，因为刷盘操作是一个异步线程在处理，所以大Key持久化的过程不会影响到主线程</li><li>使用No策略时，Redis不控制刷盘时机，所以也不会对主线程产生影响</li></ul></li><li>对RDB的影响<ul><li>执行RDB快照会使用<code>fork()</code>创建一个子进程来处理，虽然<code>fork()</code>不会在创建子进程时直接复制父进程的物理内存，但是会复制父进程的页表</li><li>页表是用来维护虚拟内存和物理内存之间的映射关系的，大key的数量越多，那么其在物理内存中占据的内存块也越多，那么对应的页表就会越大</li><li>页表越大那么执行<code>fork()</code>复制页表时阻塞的时间就越长，导致Redis性能变差</li></ul></li></ul><blockquote><p><em><strong>Tip</strong></em></p><p>执行AOF重写时也会触发<code>fork()</code>，所以大key对AOF重写也有影响，最终也会导致Redis性能变差</p></blockquote>
+              </div>
+            </details>
+
+<h1 id="Redis线程模型"><a href="#Redis线程模型" class="headerlink" title="Redis线程模型"></a>Redis线程模型</h1><h2 id="Redis是单线程吗"><a href="#Redis是单线程吗" class="headerlink" title="Redis是单线程吗"></a>Redis是单线程吗</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>严格来说，它是<strong>单线程为主，部分环节用多线程优化</strong></li><li>Redis的核心命令执行是单线程的，依赖I&#x2F;O多路复用实现高并发，这避免了锁竞争和高开销</li><li>从6.0开始，它引入了多线程I&#x2F;O来处理网络读写，提升了大规模连接的性能，但执行命令依然是单线程</li></ul><blockquote><p><em><strong>Tip</strong></em></p><p>Redis执行命令为什么使用单线程——Redis是基于内存的，cpu不会成为Redis性能上的瓶颈，最有可能影响其性能的是机器内存和网络带宽，考虑到这一点，再加上单线程实现起来比较容易，Redis也就使用了单线程</p></blockquote>
+              </div>
+            </details>
+
+<h2 id="Redis哪些地方使用了多线程"><a href="#Redis哪些地方使用了多线程" class="headerlink" title="Redis哪些地方使用了多线程"></a>Redis哪些地方使用了多线程</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>关闭文件</li><li>AOF刷盘</li><li>释放内存</li><li>处理网络请求</li></ul>
+              </div>
+            </details>
+
+<h1 id="Redis内存管理"><a href="#Redis内存管理" class="headerlink" title="Redis内存管理"></a>Redis内存管理</h1><h2 id="Redis过期删除策略"><a href="#Redis过期删除策略" class="headerlink" title="Redis过期删除策略"></a>Redis过期删除策略</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>Redis选择<strong>惰性删除+定期删除</strong>两种策略配合使用<ul><li>针对惰性删除，Redis在访问或修改key时，先检查该key是否过期，如果过期则删除该key，并返回null，否则返回正常的键值对</li><li>针对定期删除，Redis从过期字典中随机抽取20个key，删除其中过期的key，如果删除的数量超过25%，则重复该过程，直到删除数量少于25%，才等待下一轮的定期删除</li></ul></li><li><strong>三种常见的过期删除策略</strong></li></ul><div class="tabs" id="tab-redis-delete-expire"><ul class="nav-tabs"><li class="tab active"><a class="#redis-delete-expire-1">定时删除</a></li><li class="tab"><a class="#redis-delete-expire-2">惰性删除</a></li><li class="tab"><a class="#redis-delete-expire-3">定期删除</a></li></ul><div class="tab-content"><div class="tab-pane active" id="redis-delete-expire-1"><ul><li><strong>策略</strong><ul><li>在设置 key 的过期时间时，同时创建一个定时事件，当时间到达时，由事件处理器自动执行 key 的删除操作</li></ul></li><li><strong>优点</strong><ul><li>可以保证过期 key 会被尽快删除，内存可以被尽快地释放</li></ul></li><li><strong>缺点</strong><ul><li>在过期 key 比较多的情况下，删除过期 key 可能会占用相当一部分 CPU，会对服务器的响应时间和吞吐量造成影响</li></ul></li></ul></div><div class="tab-pane" id="redis-delete-expire-2"><ul><li><strong>策略</strong><ul><li>不主动删除过期键，每次从数据库访问 key 时，都检测 key 是否过期，如果过期则删除该 key</li></ul></li><li><strong>优点</strong><ul><li>只在访问时检查是否过期，使用很少的系统资源</li></ul></li><li><strong>缺点</strong><ul><li>过期的key长时间不被访问就会一直留在内存中，造成内存浪费</li></ul></li></ul></div><div class="tab-pane" id="redis-delete-expire-3"><ul><li><strong>策略</strong><ul><li>每隔一段时间随机从数据库中取出一定数量的 key 进行检查，并删除其中过期的key</li></ul></li><li><strong>优点</strong><ul><li>通过限制删除操作执行的时长和频率，来减少删除操作对 CPU 的影响，同时也能删除一部分过期的数据减少了过期键对空间的无效占用</li></ul></li><li><strong>缺点</strong><ul><li>难以确定删除操作执行的时长和频率</li></ul></li></ul></div></div></div>
+              </div>
+            </details>
+
+<h2 id="Redis内存淘汰策略"><a href="#Redis内存淘汰策略" class="headerlink" title="Redis内存淘汰策略"></a>Redis内存淘汰策略</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <div class="tabs" id="tab-redis-memory-outdated"><ul class="nav-tabs"><li class="tab active"><a class="#redis-memory-outdated-1">不进行数据淘汰</a></li><li class="tab"><a class="#redis-memory-outdated-2">进行数据淘汰</a></li></ul><div class="tab-content"><div class="tab-pane active" id="redis-memory-outdated-1"><ul><li>当运行内存超过最大设置内存时，不淘汰任何数据</li><li>如果有新的数据写入，会报错通知禁止写入</li><li>单纯的查询或删除操作依然可以正常运行</li></ul></div><div class="tab-pane" id="redis-memory-outdated-2"><ul><li>在<strong>会过期的数据</strong>中进行淘汰<ul><li>随机淘汰</li><li>优先淘汰更早过期的数据</li><li>LRU（最久未使用）</li><li>LFU（最少使用）</li></ul></li><li>在<strong>所有数据范围内</strong>进行淘汰<ul><li>随机淘汰</li><li>LRU（最久未使用）</li><li>LFU（最少使用）</li></ul></li></ul></div></div></div>
+              </div>
+            </details>
+
+<h1 id="场景实践"><a href="#场景实践" class="headerlink" title="场景实践"></a>场景实践</h1><h2 id="Redis如何实现分布式锁"><a href="#Redis如何实现分布式锁" class="headerlink" title="Redis如何实现分布式锁"></a>Redis如何实现分布式锁</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>加锁</strong><ul><li>使用<code>SET key value NX EX 10</code>命令<ul><li>key是锁的名称</li><li>value是锁的唯一标识，一般使用uuid，保证释放的是自己的锁</li><li>NX表示仅当key不存在时才设置，防止覆盖</li><li>EX设置锁的过期时间，防止死锁</li></ul></li></ul></li><li><strong>释放锁</strong><ul><li>因为要保证释放的是自己的锁，所以要先执行<code>GET</code>进行校验，校验成功后使用<code>DEL</code>删除key</li><li>一般使用Lua脚本执行，保证<code>GET</code>和<code>DEL</code>是原子操作</li></ul></li><li><strong>高可用场景</strong><ul><li>在集群模式下，使用RedLock算法来保证更高的可靠性</li><li>原理<ul><li>依次向多个Redis节点请求加锁，并且使用相同的key和value</li><li>如果超过半数节点加锁成功，则认为是加锁成功</li><li>如果加锁失败或超时，需要在所有已加锁的节点释放锁</li></ul></li></ul></li></ul><blockquote><p><em><strong>Tip</strong></em></p><p>没有唯一标识导致误删锁的场景——</p><ol><li>线程A获取到锁，但业务执行时间较长</li><li>锁的过期时间到了，Redis自动释放锁</li><li>线程B重新获取到锁，开始执行自己的业务逻辑</li><li>线程A业务此时执行完毕，执行<code>DEL</code>命令释放锁</li><li>线程B失去锁的保护，数据可能被其他线程修改，产生数据不一致的问题</li></ol></blockquote>
+              </div>
+            </details>
+
+<h2 id="大Key问题和解决办法"><a href="#大Key问题和解决办法" class="headerlink" title="大Key问题和解决办法"></a>大Key问题和解决办法</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>什么是大Key</strong><ul><li>某个key对应的value值所占的内存空间比较大</li></ul></li><li><strong>大Key有什么问题</strong><ul><li><strong>内存占用过高</strong>，进而触发内存淘汰策略，极端情况下甚至会耗尽内存导致Redis实例崩溃</li><li><strong>性能下降</strong>，操作大key可能导致redis主线程阻塞</li><li><strong>网络拥塞</strong>，每次获取大key产生的网络流量较大，消耗服务器的带宽</li><li><strong>主从同步延迟</strong>，传输大key的过程比较耗时，这会导致redis主从同步的网络延迟增加，影响数据一致性</li></ul></li><li><strong>解决办法</strong><ul><li><strong>对大key进行拆分</strong>，确保每个key的成员数量在合理的范围内</li><li><strong>对大key进行清理</strong>，设计定期清理的机制，通过脚本或定时任务，定期检查和清理大key</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="热Key问题和解决办法"><a href="#热Key问题和解决办法" class="headerlink" title="热Key问题和解决办法"></a>热Key问题和解决办法</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>什么是热key</strong><ul><li>访问频率极高的key</li></ul></li><li><strong>热key有什么问题</strong><ul><li>单点压力过大，可能导致redis宕机</li></ul></li><li><strong>如何发现热key</strong><ul><li>根据业务经验，预测哪些key有可能成为热key</li><li>使用相关检测工具，如redis的<code>monitor</code>命令，实时监控redis命令执行情况，可以找到访问频率较高的key</li></ul></li><li><strong>如何解决热key问题</strong><ul><li>利用二级缓存<ul><li>在程序中对热key进行本地缓存，防止请求打到redis</li></ul></li><li>备份热key<ul><li>在多个reids中将热key进行备份，分摊单点热key的数据压力</li></ul></li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="缓存雪崩、击穿、穿透"><a href="#缓存雪崩、击穿、穿透" class="headerlink" title="缓存雪崩、击穿、穿透"></a>缓存雪崩、击穿、穿透</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <div class="tabs" id="tab-redis-memory-3problem"><ul class="nav-tabs"><li class="tab active"><a class="#redis-memory-3problem-1">缓存雪崩</a></li><li class="tab"><a class="#redis-memory-3problem-2">缓存击穿</a></li><li class="tab"><a class="#redis-memory-3problem-3">缓存穿透</a></li></ul><div class="tab-content"><div class="tab-pane active" id="redis-memory-3problem-1"><ul><li><strong>概念</strong><ul><li>大量缓存数据在同一时间过期（失效）或者 Redis 故障宕机，造成数据库压力骤增</li></ul></li><li><strong>解决办法</strong><ul><li>给key的过期时间加上一个随机值，避免大量key同时失效</li><li>如果是Redis宕机引起的，需要部署Redis集群，做高可用</li></ul></li></ul></div><div class="tab-pane" id="redis-memory-3problem-2"><ul><li><strong>概念</strong><ul><li>某个热点数据过期，大量请求直接打到数据库</li></ul></li><li><strong>解决办法</strong><ul><li>使用互斥锁，保证同一时间只有一个业务线程更新缓存，未能获取互斥锁的请求，要么等待锁释放后重新读取缓存，要么就返回空值或者默认值</li><li>热点数据设置永不过期，或者过期后在后台异步重新构建缓存并设置过期时间</li></ul></li></ul></div><div class="tab-pane" id="redis-memory-3problem-3"><ul><li><strong>概念</strong><ul><li>查询一个缓存和数据库中都不存在的key，所有这样的请求都会直接访问数据库，且不能构建缓存</li></ul></li><li><strong>解决办法</strong><ul><li>参数校验，拦截一些非法的恶意请求</li><li>缓存空对象，如果数据库中不存在查询对象，则在缓存中缓存一个空对象</li><li>使用布隆过滤器判断key是否可能存在</li></ul></li></ul></div></div></div>
+              </div>
+            </details>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> Redis 面试题</li>
+        <li><strong>Author:</strong> Lu Xiao</li>
+        <li><strong>Created at
+                :</strong> 2025-03-06 Thursday</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2025-03-09 Sunday
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://hespecial.github.io/Interview/redis-interview/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+		<ul class="post-tags-box text-lg mt-1.5 flex-wrap justify-center flex md:hidden">
+			
+			<li class="tag-item mx-0.5">
+				<a href="/tags/Redis/">#Redis</a>&nbsp;
+			</li>
+			
+		</ul>
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/Interview/mysql-interview/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">MySQL 面试题</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">Redis 面试题</div>
+		<ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E9%83%A8%E5%88%86"><span class="nav-number">1.</span> <span class="nav-text">基础部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BF%AB"><span class="nav-number">1.1.</span> <span class="nav-text">Redis为什么快</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.2.</span> <span class="nav-text">Redis数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">1.3.</span> <span class="nav-text">Redis数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0Redis%E5%8E%9F%E5%AD%90%E6%80%A7"><span class="nav-number">1.4.</span> <span class="nav-text">如何实现Redis原子性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%81%E4%B9%85%E5%8C%96%E6%9C%BA%E5%88%B6"><span class="nav-number">2.</span> <span class="nav-text">持久化机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis%E6%9C%89%E5%93%AA%E4%BA%9B%E6%8C%81%E4%B9%85%E5%8C%96%E6%9C%BA%E5%88%B6"><span class="nav-number">2.1.</span> <span class="nav-text">Redis有哪些持久化机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOF%E9%87%8D%E5%86%99%E6%9C%BA%E5%88%B6"><span class="nav-number">2.2.</span> <span class="nav-text">AOF重写机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%A7%E8%A1%8CAOF%E9%87%8D%E5%86%99%E6%88%96RDB%E5%BF%AB%E7%85%A7%E6%97%B6%EF%BC%8C%E6%95%B0%E6%8D%AE%E5%8F%AF%E4%BB%A5%E8%A2%AB%E4%BF%AE%E6%94%B9%E5%90%97"><span class="nav-number">2.3.</span> <span class="nav-text">执行AOF重写或RDB快照时，数据可以被修改吗</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%A7Key%E5%AF%B9%E6%8C%81%E4%B9%85%E5%8C%96%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="nav-number">2.4.</span> <span class="nav-text">大Key对持久化的影响</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">Redis线程模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis%E6%98%AF%E5%8D%95%E7%BA%BF%E7%A8%8B%E5%90%97"><span class="nav-number">3.1.</span> <span class="nav-text">Redis是单线程吗</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis%E5%93%AA%E4%BA%9B%E5%9C%B0%E6%96%B9%E4%BD%BF%E7%94%A8%E4%BA%86%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="nav-number">3.2.</span> <span class="nav-text">Redis哪些地方使用了多线程</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="nav-number">4.</span> <span class="nav-text">Redis内存管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis%E8%BF%87%E6%9C%9F%E5%88%A0%E9%99%A4%E7%AD%96%E7%95%A5"><span class="nav-number">4.1.</span> <span class="nav-text">Redis过期删除策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis%E5%86%85%E5%AD%98%E6%B7%98%E6%B1%B0%E7%AD%96%E7%95%A5"><span class="nav-number">4.2.</span> <span class="nav-text">Redis内存淘汰策略</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9C%BA%E6%99%AF%E5%AE%9E%E8%B7%B5"><span class="nav-number">5.</span> <span class="nav-text">场景实践</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81"><span class="nav-number">5.1.</span> <span class="nav-text">Redis如何实现分布式锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%A7Key%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number">5.2.</span> <span class="nav-text">大Key问题和解决办法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%83%ADKey%E9%97%AE%E9%A2%98%E5%92%8C%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number">5.3.</span> <span class="nav-text">热Key问题和解决办法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%93%E5%AD%98%E9%9B%AA%E5%B4%A9%E3%80%81%E5%87%BB%E7%A9%BF%E3%80%81%E7%A9%BF%E9%80%8F"><span class="nav-number">5.4.</span> <span class="nav-text">缓存雪崩、击穿、穿透</span></a></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2025</span>
+              -
+            
+            2025&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Lu Xiao</a>
+            
+        </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="fa-regular fa-arrow-up"></i>
+		</li>
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/build/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+    
+<script src="/js/build/libs/minimasonry.min.js"></script>
+
+    
+<script src="/js/build/plugins/masonry.js" type="module"></script>
+
+
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+    
+<script src="/js/build/libs/pangu.min.js"></script>
+
+<script src="/js/build/plugins/pangu.js"></script>
+
+
+
+
+	
+</body>
+
+</html>

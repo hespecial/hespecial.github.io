@@ -12,6 +12,405 @@
       </tags>
   </entry>
   <entry>
+    <title>Go 面试题</title>
+    <url>/Interview/go-interview/</url>
+    <content><![CDATA[<h1 id="Go基础"><a href="#Go基础" class="headerlink" title="Go基础"></a>Go基础</h1><h2 id="golang的特点和优势"><a href="#golang的特点和优势" class="headerlink" title="golang的特点和优势"></a>golang的特点和优势</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>语法简单</li><li>天然支持高并发</li><li>内置垃圾回收</li></ul>
+              </div>
+            </details>
+
+<h2 id="golang和java对比"><a href="#golang和java对比" class="headerlink" title="golang和java对比"></a>golang和java对比</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>应用方面</strong><ul><li>Java广泛应用于大型企业应用、Android应用、大规模分布式系统和企业级应用。</li><li>Go适用于构建高性能、高并发的后端服务、网络应用、云服务以及分布式系统。</li></ul></li><li><strong>并发方面</strong><ul><li>Java通过线程和锁来处理并发。</li><li>Go语言并发特性的核心是goroutine和channel。</li></ul></li><li><strong>语言设计方面</strong><ul><li>Java是一门功能丰富、面向对象的语言，支持面向对象编程、泛型等高级特性。</li><li>Go语言的设计注重简洁和清晰，具有简单的语法和类型系统，它摒弃了一些复杂的特性，强调代码的可读性。</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="golang数据类型"><a href="#golang数据类型" class="headerlink" title="golang数据类型"></a>golang数据类型</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>基础类型</strong><ul><li>布尔型 bool</li><li>整形 int</li><li>浮点型 float</li><li>字符串型 string</li><li>复数类型 complex</li><li>错误类型 error</li></ul></li><li><strong>复合类型</strong><ul><li>指针 pointer</li><li>数组 array</li><li>切片 slice</li><li>映射 map</li><li>通道 channel</li><li>结构体 struct</li><li>接口 interface</li><li>函数 function</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="golang的引用类型包括哪些"><a href="#golang的引用类型包括哪些" class="headerlink" title="golang的引用类型包括哪些"></a>golang的引用类型包括哪些</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>slice</li><li>map</li><li>channel</li><li><strong>interface</strong></li></ul>
+              </div>
+            </details>
+
+<h2 id="new和make的区别"><a href="#new和make的区别" class="headerlink" title="new和make的区别"></a>new和make的区别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>共同点</strong><ul><li>给变量分配内存&#x2F;进行初始化</li></ul></li><li><strong>不同点</strong><ul><li><strong>返回类型不同</strong><ul><li>new返回该类型的指针</li><li>make返回该类型本身</li></ul></li><li><strong>作用类型不同</strong><ul><li>new可以作用于所有类型</li><li>make只能作用于slice、map、channel</li></ul></li><li><strong>初始化方式不同</strong><ul><li>new是直接将指针所指向的内存空间清零</li><li>make可以根据变量类型来进行初始化</li></ul></li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="string和-byte的区别"><a href="#string和-byte的区别" class="headerlink" title="string和[]byte的区别"></a>string和[]byte的区别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>不可变性</strong><ul><li>string是不可变的数据类型，一旦创建就不能被修改。任何修改string的操作都会产生一个新的 string，而原始的string保持不变。</li><li>[]byte是可变的切片，可以通过索引直接修改切片中的元素。</li></ul></li><li><strong>内存分配</strong><ul><li>string是一个不可变的视图，底层数据是只读的，string的内存分配和释放由runtime管理</li><li>[]byte是一个可变的切片，底层数据是可以修改的，[]byte的内存管理由程序员负责</li></ul></li><li><strong>应用场景</strong><ul><li>如果需要频繁地修改字符串内容，或者处理二进制数据，使用[]byte 更为合适</li><li>如果字符串内容基本保持不变并且主要处理文本数据，那么使用 string 更为方便</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="byte和rune的区别"><a href="#byte和rune的区别" class="headerlink" title="byte和rune的区别"></a>byte和rune的区别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>byte表示字节，是uint8的别名，rune表示字符，是int32的别名</li><li>byte表示ASCII码字符，rune表示Unicode字符</li><li>在遍历字符串时，如果字符串含有中文，需要使用rune</li></ul>
+              </div>
+            </details>
+
+<h2 id="函数返回局部变量的指针是否安全"><a href="#函数返回局部变量的指针是否安全" class="headerlink" title="函数返回局部变量的指针是否安全"></a>函数返回局部变量的指针是否安全</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <p>和c&#x2F;cpp不同，由于go语言会进行内存逃逸分析，go语言中返回局部变量的指针是被允许的</p>
+              </div>
+            </details>
+
+<h2 id="for-range时k、v的地址是否发生变化"><a href="#for-range时k、v的地址是否发生变化" class="headerlink" title="for range时k、v的地址是否发生变化"></a>for range时k、v的地址是否发生变化</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <p>不会</p>
+              </div>
+            </details>
+
+<h2 id="关于defer"><a href="#关于defer" class="headerlink" title="关于defer"></a>关于defer</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>作用</strong><ul><li>起延迟执行的作用，可以用来进行资源释放和收尾工作</li></ul></li><li><strong>特点</strong><ul><li>和栈一样后进先出，先出现的defer后执行</li></ul></li><li><strong>使用场景</strong><ul><li>释放锁</li><li>关闭文件</li><li>配合recover捕获panic</li></ul></li></ul><blockquote><p><em><strong>Tip</strong></em></p><ul><li>defer后面跟有参函数时会直接在defer声明处进行参数传递</li><li>defer在retrun后执行，返回值为无名返回值时，返回值结果不会被修改；但是当返回值类型为有名返回值或指针时，返回值结果可能被修改</li></ul></blockquote>
+              </div>
+            </details>
+
+<h2 id="golang参数传递"><a href="#golang参数传递" class="headerlink" title="golang参数传递"></a>golang参数传递</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>golang中所有传参都是值传递，即传入的是实际参数的副本</li><li>所以传递引用类型（如slice、map、channel）也是值传递，只是副本和实际参数引用的底层数据是相同的。比如传入切片，副本切片引用的是和原切片相同的底层数组，所以对副本进行修改操作时原切片也会受到影响</li></ul>
+              </div>
+            </details>
+
+<h2 id="golang面向对象"><a href="#golang面向对象" class="headerlink" title="golang面向对象"></a>golang面向对象</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>封装</strong><ul><li>首字母大写的字段和方法是公有的，可以被其他包访问</li><li>首字母小写的字段和方法是私有的，只能在当前包中使用</li></ul></li><li><strong>继承</strong><ul><li>go使用结构体嵌套的方式实现继承，嵌入的匿名结构体称为嵌入类型</li><li>具有字段提升的特性，可以把父类型的字段和方法注入到子类型中去</li><li>另外go语言支持多重继承</li></ul></li><li><strong>多态</strong><ul><li>go通过interface来实现多态</li><li>一个类型的实例可以赋值给它所实现的任意接口</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="如何高效拼接字符串"><a href="#如何高效拼接字符串" class="headerlink" title="如何高效拼接字符串"></a>如何高效拼接字符串</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>方式</strong><ul><li><code>+</code></li><li><code>fmt.Sprintf()</code></li><li><code>strings.Builder()</code></li><li><code>bytes.Buffer()</code></li><li><code>strings.Join()</code></li></ul></li><li><strong>性能</strong><ul><li><code>strings.Join()</code> ≈ <code>strings.Builder()</code> &gt; <code>bytes.Buffer()</code> &gt;<code>+</code>+ &gt; <code>fmt.Sprintf()</code></li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="空struct-的作用"><a href="#空struct-的作用" class="headerlink" title="空struct{}的作用"></a>空struct{}的作用</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>作用</strong><ul><li>因为空struct{}的实例（struct{}{}）本身不占用内存空间，所以可以用来当作占位符使用</li></ul></li><li><strong>使用场景</strong><ul><li>go语言没有set类型，可以利用map来实现，map的key为需要存储的元素，value可以使用stuct{}{}</li><li>协程之间使用channel进行通信时，如果不在乎通信的内容，仅仅只是接受一个信号，那么可以使用struct{}{}</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="int和int32是同一个概念吗"><a href="#int和int32是同一个概念吗" class="headerlink" title="int和int32是同一个概念吗"></a>int和int32是同一个概念吗</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>int32仅仅表示32位的无符号整数</li><li>int底层基于操作系统实现，其大小取决于操作系统的位数<ul><li>int在32位系统中的int和int32是相同的，在64位系统则表示64位整数</li><li>int基于操作系统的底层实现是golang能够在不同平台运行的基础</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="golang程序初始化执行顺序"><a href="#golang程序初始化执行顺序" class="headerlink" title="golang程序初始化执行顺序"></a>golang程序初始化执行顺序</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>import –&gt; const –&gt; var –&gt;init()–&gt;main()</li><li>单个源文件存在多个init时，从上至下依次执行</li><li>相同包下多个源文件都存在init时，根据文件名的字典序执行</li><li>import导包过程中<ul><li>有依赖关系：递归执行上述流程</li><li>无依赖关系：按照导包顺序依次执行</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="struct能否比较"><a href="#struct能否比较" class="headerlink" title="struct能否比较"></a>struct能否比较</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>不同类型的struct不能比较</li><li>相同类型的struct分为两种情况<ul><li>若struct内所有成员均可比较，则该struct的不同实例可以比较</li><li>反之，如含有slice、map、function，则不能比较</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="interface能否比较"><a href="#interface能否比较" class="headerlink" title="interface能否比较"></a>interface能否比较</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>可以进行比较</li><li>只在两种情况下相等：<ul><li>两个interface均等于nil</li><li>两个interface内部的类型和值都相等</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="两个nil可能不相等吗"><a href="#两个nil可能不相等吗" class="headerlink" title="两个nil可能不相等吗"></a>两个nil可能不相等吗</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>只有在类型相同时两个nil才相等</li></ul><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> p1, p2 *<span class="type">int</span></span><br><span class="line"><span class="keyword">var</span> p3 *<span class="type">float64</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// p1==p3 类型不同，编译不通过</span></span><br><span class="line">fmt.Println(p1 == <span class="literal">nil</span>, p2 == <span class="literal">nil</span>, p1 == p2) <span class="comment">// true true true</span></span><br><span class="line">fmt.Println(a == <span class="literal">nil</span>, p == <span class="literal">nil</span>, a == p) <span class="comment">// true true false</span></span><br></pre></td></tr></table></figure></div>
+              </div>
+            </details>
+
+<h2 id="值类型T和指针类型-T可以互相调用方法吗"><a href="#值类型T和指针类型-T可以互相调用方法吗" class="headerlink" title="值类型T和指针类型*T可以互相调用方法吗"></a>值类型T和指针类型*T可以互相调用方法吗</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>使用值类型T调用*T的方法，只有当此T是可寻址的情况下才可以。比如常量就无法寻址，也就无法对其进行取地址操作。</li><li>反过来，*T只有在不是空指针的情况下才可以调用值类型T的方法。</li></ul><div class="tabs" id="tab-first"><ul class="nav-tabs"><li class="tab active"><a class="#first-1">T调用*T的方法</a></li><li class="tab"><a class="#first-2">*T调用T的方法</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-1"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> myInt <span class="type">int</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(m *myInt)</span></span> f() &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;ok&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// ⬇️会报错，因为3无法寻址</span></span><br><span class="line">	<span class="comment">// myInt(3).f()</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> a myInt = <span class="number">3</span></span><br><span class="line">	a.f()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div><div class="tab-pane" id="first-2"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> T <span class="keyword">struct</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(*test)</span></span> f1() &#123;</span><br><span class="line">	fmt.Println(<span class="string">&quot;f1 ok&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(test)</span></span> f2() &#123;</span><br><span class="line">	fmt.Println(<span class="string">&quot;f2 ok&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> t1 *T</span><br><span class="line">	t1.f1()</span><br><span class="line">    <span class="comment">// ⬇️ *T调用T的方法时会自动解引用，而*T解引用后是nil，nil调用方法会报错</span></span><br><span class="line">	<span class="comment">// t1.f2()</span></span><br><span class="line">	<span class="keyword">var</span> t2 T</span><br><span class="line">	t2.f1()</span><br><span class="line">	t2.f2()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div></div>
+              </div>
+            </details>
+
+<h2 id="值接收者和指针接收者实现接口的区别"><a href="#值接收者和指针接收者实现接口的区别" class="headerlink" title="值接收者和指针接收者实现接口的区别"></a>值接收者和指针接收者实现接口的区别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>使用值接收者实现接口之后，不管是值类型的变量还是指针类型的变量都可以赋值给接口变量，因为对一个不为空的对象进行解引用总是合法的</li><li>但使用指针接收者实现接口后，只能将指针类型的变量赋值给接口变量，如果使用值类型进行赋值，在接口转换过程中，该值类型可能无法被取地址，会导致无法调用指针方法，因此在编译阶段就杜绝了这种行为</li></ul>
+              </div>
+            </details>
+
+<h2 id="v、-v、-v的区别"><a href="#v、-v、-v的区别" class="headerlink" title="%v、%+v、%#v的区别"></a>%v、%+v、%#v的区别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>%v 只输出所有的值</li><li>%+v 先输出字段类型，再输出该字段的值</li><li>%#v 先输出结构体名字值，再输出结构体（字段类型+字段的值）</li></ul><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> student <span class="keyword">struct</span> &#123;</span><br><span class="line">    name <span class="type">string</span></span><br><span class="line">    id <span class="type">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    s := &amp;student&#123;<span class="string">&quot;luxiao&quot;</span>, <span class="number">123456</span>&#125;</span><br><span class="line">    fmt.Printf(<span class="string">&quot;%%v的方式  = %v\n&quot;</span>, s)</span><br><span class="line">    fmt.Printf(<span class="string">&quot;%%+v的方式 = %+v\n&quot;</span>, s)</span><br><span class="line">    fmt.Printf(<span class="string">&quot;%%#v的方式 = %#v\n&quot;</span>, s)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// output:</span></span><br><span class="line"><span class="comment">// %v的方式  = &amp;&#123;luxiao 123456&#125;</span></span><br><span class="line"><span class="comment">// %+v的方式 = &amp;&#123;name:&quot;luxiao&quot; id:123456&#125;</span></span><br><span class="line"><span class="comment">// %#v的方式 = &amp;main.student&#123;name:&quot;luxiao&quot;, id:123456&#125;</span></span><br></pre></td></tr></table></figure></div>
+              </div>
+            </details>
+
+<h2 id="指针的作用"><a href="#指针的作用" class="headerlink" title="指针的作用"></a>指针的作用</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>函数传参或者方法中传递接收者时，如果要对原值进行修改，一般传递指针参数</li><li>如果结构体比较大的话，使用指针可以节省空间并提高效率</li></ul>
+              </div>
+            </details>
+
+<h2 id="介绍一下context"><a href="#介绍一下context" class="headerlink" title="介绍一下context"></a>介绍一下context</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>context用来管理上下文，具体有如下作用<ul><li>传递取消信号：可以用来传递取消信号，让一个正在执行的函数知道它应该提前终止</li><li>超时控制：可以设定一个超时时间，自动取消超过执行时间的操作</li><li>截止时间：与超时类似，但是是设定一个绝对时间点，而不是时间段</li><li>值传递：可以安全地在请求的上下文中传递数据，避免了使用全局变量或者参数列表不断增长</li></ul></li><li>Context是一个接口，该接口定义了四个需要实现的方法<ul><li>Deadline方法需要返回当前Context被取消的时间，也就是完成工作的截止时间（deadline）</li><li>Done方法需要返回一个Channel，这个Channel会在当前工作完成或者上下文被取消之后关闭，多次调用Done方法会返回同一个Channel</li><li>Err方法会返回当前Context结束的原因，它只会在Done返回的Channel被关闭时才会返回非空的值；</li><li>Value方法会从Context中返回键对应的值</li></ul></li><li>可以使用Background或Todo创建顶层上下文，使用WithCancel、WithDeadline、WithTimeout或WithValue创建派生上下文</li><li>当一个上下文被取消时，它派生的所有上下文也被取消</li></ul><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> Context <span class="keyword">interface</span> &#123;</span><br><span class="line">    Deadline() (deadline time.Time, ok <span class="type">bool</span>)</span><br><span class="line">    Done() &lt;-<span class="keyword">chan</span> <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line">    Err() <span class="type">error</span></span><br><span class="line">    Value(key <span class="keyword">interface</span>&#123;&#125;) <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+              </div>
+            </details>
+
+<h1 id="Slice"><a href="#Slice" class="headerlink" title="Slice"></a>Slice</h1><h2 id="数组和切片的区别"><a href="#数组和切片的区别" class="headerlink" title="数组和切片的区别"></a>数组和切片的区别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>长度是否可变</strong><ul><li>数组是一个长度固定的数据类型，其长度在定义时就已经确定，不能动态改变</li><li>切片是一个长度可变的数据类型，其长度在定义时可以为空，也可以指定一个初始长度（和容量），后续可以自动扩容</li></ul></li><li><strong>内存分配时机</strong><ul><li>数组在编译时期确定内存分配</li><li>切片在运行时期动态分配内存</li></ul></li><li><strong>参数传递方式</strong><ul><li>本质上数组和切片都是值传递</li><li>当数组作为函数参数时，函数操作的是数组的一个副本，不会影响原始数组</li><li>当切片作为函数参数时，函数操作的是切片中底层数组的引用，会影响原始切片，<strong>但是存在特例</strong>，当切片在函数中进行扩容时，会导致这个切片的底层指针指向新的底层数组，不再和原切片共享一个底层数组，发生扩容后函数修改切片不会对原切片造成影响</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="slice底层原理"><a href="#slice底层原理" class="headerlink" title="slice底层原理"></a>slice底层原理</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>组成</strong><ul><li>指针、长度和容量。指针指向底层数组，长度代表slice当前的长度，容量代表底层数组的长度</li></ul></li><li><strong>append追加原则</strong><ul><li>假如slice容量够用，则追加新元素进去，返回原来的slice</li><li>若原容量不够，则slice 先扩容，扩容之后得到新的slice，将元素追加进新的slice，最后返回新的slice</li></ul></li><li><strong>扩容规则</strong><ul><li>1.18之前：当切片容量小于1024时，扩容为原来的2倍，这样可以避免频繁扩容；当切片容量大于等于1024时，扩容为原来的1.25倍，这样可以避免内存浪费；如果扩容后还不够，则直接使用需要的容量</li><li>1.18及之后：当切片容量小于256时，扩容为原来的两倍；当切片容量大于等于256时，按照公式进行扩容<code>newcap+=(newcap+3*256)/4</code>；如果扩容后还不够，则直接使用需要的容量</li><li>改版之后扩容过程相对于原来更为平缓</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="切片的深浅拷贝"><a href="#切片的深浅拷贝" class="headerlink" title="切片的深浅拷贝"></a>切片的深浅拷贝</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>深浅拷贝都是进行复制，本质区别就是复制出来的对象与原对象的底层数组指针是否会指向同一个地址<ul><li>深拷贝会在内存中重新开辟一块内存，再让底层指针指向这片新的内存</li><li>浅拷贝会和原切片共享同一个底层数组</li></ul></li><li>具体应用<ul><li>使用**&#x3D;操作符和[ : ]下标**的方式拷贝切片是浅拷贝</li><li>使用<strong>copy()函数</strong>复制是深拷贝</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="零切片、nil切片、空切片"><a href="#零切片、nil切片、空切片" class="headerlink" title="零切片、nil切片、空切片"></a>零切片、nil切片、空切片</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>零切片</strong><ul><li>切片元素为相应的零值的切片</li></ul></li><li><strong>nil切片</strong><ul><li>长度和容量都为0</li><li>和nil比较的结果为true</li></ul></li><li><strong>空切片</strong><ul><li>长度和容量也都为0</li><li>和nil的比较结果为false，因为所有的空切片的底层指针都指向同一个地址</li></ul></li></ul><div class="tabs" id="tab-second"><ul class="nav-tabs"><li class="tab active"><a class="#second-1">零切片</a></li><li class="tab"><a class="#second-2">nil切片</a></li><li class="tab"><a class="#second-3">空切片</a></li></ul><div class="tab-content"><div class="tab-pane active" id="second-1"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line">slice := <span class="built_in">make</span>([]<span class="type">int</span>,<span class="number">5</span>) <span class="comment">// 0 0 0 0 0</span></span><br><span class="line">slice := <span class="built_in">make</span>([]*<span class="type">int</span>,<span class="number">5</span>) <span class="comment">// nil nil nil nil nil</span></span><br></pre></td></tr></table></figure></div></div><div class="tab-pane" id="second-2"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> slice []<span class="type">int</span></span><br><span class="line"><span class="keyword">var</span> slice = *<span class="built_in">new</span>([]<span class="type">int</span>)</span><br></pre></td></tr></table></figure></div></div><div class="tab-pane" id="second-3"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> slice = []<span class="type">int</span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> slice = <span class="built_in">make</span>([]<span class="type">int</span>, <span class="number">0</span>)</span><br></pre></td></tr></table></figure></div></div></div></div>
+              </div>
+            </details>
+
+<h2 id="判断两个切片是否相等"><a href="#判断两个切片是否相等" class="headerlink" title="判断两个切片是否相等"></a>判断两个切片是否相等</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>可以调用reflect包下的DeepEqual()，但并不建议这么做，因为其底层使用了反射进行判断，比较影响性能</li><li>在知道切片类型的情况下，自己实现循环比较的性能更佳</li></ul>
+              </div>
+            </details>
+
+<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><h2 id="map常识"><a href="#map常识" class="headerlink" title="map常识"></a>map常识</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>map基于key的维度进行去重</li><li>map的遍历是无序的，若想要顺序遍历，则需要先对key排序，再按照key的顺序遍历map</li><li>对map进行读、写、删的操作的时间复杂度为O(1)</li><li>key必须为可比较类型，go语言中slice、map、func三种类型不可比较</li><li>map不是并发安全的，读map时可以并发读，但是写map时并发读写都不被允许。若要实现map的并发读写，有两种方式<ul><li>map+互斥锁&#x2F;读写锁</li><li>使用go自带的并发安全的sync.Map</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="map为什么是无序的"><a href="#map为什么是无序的" class="headerlink" title="map为什么是无序的"></a>map为什么是无序的</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>其一，map在进行扩容的过程中可能打乱原始键值对的顺序</li><li>其二，官方在for-range遍历map时做了随机播种</li></ul>
+              </div>
+            </details>
+
+<h2 id="map中删除一个key，它的内存会释放么"><a href="#map中删除一个key，它的内存会释放么" class="headerlink" title="map中删除一个key，它的内存会释放么"></a>map中删除一个key，它的内存会释放么</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>如果删除的元素是值类型，如int，float，bool，string以及数组和struct，map的内存不会自动释放</li><li>如果删除的元素是引用类型，如指针，slice，map，chan等，map的内存会自动释放，但释放的内存是子元素应用类型的内存占用</li><li>将map设置为nil后，内存被回收</li></ul>
+              </div>
+            </details>
+
+<h2 id="map底层结构"><a href="#map底层结构" class="headerlink" title="map底层结构"></a>map底层结构</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>map在底层算法上通过哈希表实现</li><li>每个map都是一个指针，指向hmap结构体，hmap主要包含一个桶数组的指针（buckets），以及维护这个桶数组所需的一些字段</li><li>桶数组中每个元素都是一个bmap结构体，也就是所谓的桶，每个桶固定可以存放8个kv键值对以及一个指向下一个溢出桶的指针</li><li>每个kv键值对数据包含tophash(key的高8位哈希值)、key、val三部分</li></ul><div class="tabs" id="tab-third"><ul class="nav-tabs"><li class="tab active"><a class="#third-1">数据结构</a></li><li class="tab"><a class="#third-2">图示</a></li></ul><div class="tab-content"><div class="tab-pane active" id="third-1"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> hmap <span class="keyword">struct</span> &#123;</span><br><span class="line">	count     <span class="type">int</span>    <span class="comment">// map中kv键值对总数</span></span><br><span class="line">	flags     <span class="type">uint8</span>  <span class="comment">// 状态标志，标识出map是否被并发读写</span></span><br><span class="line">	B         <span class="type">uint8</span>  <span class="comment">// 桶数组长度的指数，桶数组长度为2^B</span></span><br><span class="line">	noverflow <span class="type">uint16</span> <span class="comment">// 溢出桶的数量</span></span><br><span class="line">	hash0     <span class="type">uint32</span> <span class="comment">// 随机因子，生成key的hash值时会用到</span></span><br><span class="line"></span><br><span class="line">	buckets    unsafe.Pointer <span class="comment">// 桶数组的指针</span></span><br><span class="line">	oldbuckets unsafe.Pointer <span class="comment">// 扩容过程中旧的桶数组</span></span><br><span class="line">	nevacuate  <span class="type">uintptr</span>        <span class="comment">// 扩容进度标识，小于此地址的buckets代表已搬迁完成。</span></span><br><span class="line"></span><br><span class="line">	extra *mapextra <span class="comment">// 预申请的溢出桶</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div><div class="tab-pane" id="third-2"><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/post/map-structure.png"
+                      alt="map structure"
+                ></p></div></div></div>
+              </div>
+            </details>
+
+<h2 id="map读写过程"><a href="#map读写过程" class="headerlink" title="map读写过程"></a>map读写过程</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><p><strong>读流程</strong></p><ol><li>根据key取hash值</li><li>根据hash值以及B对桶数组长度取模，确定所在的桶</li><li>沿着桶链表依次遍历各个桶内的kv键值对</li><li>命中相同的key则返回value，若key不存在则返回零值</li></ol></li><li><p><strong>写流程</strong></p><ul><li>基本一致，只是如果发现map处在扩容过程中则会帮助推进渐进式扩容</li></ul></li></ul><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/post/map-process.png"
+                      alt="map process"
+                ></p>
+              </div>
+            </details>
+
+<h2 id="哈希冲突"><a href="#哈希冲突" class="headerlink" title="哈希冲突"></a>哈希冲突</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>产生原因</strong><ul><li>由于输入域（key）无穷大，输出域（hash 值）有限，因此必然存在不同 key 映射到相同 hash 值的情况，称之为 hash 冲突</li><li>再者，hash 值会对桶数组长度取模，因此不同 hash 值可能被打到同一个桶中</li></ul></li><li><strong>常见解决办法</strong><ul><li><strong>拉链法</strong><ul><li>将命中同一个位置的元素通过链表的形式进行链接</li><li>无需预先为元素分配内存，便于动态扩展</li></ul></li><li><strong>开放寻址法</strong><ul><li>在插入新条目时，会基于一定的探测策略持续寻找，直到找到一个可用于存放数据的空位为止</li><li>无需额外的指针用于链接元素；内存地址完全连续，可以基于局部性原理，充分利用 CPU 高速缓存</li></ul></li></ul></li><li><strong>go语言的处理方法</strong>（结合拉链法和开放寻址法两种思路）<ul><li>当 key 命中一个桶时，首先根据开放寻址法，在桶的 8 个位置中寻找空位进行插入</li><li>倘若桶的 8 个位置都已被占满，则基于桶的溢出桶指针，找到下一个桶，重复第上一步</li><li>倘若遍历到链表尾部，仍未找到空位，则基于拉链法，在桶链表尾部续接新桶，并插入kv对</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="扩容策略"><a href="#扩容策略" class="headerlink" title="扩容策略"></a>扩容策略</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>渐进式扩容</strong><ul><li>每次写操作都会帮助推进扩容的过程，避免因为一次性的全量数据迁移引发性能抖动</li></ul></li><li><strong>扩容类型</strong><ul><li><strong>增量扩容</strong><ul><li>扩容后，桶数组的长度增长为原长度的 2 倍</li><li>目的是降低每个桶中 key-value 对的数量，优化 map 操作的时间复杂度</li></ul></li><li><strong>等量扩容</strong><ul><li>扩容后，桶数组的长度和之前保持一致，但是溢出桶的数量会下降</li><li>目的是提高桶主体结构的数据填充率，减少溢出桶数量，避免发生内存泄漏</li></ul></li></ul></li><li><strong>扩容时机</strong><ul><li><strong>装载因子超出阈值6.5</strong><ul><li>map 中 key-value 对的数量超过 8 个，且大于桶数组长度的 6.5 倍，则进入增量扩容</li></ul></li><li><strong>溢出桶数量过多</strong><ul><li>若溢出桶的数量大于 2^B 个（即桶数组的长度；B 大于 15 时取15），则进入等量扩容</li></ul></li></ul></li></ul><div class="tabs" id="tab-fourth"><ul class="nav-tabs"><li class="tab active"><a class="#fourth-1">增量扩容</a></li><li class="tab"><a class="#fourth-2">等量扩容</a></li></ul><div class="tab-content"><div class="tab-pane active" id="fourth-1"><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/post/map-double-incr.png"
+                      alt="double incr"
+                ></p></div><div class="tab-pane" id="fourth-2"><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/post/map-equal-incr.png"
+                      alt="equal incr"
+                ></p></div></div></div>
+              </div>
+            </details>
+
+<h2 id="扩容过程"><a href="#扩容过程" class="headerlink" title="扩容过程"></a>扩容过程</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ol><li>计算新的存储桶数量：当map 的元素数量达到负载因子 (load factor)的上限时，会触发扩容。新的存储桶数量通常会是当前存储桶数量的两倍。</li><li>分配新的存储桶：创建新的存储桶和散列数组，大小为新的存储桶数量</li><li>重新散列元素：遍历当前 map 的每个存储桶，将其中的元素重新散列到新的存储桶中，这个过程是渐进式的</li><li>切换到新的存储桶：将 map 的内部数据结构指向新的存储桶和散列数组，这个过程是原子的，以确保在切换期间不会影响并发访问。</li><li>释放旧的存储桶：释放的存储桶和散列数组的内存空间，避免内存泄漏</li></ol>
+              </div>
+            </details>
+
+<h1 id="Channel"><a href="#Channel" class="headerlink" title="Channel"></a>Channel</h1><h2 id="无缓冲的channel和有缓冲的channel的区别"><a href="#无缓冲的channel和有缓冲的channel的区别" class="headerlink" title="无缓冲的channel和有缓冲的channel的区别"></a>无缓冲的channel和有缓冲的channel的区别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>无缓冲channel是同步的，有缓冲channel是异步的</strong></li><li>对于无缓冲的channel<ul><li>发送方向channel发送数据，但没有接收方接受数据时，发送方阻塞</li><li>接收方从channel接收数据，但没有发送方发送数据时，接收方阻塞</li></ul></li><li>对于有缓冲的channel<ul><li>发送方只有在缓冲区满时阻塞</li><li>接收方只有在缓冲区空时阻塞</li></ul></li><li>无缓冲的channel其实可以看作缓冲区大小为0的channel，从这个角度看，无缓冲channel兼具了缓冲区满和缓冲区空的特点</li></ul>
+              </div>
+            </details>
+
+<h2 id="channel的底层原理"><a href="#channel的底层原理" class="headerlink" title="channel的底层原理"></a>channel的底层原理</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>每个channel都对应一个hchan结构体，hchan主要包括一个循环数组，以及一些维护这个循环数组的字段</li><li>比较重要的几个字段<ul><li>buf 指向底层循环数组，只有缓冲型的 channel 才有。</li><li>sendx，recvx 均指向底层循环数组，表示当前可以发送和接收的元素位置索引值（相对于底层数组）。</li><li>sendq，recvq 分别表示被阻塞的 goroutine的等待队列，这些 goroutine 由于尝试读取 channel 或向 channel 发送数据而被阻塞。</li><li>lock 用来保证每个读 channel 或写 channel 的操作都是原子的。</li></ul></li></ul><div class="tabs" id="tab-fifth"><ul class="nav-tabs"><li class="tab active"><a class="#fifth-1">channel数据结构</a></li><li class="tab"><a class="#fifth-2">图示</a></li></ul><div class="tab-content"><div class="tab-pane active" id="fifth-1"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> hchan <span class="keyword">struct</span> &#123;</span><br><span class="line">    <span class="comment">// chan 里元素数量</span></span><br><span class="line">    qcount <span class="type">uint</span></span><br><span class="line">    <span class="comment">// chan 底层循环数组的长度</span></span><br><span class="line">    dataqsiz <span class="type">uint</span></span><br><span class="line">    <span class="comment">// 指向底层循环数组的指针</span></span><br><span class="line">    <span class="comment">// 只针对有缓冲的 channel</span></span><br><span class="line">    buf unsafe.Pointer</span><br><span class="line">    <span class="comment">// chan 中元素大小</span></span><br><span class="line">    elemsize <span class="type">uint16</span></span><br><span class="line">    <span class="comment">// chan 是否被关闭的标志</span></span><br><span class="line">    closed <span class="type">uint32</span></span><br><span class="line">    <span class="comment">// chan 中元素类型</span></span><br><span class="line">    elemtype *_type  <span class="comment">// element type</span></span><br><span class="line">    <span class="comment">// 已发送元素在循环数组中的索引</span></span><br><span class="line">    sendx <span class="type">uint</span>  <span class="comment">// send index</span></span><br><span class="line">    <span class="comment">// 已接收元素在循环数组中的索引</span></span><br><span class="line">    recvx <span class="type">uint</span>  <span class="comment">// receive index</span></span><br><span class="line">    <span class="comment">// 等待接收的 goroutine 队列</span></span><br><span class="line">    recvq waitq  <span class="comment">// list of recv waiters</span></span><br><span class="line">    <span class="comment">// 等待发送的 goroutine 队列</span></span><br><span class="line">    sendq waitq  <span class="comment">// list of send waiters</span></span><br><span class="line">    <span class="comment">// 保护 hchan 中所有字段</span></span><br><span class="line">    lock mutex</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div><div class="tab-pane" id="fifth-2"><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/post/channel-structure.png"
+                      alt="channel structure"
+                ></p></div></div></div>
+              </div>
+            </details>
+
+<h2 id="channel发送和接收数据的过程"><a href="#channel发送和接收数据的过程" class="headerlink" title="channel发送和接收数据的过程"></a>channel发送和接收数据的过程</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>goroutine向channel发送数据<ul><li>goroutine首先获取channel的锁</li><li>如果channel缓冲区未满，则直接将数写入缓冲区，并更新sendx</li><li>如果缓冲区已满，则将当前goroutine挂到sendq等待队列中，并释放锁，等到有goroutine接受数据才会被唤醒</li></ul></li><li>channel从goroutine接收数据<ul><li>goroutine首先获取channel的锁</li><li>如果channel缓冲区非空，则直接从缓冲区读取数据，并更新recvx</li><li>如果缓冲区为空，则将当前goroutine挂到recvq等待队列中，并释放锁，等到有goroutine写入数据才会被唤醒</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="操作channel的情况"><a href="#操作channel的情况" class="headerlink" title="操作channel的情况"></a>操作channel的情况</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <table><thead><tr><th><strong>操作</strong></th><th align="center"><strong>nil channel</strong></th><th align="center"><strong>closed channel</strong></th><th align="center"><strong>not nil, not closed channel</strong></th></tr></thead><tbody><tr><td><strong>close</strong></td><td align="center">panic</td><td align="center">panic</td><td align="center">正常关闭</td></tr><tr><td><strong>读</strong></td><td align="center">阻塞</td><td align="center">读到对应类型的零值</td><td align="center">阻塞或正常读取数据。缓冲型 channel 为空或非缓冲型 channel 没有等待发送者时会阻塞</td></tr><tr><td><strong>写</strong></td><td align="center">阻塞</td><td align="center">panic</td><td align="center">阻塞或正常写入数据，非缓冲型 channel 没有等待接收者或缓冲型 channel buf 满时会被阻塞</td></tr></tbody></table>
+              </div>
+            </details>
+
+<h1 id="Mutex"><a href="#Mutex" class="headerlink" title="Mutex"></a>Mutex</h1><h2 id="mutex有几种模式"><a href="#mutex有几种模式" class="headerlink" title="mutex有几种模式"></a>mutex有几种模式</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>正常模式</strong><ul><li>在正常模式下，一个尝试加锁的goroutine会先自旋几次，尝试通过原子操作获得锁，若几次自旋之后仍不能获得锁，则通过信号量排队等待。但是当锁被释放，第一个等待者被唤醒后并不会直接拥有锁，而是需要和后来者竞争，也就是那些处于自旋阶段，尚未排队等待的goroutine。这种情况下后来者更有优势，一方面，它们正在CPU上运行，自然比刚被唤醒的goroutine更有优势，另一方面处于自旋状态的goroutine可以有很多，而被唤醒的goroutine每次只有一个，所以被唤醒的goroutine有很大概率拿不到锁。这种情况下它会被重新插入到队列的头部，而不是尾部。而当一个goroutine本次加锁等待时间超过了1ms后，它会把当前Mutex从正常模式切换至“饥饿模式”。</li></ul></li><li><strong>饥饿模式</strong><ul><li>在饥饿模式下，Mutex的所有权从执行Unlock的goroutine，直接传递给等待队列头部的goroutine，后来者不会自旋，也不会尝试获得锁，即使Mutex处于Unlocked的状态。它们会直接到队列的尾部排队等待。当一个等待者获得锁之后，它会在以下两种情况时，将Mutex由饥饿模式切换回正常模式。第一种情况是它的等待时间小于1ms，也就是它刚来不久；第二种情况是它是最后一个等待者，等待队列已经空了，后面自然就没有饥饿的goroutine了。</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="读写锁"><a href="#读写锁" class="headerlink" title="读写锁"></a>读写锁</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>RWMutex</strong><ul><li>并发读不互斥，并发写和并发读写都互斥</li></ul></li><li><strong>内部结构</strong><ul><li>w: 对写任务进行并发控制，获取写锁时首先需要获取该锁，如果它已被某个写任务占据，则后来获取的写任务会阻塞在该锁上</li><li>writerSem：写操作等待的信号量，当写任务可以执行时释放该信号量</li><li>readerSem：读操作等待的信号量，当读任务可以执行时释放该信号量</li><li>readerCount：记录读任务的数量，当其值为负时，表示有写任务在等待或正在处理</li><li>readerWait：用于实现<strong>写优先的关键逻辑</strong>，写任务需要等待多少个读任务结束，才可以执行</li></ul></li></ul><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> RWMutex <span class="keyword">struct</span> &#123;</span><br><span class="line">    w Mutex <span class="comment">// held if there are pending writers</span></span><br><span class="line"></span><br><span class="line">    writerSem <span class="type">uint32</span> <span class="comment">// semaphore for writers to wait for completing readers</span></span><br><span class="line">    readerSem <span class="type">uint32</span> <span class="comment">// semaphore for readers to wait for completing writers</span></span><br><span class="line">    readerCount <span class="type">int32</span> <span class="comment">// number of pending readers</span></span><br><span class="line">    readerWait <span class="type">int32</span> <span class="comment">// number of departing readers</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><ul><li><strong>获取和释放读写锁的过程</strong></li></ul><div class="tabs" id="tab-rwlock"><ul class="nav-tabs"><li class="tab active"><a class="#rwlock-1">读锁</a></li><li class="tab"><a class="#rwlock-2">写锁</a></li><li class="tab"><a class="#rwlock-3">场景图示</a></li></ul><div class="tab-content"><div class="tab-pane active" id="rwlock-1"><ul><li>获取读锁<ol><li>获取读锁时，先将读计数器 readerCount增1，表示增加一个读任务</li><li>当readerCount值为负时，表示前面存在等待处理写任务或有写任务正在处理，此时阻塞新接收到的读任务，等待信号量通知</li></ol></li></ul><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(rw *RWMutex)</span></span> RLock() &#123;</span><br><span class="line">    ....</span><br><span class="line">    <span class="comment">// readerCount计数器++</span></span><br><span class="line">    <span class="comment">// 小于0，表示存在等待处理/正在处理的写操作</span></span><br><span class="line">    <span class="comment">// 新加入的读操作阻塞，等待readerSem信号量通知</span></span><br><span class="line">    <span class="comment">// &gt; 0: 表示只有读锁，读读不冲突，上锁成功，函数退出    </span></span><br><span class="line">    <span class="comment">//  ======== 此处就是写优先的逻辑逻辑===========</span></span><br><span class="line">	<span class="keyword">if</span> atomic.AddInt32(&amp;rw.readerCount, <span class="number">1</span>) &lt; <span class="number">0</span> &#123;</span><br><span class="line">		<span class="comment">// A writer is pending, wait for it.</span></span><br><span class="line">		runtime_SemacquireMutex(&amp;rw.readerSem, <span class="literal">false</span>, <span class="number">0</span>)</span><br><span class="line">	&#125;</span><br><span class="line">    .....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><ul><li>释放读锁<ol><li>释放读锁时，先将读计数器减一，表示完成一个读任务</li><li>如果readerCount为负，则存在需要优先处理的写任务</li><li>因为此时存在写任务，readerWait已被写任务赋值，将该值减一，表示写任务执行前要处理的读任务完成一个</li><li>如果readerWait为0，则表示写任务执行之前的所有读任务都已完成，释放写信号量，执行等待处理的写任务</li></ol></li></ul><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(rw *RWMutex)</span></span> RUnlock() &#123;</span><br><span class="line">    ....</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 读计数器--</span></span><br><span class="line">    <span class="comment">// &lt; 0，表示存在等待处理的写操作</span></span><br><span class="line">    <span class="comment">// &gt; 0， 表示还有剩余的读锁，读读之间不需要阻塞</span></span><br><span class="line">    <span class="comment">// ==0，表示没有任何锁</span></span><br><span class="line">	<span class="keyword">if</span> r := atomic.AddInt32(&amp;rw.readerCount, <span class="number">-1</span>); r &lt; <span class="number">0</span> &#123;</span><br><span class="line">		<span class="comment">// Outlined slow-path to allow the fast-path to be inlined</span></span><br><span class="line">		rw.rUnlockSlow(r)</span><br><span class="line">	&#125;</span><br><span class="line">	....</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(rw *RWMutex)</span></span> rUnlockSlow(r <span class="type">int32</span>) &#123;</span><br><span class="line">    <span class="comment">// 临界区检测 readerCount  [-rwmutexMaxReaders, -1] &amp;&amp; (0, rwmutexMaxReaders)</span></span><br><span class="line">	<span class="keyword">if</span> r+<span class="number">1</span> == <span class="number">0</span> || r+<span class="number">1</span> == -rwmutexMaxReaders &#123;</span><br><span class="line">		race.Enable()</span><br><span class="line">		throw(<span class="string">&quot;sync: RUnlock of unlocked RWMutex&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 获取写锁之前，需要处理的读锁数量</span></span><br><span class="line">    <span class="comment">// readerWait ==0:表示写锁之前的读锁都处理完毕，后续将锁分配给写事务，</span></span><br><span class="line">    <span class="comment">// 释放信号量，通知等待的写锁</span></span><br><span class="line">    <span class="comment">// readerWait &gt; 0: 表示还有读锁在处理，退出调用.</span></span><br><span class="line">	<span class="keyword">if</span> atomic.AddInt32(&amp;rw.readerWait, <span class="number">-1</span>) == <span class="number">0</span> &#123;</span><br><span class="line">		<span class="comment">// The last reader unblocks the writer.</span></span><br><span class="line">		runtime_Semrelease(&amp;rw.writerSem, <span class="literal">false</span>, <span class="number">1</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div><div class="tab-pane" id="rwlock-2"><ul><li>获取写锁<ol><li>获取写锁时，先抢占互斥锁，因为当存在多个写任务时，同一时间仅会处理一个</li><li>反转readerCount的值为负，同时计算收到写任务时的读任务数量</li><li>当读任务数量&gt;0时，表示存在正在处理的读任务，将该值累加给readerWait，表示执行接收到的写任务时需要执行多少任务</li><li>当readWait &gt; 0，表示有任务要执行，因为通过信号量将写任务阻塞</li></ol></li></ul><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(rw *RWMutex)</span></span> Lock() &#123;</span><br><span class="line">    ....</span><br><span class="line">    先上锁，排除其它写锁竞争</span><br><span class="line">	rw.w.Lock()</span><br><span class="line">	<span class="comment">// Announce to readers there is a pending writer.</span></span><br><span class="line">	r := atomic.AddInt32(&amp;rw.readerCount, -rwmutexMaxReaders) + rwmutexMaxReaders</span><br><span class="line">	<span class="comment">// Wait for active readers.</span></span><br><span class="line">	<span class="keyword">if</span> r != <span class="number">0</span> &amp;&amp; atomic.AddInt32(&amp;rw.readerWait, r) != <span class="number">0</span> &#123;</span><br><span class="line">		runtime_SemacquireMutex(&amp;rw.writerSem, <span class="literal">false</span>, <span class="number">0</span>)</span><br><span class="line">	&#125;</span><br><span class="line">    ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><ul><li>释放写锁<ol><li>释放写锁时，先将readerCount反转为正值表示写任务执行完成，并计算读任务的数量；在释放写锁期间如果有新到的并发读任务，因为readerCount&gt;&#x3D;0，可以立即获取读锁执行</li><li>释放r次读信号量，将在写任务期间被阻塞的读任务唤醒执行</li><li>释放Mutex互斥锁</li></ol></li></ul><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(rw *RWMutex)</span></span> Unlock() &#123;</span><br><span class="line">    ....</span><br><span class="line">	<span class="comment">// Announce to readers there is no active writer.</span></span><br><span class="line">	r := atomic.AddInt32(&amp;rw.readerCount, rwmutexMaxReaders)</span><br><span class="line">	<span class="keyword">if</span> r &gt;= rwmutexMaxReaders &#123;</span><br><span class="line">		race.Enable()</span><br><span class="line">		throw(<span class="string">&quot;sync: Unlock of unlocked RWMutex&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// Unblock blocked readers, if any.</span></span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="type">int</span>(r); i++ &#123;</span><br><span class="line">		runtime_Semrelease(&amp;rw.readerSem, <span class="literal">false</span>, <span class="number">0</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// Allow other writers to proceed.</span></span><br><span class="line">	rw.w.Unlock()</span><br><span class="line">	....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div><div class="tab-pane" id="rwlock-3"><ul><li><strong>场景</strong><ul><li>t1时刻初始有5个读锁【R1、R2、R3、R4、R5】</li><li>在t1-&gt;t2读锁执行期间，收到一个写锁调用【W1】和3个读锁调用【R6、R7、R8】</li><li>在t2时间段后，交互收到2个写调用【W2、W3】、2个读调用【R9、R10】</li></ul></li><li><strong>图示</strong></li></ul><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/post/rwlock.png"
+                      alt="rwlock"
+                ></p></div></div></div>
+              </div>
+            </details>
+
+<h2 id="什么是CAS"><a href="#什么是CAS" class="headerlink" title="什么是CAS"></a>什么是CAS</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>CAS的全称为Compare And Swap，直译就是比较交换，是一条CPU的原子指令，其作用是让CPU先进行比较两个值是否相等，然后原子地更新某个位置的值</li><li>假设包含3个参数内存位置(V)、预期原值(A)和新值(B)。V表示要更新变量的值，E表示预期值，N表示新值。仅当V值等于E值时，才会将V的值设为N，如果V值和E值不同，则说明已经有其他线程在做更新，则当前线程什么都不做，最后CAS返回当前V的真实值。CAS操作时抱着乐观的态度进行的，它总是认为自己可以成功完成操作。基于这样的原理，CAS操作即使没有锁，也可以发现其他线程对于当前线程的干扰。</li></ul>
+              </div>
+            </details>
+
+<h1 id="GMP"><a href="#GMP" class="headerlink" title="GMP"></a>GMP</h1><h2 id="什么是GMP"><a href="#什么是GMP" class="headerlink" title="什么是GMP"></a>什么是GMP</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>Goroutine (G)</strong><ul><li>Goroutine是Go语言中的轻量级线程，能够与其他goroutine并发执行。</li><li>与传统的线程相比，goroutine的创建和销毁成本非常低。</li><li>Goroutine由Go的运行时系统调度，不依赖于操作系统的线程调度。</li></ul></li><li><strong>Machine (M)</strong><ul><li>Machine代表操作系统的线程。</li><li>M负责执行Goroutine。</li></ul></li><li><strong>Processor (P)</strong><ul><li>Processor是一个逻辑处理器，负责Goroutine的调度。</li><li>P维护一个本地队列，其中保存了准备运行的Goroutine。</li><li>每个P都绑定到一个M上，如果绑定后的M获取不到可执行的G，那么该M就会自旋，而其他绑定不到P的M会休眠</li></ul></li></ul><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/images/post/gmp.jpg"
+                      alt="gmp"
+                ></p>
+              </div>
+            </details>
+
+<h2 id="GMP的工作原理"><a href="#GMP的工作原理" class="headerlink" title="GMP的工作原理"></a>GMP的工作原理</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>首先通过go func()创建一个Goroutine</li><li>这个创建的G会优先放入当前P的本地队列中，如果本地队列满了，则会把本地队列中一半的G和这个创建的G放入全局队列中</li><li>然后M从P的本地队列中获取一个G来执行，如果本地队列已经没有可运行的G，则会从全局队列中获取，如果全局队列中获取不到，则采取work stealing机制，从其他P的本地队列中偷取一半的G，如果偷取不到，那么该M会进入自旋状态，等待新的goroutine执行</li><li>M在执行goroutine时会遇到3种情况<ul><li>正常情况下，当前goroutine执行完成后，M上运行的goroutine会切换成G0，G0负责调度时的协程切换，G0会从P的本地队列中再获取G，然后M从G0切换到这个G，并开始运行它</li><li>如果当前goroutine运行时间超过10ms，因为是抢占式调度，M会暂停执行该goroutine，将其放回本地队列尾部，转而执行其他的goroutine</li><li>如果M执行G时发生了阻塞，那么就会采用hand off机制，M会释放当前绑定的P，然后创建一个新的M服务这个P（如果有空闲的M就直接复用），当原来的M退出阻塞状态之后，它会尝试获取之前释放的P，如果无法获取，则获取空闲的P，如果依然没有，那么挂载在这个M上的G会被标记为可运行状态，放回到全局队列中，这个M进入休眠状态</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="P和-M的数量关系"><a href="#P和-M的数量关系" class="headerlink" title="P和 M的数量关系"></a>P和 M的数量关系</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>P 的数量：由 runtime 的 GOMAXPROCS 决定。</li><li>M 的数量：<ul><li>go 程序启动时，会设置 M 的最大数量，默认 10000，但是内核很难支持这么多的线程数，所以这个限制可以忽略。</li><li>runtime&#x2F;debug 中的 SetMaxThreads 函数，可以设置 M 的最大数量。</li></ul></li><li>M的数量&gt;&#x3D;P的数量，一个 M 阻塞，P 就会去创建或者切换另一个 M，所以，即使 P 的默认数量是 1，也有可能会创建很多个 M 出来</li></ul>
+              </div>
+            </details>
+
+<h2 id="P和-M何时会被创建"><a href="#P和-M何时会被创建" class="headerlink" title="P和 M何时会被创建"></a>P和 M何时会被创建</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>P 何时创建<ul><li>在确定了 P 的最大数量 n 后，runtime会根据这个数量创建 n 个 P</li></ul></li><li>M 何时创建<ul><li>没有足够的 M 来关联 P 并运行其中的可运行的 G</li><li>比如所有的 M 此时都阻塞住了，而 P 中还有很多就绪任务，就会去寻找空闲的 M，而没有空闲的，就会去创建新的 M。</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="M0和G0"><a href="#M0和G0" class="headerlink" title="M0和G0"></a>M0和G0</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>M0 是启动程序后的编号为 0 的主线程，这个 M 对应的实例会在全局变量 runtime.m0 中，不需要在 heap 上分配，M0 负责执行初始化操作和启动第一个 G， 在之后 M0 就和其他的 M 一样了</li><li>G0 是每次启动一个 M 都会创建的一个 goroutine，G0 仅用于负责调度的 G，G0 不指向任何可执行的函数，每个 M 都会有一个自己的 G0</li></ul>
+              </div>
+            </details>
+
+<h2 id="没有P会怎样"><a href="#没有P会怎样" class="headerlink" title="没有P会怎样"></a>没有P会怎样</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>Go语言早期的调度模型（GM模型）就是没有P的，这样的调度模型会存在一些性能问题</li><li>没有P也就没有本地队列，M想要执行和放回G都需要通过全局队列来完成，而多线程访问同一资源需要通过加锁来保证同步</li><li>创建、销毁、调度 G 都需要每个 M 获取锁，这就形成了激烈的锁竞争</li><li>M 转移 G 会造成延迟和额外的系统负载。比如当 G1 中创建新协程的时候，M1创建了 G2，为了继续执行 G1，需要把 G2交给M2执行，也造成了很差的局部性，因为 G2 和 G1 是相关的，最好放在 M1 上执行，而不是其他的M</li></ul>
+              </div>
+            </details>
+
+<h2 id="work-stealing机制为什么不需要加锁"><a href="#work-stealing机制为什么不需要加锁" class="headerlink" title="work stealing机制为什么不需要加锁"></a>work stealing机制为什么不需要加锁</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <p>P 从本地队列取 G 的这个操作，是一个 CAS 操作，它具有原子性，是由硬件直接支持的，不需要并发的竞争关系</p>
+              </div>
+            </details>
+
+<h1 id="并发编程"><a href="#并发编程" class="headerlink" title="并发编程"></a>并发编程</h1><h2 id="CSP并发模型"><a href="#CSP并发模型" class="headerlink" title="CSP并发模型"></a>CSP并发模型</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>CSP（Communicating Sequential Processes，通信顺序进程），其设计理念是<strong>通过通信来共享内存，而不是通过共享内存来通信</strong></li><li>go语言的并发模型基于CSP，通过goroutine和channel来实现</li></ul>
+              </div>
+            </details>
+
+<h2 id="原子操作"><a href="#原子操作" class="headerlink" title="原子操作"></a>原子操作</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <p>原子操作是一组不可分割的操作，用于在并发环境中安全地修改共享资源。Go语言的sync&#x2F;atomic包提供了一组原子操作函数，用于对基本数据类型（如整数）进行安全的读写，防止竞态条件。</p>
+              </div>
+            </details>
+
+<h2 id="什么时候会发生阻塞"><a href="#什么时候会发生阻塞" class="headerlink" title="什么时候会发生阻塞"></a>什么时候会发生阻塞</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>系统调用<ul><li>当Goroutine执行一个阻塞的系统调用（如文件I&#x2F;O、网络I&#x2F;O等）时，它会被阻塞，直到系统调用完成。</li></ul></li><li>通道操作<ul><li>Goroutine在执行通道（channel）操作时，如发送数据到一个已满的通道或从一个空的通道接收数据，可能会发生阻塞。阻塞会持续到通道中有足够的空间或数据可用。</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="如何处理阻塞"><a href="#如何处理阻塞" class="headerlink" title="如何处理阻塞"></a>如何处理阻塞</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>在创建通道时指定缓冲区大小，即创建⼀个缓冲通道<ul><li>当缓冲区未满时，发送数据不会阻塞</li><li>当缓冲区未空时，接收数据不会阻塞</li></ul></li><li>select 语句用于处理多个通道操作，使用default分支，可以在所有通道都阻塞的情况下执行非阻塞的操作</li><li>超时控制<ul><li>context.WithTimeOut()</li><li>time.After()</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="如何控制goroutine的生命周期"><a href="#如何控制goroutine的生命周期" class="headerlink" title="如何控制goroutine的生命周期"></a>如何控制goroutine的生命周期</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>启动</strong><ul><li>使用go关键字创建一个新的goroutine</li></ul></li><li><strong>退出</strong><ul><li>等待退出：使用sync.WaitGroup来实现等待进程自行结束</li><li>阻塞退出：通过channel发送一个信号使阻塞状态的goroutine退出</li><li>手动退出：使用context.WithCancel()手动结束goroutine</li><li>超时退出：使用context.WithTimeOut()可以实现超时强制退出</li></ul></li></ul>
+              </div>
+            </details>
+
+<h1 id="内存相关"><a href="#内存相关" class="headerlink" title="内存相关"></a>内存相关</h1><h2 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>含义</strong><ul><li>指程序在申请内存后，无法释放已申请的内存空间，一次内存泄露危害可以忽略，但内存泄露堆积后果很严重，无论多少内存，迟早会被占光</li></ul></li><li><strong>场景</strong><ul><li>字符串&#x2F;切片截取导致内存泄漏</li><li>goroutine被长期挂住，导致该协程中的内存也无法被释放，就会造成永久性的内存泄漏。比如协程结束时协程中的channel没有关闭，导致一直阻塞，再比如协程中有死循环等等</li></ul></li><li><strong>排查方式</strong><ul><li>pprof是Go的性能分析工具，在程序运行过程中，可以记录程序的运行信息，可以是CPU使用情况、内存使用情况、goroutine运行情况等</li></ul></li></ul><div class="tabs" id="tab-sixth"><ul class="nav-tabs"><li class="tab active"><a class="#sixth-1">字符串截取</a></li><li class="tab"><a class="#sixth-2">切片截取</a></li></ul><div class="tab-content"><div class="tab-pane active" id="sixth-1"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// 以下代码，会有10字节的内存泄漏，我们知道，str0和str1底层共享内存</span></span><br><span class="line">    <span class="comment">// 只要str1一直活跃，str0 就不会被回收，10字节的内存被使用</span></span><br><span class="line">    <span class="comment">// 剩下的10字节内存就造成了临时性的内存泄漏，直到str1不再活跃</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 如果str0足够大，str1截取足够小，或者在高并发场景中频繁使用</span></span><br><span class="line">    <span class="comment">// 那么可想而知，会造成临时性内存泄漏，对性能产生极大影响</span></span><br><span class="line">    <span class="keyword">var</span> str0 = <span class="string">&quot;12345678901234567890&quot;</span></span><br><span class="line">    str1 := str0[:<span class="number">10</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 解决方案 1</span></span><br><span class="line">    <span class="comment">// 将需要截取的部分先转换成[]byte，再转换成string</span></span><br><span class="line">    <span class="comment">// 但是这种方式会产生两个10字节的临时变量</span></span><br><span class="line">    <span class="comment">// string转换[]byte时产生一个10字节临时变量，[]byte转换string时产生一个10字节的临时变量</span></span><br><span class="line">    str1 := <span class="type">string</span>([]<span class="type">byte</span>(str0[:<span class="number">10</span>]))</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 解决方案 2</span></span><br><span class="line">    <span class="comment">// 仍然有一个字节的浪费</span></span><br><span class="line">    str1 := (<span class="string">&quot; &quot;</span> + str0[:<span class="number">10</span>])[<span class="number">1</span>:]</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 解决方案 3</span></span><br><span class="line">    str1 := strings.Repeat(str0[:<span class="number">10</span>], <span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div><div class="tab-pane" id="sixth-2"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// 这种情况与字符串截取引起的内存泄漏情况类似，s1活跃情况下，造成s0中部分内存泄漏</span></span><br><span class="line">	<span class="keyword">var</span> s0 = []<span class="type">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>&#125;</span><br><span class="line">	s1 := s0[:<span class="number">5</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 解决方案 append</span></span><br><span class="line">    s1 := <span class="built_in">append</span>(s0[:<span class="number">0</span>], s0[:<span class="number">5</span>]...)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div></div>
+              </div>
+            </details>
+
+<h2 id="逃逸分析"><a href="#逃逸分析" class="headerlink" title="逃逸分析"></a>逃逸分析</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li><strong>是什么</strong><ul><li>通过指针的动态范围来决定一个变量分配在栈上还是堆上</li></ul></li><li><strong>为什么</strong><ul><li>总的来说就是让变量分配到合理的位置</li><li>栈区可以自动清理内存，效率高，但空间有限</li><li>堆区空间大，但不像栈可以自动清理，需要进行垃圾回收，导致运行效率低下</li><li>逃逸分析，把一次性的变量分配到栈区，把后续可能在外部引用的对象分配到堆区</li></ul></li><li><strong>内存逃逸</strong><ul><li>如果变量在函数外部没有被引用，则一般不发生内存逃逸，优先分配到栈区，如果栈区存不下会分配到堆区</li><li>如果变量在函数外部被引用（闭包也算作此种情况），则发生内存逃逸，一定分配到堆区</li><li>此外，如果不确定是否被外部引用，如fmt.Println(x)，由于函数参数为接口类型，不确定x是否为引用类型，也视为x发生逃逸</li></ul></li><li><strong>如何避免</strong><ul><li>尽量减少不必要的指针使用</li></ul></li></ul>
+              </div>
+            </details>
+
+<h2 id="GC垃圾回收"><a href="#GC垃圾回收" class="headerlink" title="GC垃圾回收"></a>GC垃圾回收</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
+              <div class='content'>
+              <ul><li>标记清除法（Go 1.3） </li><li>三色标记法（Go 1.5）</li><li>三色标记法+混合写屏障（Go 1.8）</li></ul><div class="tabs" id="tab-sixth"><ul class="nav-tabs"><li class="tab active"><a class="#sixth-1">标记清除法</a></li><li class="tab"><a class="#sixth-2">三色标记法</a></li><li class="tab"><a class="#sixth-3">三色标记法+混合写屏障</a></li></ul><div class="tab-content"><div class="tab-pane active" id="sixth-1"><ul><li><strong>过程</strong><ul><li>进行 STW（stop the world 即暂停程序业务逻辑），然后从 main 函数开始找到不可达的对象和可达的对象</li><li>开始标记，程序找出可达对象并做标记</li><li>标记结束清除未标记的对象</li><li>结束 STW 停止暂停，让程序继续运行，循环该过程直到 main 生命周期结束</li></ul></li><li><strong>缺点</strong><ul><li>STW会让程序暂停，程序会出现卡顿</li><li>进行标记需要扫描整个堆栈信息，效率低下</li></ul></li></ul></div><div class="tab-pane" id="sixth-2"><ul><li><strong>含义</strong><ul><li>三色标记算法将程序中的对象分成白色、黑色和灰色三类</li><li>白色对象表示暂无对象引用的潜在垃圾，灰色表示待处理的对象，黑色表示活跃的对象</li></ul></li><li><strong>过程</strong><ul><li>将所有对象标记为白色</li><li>从程序根节点集合出发，将第一次遍历到的节点标记为灰色放入集合列表中</li><li>遍历灰色集合，将灰色节点遍历到的白色节点标记为灰色，并把灰色节点标记为黑色</li><li>循环这个过程，直到灰色节点集合为空</li><li>回收所有的白色节点</li></ul></li><li><strong>缺陷</strong><ul><li>因为三色标记法是动态进行的，回收过程中若<strong>同时满足下面两个条件</strong>，则会出现<strong>丢失对象</strong>的问题<ul><li>一个白色对象被黑色对象引用</li><li>同时灰色对象到该白色对象的可达关系被破环</li></ul></li></ul></li><li><strong>应对办法</strong><ul><li>插入写屏障：<ul><li>对象被引用时触发的机制，当白色对象被黑色对象引用时，白色对象被标记为灰色</li><li>实现了强三色不变式，即不允许黑色对象引用白色对象（破坏第一个条件）</li><li>缺点是栈区没有屏障机制，最后会对栈执行STW，进行二次扫描</li></ul></li><li>删除写屏障：<ul><li>对象被删除时触发的机制，灰色对象对白色对象的引用被删除时，白色对象会被标记为灰色</li><li>实现了弱三色不变式，即黑色对象可以引用白色，但是该白色对象要处在灰色对象可达的链路当中（破坏第二个条件）</li><li>缺点是回收精度比较低，有些垃圾对象会到下一轮检测才被回收；同时也会进行STW二次扫描进行快照对比</li></ul></li></ul></li></ul></div><div class="tab-pane" id="sixth-3"><ul><li><strong>思想</strong><ul><li>结合了插入写屏障和删除写屏障的优点，通过变形的弱三色不变式，解决了STW所带来的性能瓶颈</li></ul></li><li><strong>过程</strong><ul><li>GC 开始时将栈上可达对象全部标记为黑色（不需要二次扫描，无需 STW）</li><li>GC 期间，任何栈上创建的新对象均为黑色</li><li>被删除引用的对象标记为灰色</li><li>被添加引用的对象标记为灰色</li></ul></li></ul></div></div></div>
+              </div>
+            </details>
+]]></content>
+      <categories>
+        <category>Interview</category>
+      </categories>
+      <tags>
+        <tag>Go</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MySQL 面试题</title>
     <url>/Interview/mysql-interview/</url>
     <content><![CDATA[<h1 id="基础部分"><a href="#基础部分" class="headerlink" title="基础部分"></a>基础部分</h1><h2 id="MySQL数据类型"><a href="#MySQL数据类型" class="headerlink" title="MySQL数据类型"></a>MySQL数据类型</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
@@ -453,394 +852,6 @@
       </categories>
       <tags>
         <tag>Redis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Go 面试题</title>
-    <url>/Interview/go-interview/</url>
-    <content><![CDATA[<h1 id="Go基础"><a href="#Go基础" class="headerlink" title="Go基础"></a>Go基础</h1><h2 id="golang的特点和优势"><a href="#golang的特点和优势" class="headerlink" title="golang的特点和优势"></a>golang的特点和优势</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>语法简单</li><li>天然支持高并发</li><li>内置垃圾回收</li></ul>
-              </div>
-            </details>
-
-<h2 id="golang和java对比"><a href="#golang和java对比" class="headerlink" title="golang和java对比"></a>golang和java对比</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li><strong>应用方面</strong><ul><li>Java广泛应用于大型企业应用、Android应用、大规模分布式系统和企业级应用。</li><li>Go适用于构建高性能、高并发的后端服务、网络应用、云服务以及分布式系统。</li></ul></li><li><strong>并发方面</strong><ul><li>Java通过线程和锁来处理并发。</li><li>Go语言并发特性的核心是goroutine和channel。</li></ul></li><li><strong>语言设计方面</strong><ul><li>Java是一门功能丰富、面向对象的语言，支持面向对象编程、泛型等高级特性。</li><li>Go语言的设计注重简洁和清晰，具有简单的语法和类型系统，它摒弃了一些复杂的特性，强调代码的可读性。</li></ul></li></ul>
-              </div>
-            </details>
-
-<h2 id="golang数据类型"><a href="#golang数据类型" class="headerlink" title="golang数据类型"></a>golang数据类型</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li><strong>基础类型</strong><ul><li>布尔型 bool</li><li>整形 int</li><li>浮点型 float</li><li>字符串型 string</li><li>复数类型 complex</li><li>错误类型 error</li></ul></li><li><strong>复合类型</strong><ul><li>指针 pointer</li><li>数组 array</li><li>切片 slice</li><li>映射 map</li><li>通道 channel</li><li>结构体 struct</li><li>接口 interface</li><li>函数 function</li></ul></li></ul>
-              </div>
-            </details>
-
-<h2 id="golang的引用类型包括哪些"><a href="#golang的引用类型包括哪些" class="headerlink" title="golang的引用类型包括哪些"></a>golang的引用类型包括哪些</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>slice</li><li>map</li><li>channel</li><li><strong>interface</strong></li></ul>
-              </div>
-            </details>
-
-<h2 id="new和make的区别"><a href="#new和make的区别" class="headerlink" title="new和make的区别"></a>new和make的区别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li><strong>共同点</strong><ul><li>给变量分配内存&#x2F;进行初始化</li></ul></li><li><strong>不同点</strong><ul><li><strong>返回类型不同</strong><ul><li>new返回该类型的指针</li><li>make返回该类型本身</li></ul></li><li><strong>作用类型不同</strong><ul><li>new可以作用于所有类型</li><li>make只能作用于slice、map、channel</li></ul></li><li><strong>初始化方式不同</strong><ul><li>new是直接将指针所指向的内存空间清零</li><li>make可以根据变量类型来进行初始化</li></ul></li></ul></li></ul>
-              </div>
-            </details>
-
-<h2 id="string和-byte的区别"><a href="#string和-byte的区别" class="headerlink" title="string和[]byte的区别"></a>string和[]byte的区别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li><strong>不可变性</strong><ul><li>string是不可变的数据类型，一旦创建就不能被修改。任何修改string的操作都会产生一个新的 string，而原始的string保持不变。</li><li>[]byte是可变的切片，可以通过索引直接修改切片中的元素。</li></ul></li><li><strong>内存分配</strong><ul><li>string是一个不可变的视图，底层数据是只读的，string的内存分配和释放由runtime管理</li><li>[]byte是一个可变的切片，底层数据是可以修改的，[]byte的内存管理由程序员负责</li></ul></li><li><strong>应用场景</strong><ul><li>如果需要频繁地修改字符串内容，或者处理二进制数据，使用[]byte 更为合适</li><li>如果字符串内容基本保持不变并且主要处理文本数据，那么使用 string 更为方便</li></ul></li></ul>
-              </div>
-            </details>
-
-<h2 id="byte和rune的区别"><a href="#byte和rune的区别" class="headerlink" title="byte和rune的区别"></a>byte和rune的区别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>byte表示字节，是uint8的别名，rune表示字符，是int32的别名</li><li>byte表示ASCII码字符，rune表示Unicode字符</li><li>在遍历字符串时，如果字符串含有中文，需要使用rune</li></ul>
-              </div>
-            </details>
-
-<h2 id="函数返回局部变量的指针是否安全"><a href="#函数返回局部变量的指针是否安全" class="headerlink" title="函数返回局部变量的指针是否安全"></a>函数返回局部变量的指针是否安全</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <p>和c&#x2F;cpp不同，由于go语言会进行内存逃逸分析，go语言中返回局部变量的指针是被允许的</p>
-              </div>
-            </details>
-
-<h2 id="for-range时k、v的地址是否发生变化"><a href="#for-range时k、v的地址是否发生变化" class="headerlink" title="for range时k、v的地址是否发生变化"></a>for range时k、v的地址是否发生变化</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <p>不会</p>
-              </div>
-            </details>
-
-<h2 id="关于defer"><a href="#关于defer" class="headerlink" title="关于defer"></a>关于defer</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li><strong>作用</strong><ul><li>起延迟执行的作用，可以用来进行资源释放和收尾工作</li></ul></li><li><strong>特点</strong><ul><li>和栈一样后进先出，先出现的defer后执行</li></ul></li><li><strong>使用场景</strong><ul><li>释放锁</li><li>关闭文件</li><li>配合recover捕获panic</li></ul></li></ul><blockquote><p><em><strong>Tip</strong></em></p><ul><li>defer后面跟有参函数时会直接在defer声明处进行参数传递</li><li>defer在retrun后执行，返回值为无名返回值时，返回值结果不会被修改；但是当返回值类型为有名返回值或指针时，返回值结果可能被修改</li></ul></blockquote>
-              </div>
-            </details>
-
-<h2 id="golang参数传递"><a href="#golang参数传递" class="headerlink" title="golang参数传递"></a>golang参数传递</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>golang中所有传参都是值传递，即传入的是实际参数的副本</li><li>所以传递引用类型（如slice、map、channel）也是值传递，只是副本和实际参数引用的底层数据是相同的。比如传入切片，副本切片引用的是和原切片相同的底层数组，所以对副本进行修改操作时原切片也会受到影响</li></ul>
-              </div>
-            </details>
-
-<h2 id="golang面向对象"><a href="#golang面向对象" class="headerlink" title="golang面向对象"></a>golang面向对象</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li><strong>封装</strong><ul><li>首字母大写的字段和方法是公有的，可以被其他包访问</li><li>首字母小写的字段和方法是私有的，只能在当前包中使用</li></ul></li><li><strong>继承</strong><ul><li>go使用结构体嵌套的方式实现继承，嵌入的匿名结构体称为嵌入类型</li><li>具有字段提升的特性，可以把父类型的字段和方法注入到子类型中去</li><li>另外go语言支持多重继承</li></ul></li><li><strong>多态</strong><ul><li>go通过interface来实现多态</li><li>一个类型的实例可以赋值给它所实现的任意接口</li></ul></li></ul>
-              </div>
-            </details>
-
-<h2 id="如何高效拼接字符串"><a href="#如何高效拼接字符串" class="headerlink" title="如何高效拼接字符串"></a>如何高效拼接字符串</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li><strong>方式</strong><ul><li><code>+</code></li><li><code>fmt.Sprintf()</code></li><li><code>strings.Builder()</code></li><li><code>bytes.Buffer()</code></li><li><code>strings.Join()</code></li></ul></li><li><strong>性能</strong><ul><li><code>strings.Join()</code> ≈ <code>strings.Builder()</code> &gt; <code>bytes.Buffer()</code> &gt;<code>+</code>+ &gt; <code>fmt.Sprintf()</code></li></ul></li></ul>
-              </div>
-            </details>
-
-<h2 id="空struct-的作用"><a href="#空struct-的作用" class="headerlink" title="空struct{}的作用"></a>空struct{}的作用</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li><strong>作用</strong><ul><li>因为空struct{}的实例（struct{}{}）本身不占用内存空间，所以可以用来当作占位符使用</li></ul></li><li><strong>使用场景</strong><ul><li>go语言没有set类型，可以利用map来实现，map的key为需要存储的元素，value可以使用stuct{}{}</li><li>协程之间使用channel进行通信时，如果不在乎通信的内容，仅仅只是接受一个信号，那么可以使用struct{}{}</li></ul></li></ul>
-              </div>
-            </details>
-
-<h2 id="int和int32是同一个概念吗"><a href="#int和int32是同一个概念吗" class="headerlink" title="int和int32是同一个概念吗"></a>int和int32是同一个概念吗</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>int32仅仅表示32位的无符号整数</li><li>int底层基于操作系统实现，其大小取决于操作系统的位数<ul><li>int在32位系统中的int和int32是相同的，在64位系统则表示64位整数</li><li>int基于操作系统的底层实现是golang能够在不同平台运行的基础</li></ul></li></ul>
-              </div>
-            </details>
-
-<h2 id="golang程序初始化执行顺序"><a href="#golang程序初始化执行顺序" class="headerlink" title="golang程序初始化执行顺序"></a>golang程序初始化执行顺序</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>import –&gt; const –&gt; var –&gt;init()–&gt;main()</li><li>单个源文件存在多个init时，从上至下依次执行</li><li>相同包下多个源文件都存在init时，根据文件名的字典序执行</li><li>import导包过程中<ul><li>有依赖关系：递归执行上述流程</li><li>无依赖关系：按照导包顺序依次执行</li></ul></li></ul>
-              </div>
-            </details>
-
-<h2 id="struct能否比较"><a href="#struct能否比较" class="headerlink" title="struct能否比较"></a>struct能否比较</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>不同类型的struct不能比较</li><li>相同类型的struct分为两种情况<ul><li>若struct内所有成员均可比较，则该struct的不同实例可以比较</li><li>反之，如含有slice、map、function，则不能比较</li></ul></li></ul>
-              </div>
-            </details>
-
-<h2 id="interface能否比较"><a href="#interface能否比较" class="headerlink" title="interface能否比较"></a>interface能否比较</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>可以进行比较</li><li>只在两种情况下相等：<ul><li>两个interface均等于nil</li><li>两个interface内部的类型和值都相等</li></ul></li></ul>
-              </div>
-            </details>
-
-<h2 id="两个nil可能不相等吗"><a href="#两个nil可能不相等吗" class="headerlink" title="两个nil可能不相等吗"></a>两个nil可能不相等吗</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>只有在类型相同时两个nil才相等</li></ul><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> p1, p2 *<span class="type">int</span></span><br><span class="line"><span class="keyword">var</span> p3 *<span class="type">float64</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// p1==p3 类型不同，编译不通过</span></span><br><span class="line">fmt.Println(p1 == <span class="literal">nil</span>, p2 == <span class="literal">nil</span>, p1 == p2) <span class="comment">// true true true</span></span><br><span class="line">fmt.Println(a == <span class="literal">nil</span>, p == <span class="literal">nil</span>, a == p) <span class="comment">// true true false</span></span><br></pre></td></tr></table></figure></div>
-              </div>
-            </details>
-
-<h2 id="值类型T和指针类型-T可以互相调用方法吗"><a href="#值类型T和指针类型-T可以互相调用方法吗" class="headerlink" title="值类型T和指针类型*T可以互相调用方法吗"></a>值类型T和指针类型*T可以互相调用方法吗</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>使用值类型T调用*T的方法，只有当此T是可寻址的情况下才可以。比如常量就无法寻址，也就无法对其进行取地址操作。</li><li>反过来，*T只有在不是空指针的情况下才可以调用值类型T的方法。</li></ul><div class="tabs" id="tab-first"><ul class="nav-tabs"><li class="tab active"><a class="#first-1">T调用*T的方法</a></li><li class="tab"><a class="#first-2">*T调用T的方法</a></li></ul><div class="tab-content"><div class="tab-pane active" id="first-1"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> myInt <span class="type">int</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(m *myInt)</span></span> f() &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;ok&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// ⬇️会报错，因为3无法寻址</span></span><br><span class="line">	<span class="comment">// myInt(3).f()</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> a myInt = <span class="number">3</span></span><br><span class="line">	a.f()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div><div class="tab-pane" id="first-2"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> T <span class="keyword">struct</span> &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(*test)</span></span> f1() &#123;</span><br><span class="line">	fmt.Println(<span class="string">&quot;f1 ok&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(test)</span></span> f2() &#123;</span><br><span class="line">	fmt.Println(<span class="string">&quot;f2 ok&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> t1 *T</span><br><span class="line">	t1.f1()</span><br><span class="line">    <span class="comment">// ⬇️ *T调用T的方法时会自动解引用，而*T解引用后是nil，nil调用方法会报错</span></span><br><span class="line">	<span class="comment">// t1.f2()</span></span><br><span class="line">	<span class="keyword">var</span> t2 T</span><br><span class="line">	t2.f1()</span><br><span class="line">	t2.f2()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div></div>
-              </div>
-            </details>
-
-<h2 id="值接收者和指针接收者实现接口的区别"><a href="#值接收者和指针接收者实现接口的区别" class="headerlink" title="值接收者和指针接收者实现接口的区别"></a>值接收者和指针接收者实现接口的区别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>使用值接收者实现接口之后，不管是值类型的变量还是指针类型的变量都可以赋值给接口变量，因为对一个不为空的对象进行解引用总是合法的</li><li>但使用指针接收者实现接口后，只能将指针类型的变量赋值给接口变量，如果使用值类型进行赋值，在接口转换过程中，该值类型可能无法被取地址，会导致无法调用指针方法，因此在编译阶段就杜绝了这种行为</li></ul>
-              </div>
-            </details>
-
-<h2 id="v、-v、-v的区别"><a href="#v、-v、-v的区别" class="headerlink" title="%v、%+v、%#v的区别"></a>%v、%+v、%#v的区别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>%v 只输出所有的值</li><li>%+v 先输出字段类型，再输出该字段的值</li><li>%#v 先输出结构体名字值，再输出结构体（字段类型+字段的值）</li></ul><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> student <span class="keyword">struct</span> &#123;</span><br><span class="line">    name <span class="type">string</span></span><br><span class="line">    id <span class="type">int</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    s := &amp;student&#123;<span class="string">&quot;luxiao&quot;</span>, <span class="number">123456</span>&#125;</span><br><span class="line">    fmt.Printf(<span class="string">&quot;%%v的方式  = %v\n&quot;</span>, s)</span><br><span class="line">    fmt.Printf(<span class="string">&quot;%%+v的方式 = %+v\n&quot;</span>, s)</span><br><span class="line">    fmt.Printf(<span class="string">&quot;%%#v的方式 = %#v\n&quot;</span>, s)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// output:</span></span><br><span class="line"><span class="comment">// %v的方式  = &amp;&#123;luxiao 123456&#125;</span></span><br><span class="line"><span class="comment">// %+v的方式 = &amp;&#123;name:&quot;luxiao&quot; id:123456&#125;</span></span><br><span class="line"><span class="comment">// %#v的方式 = &amp;main.student&#123;name:&quot;luxiao&quot;, id:123456&#125;</span></span><br></pre></td></tr></table></figure></div>
-              </div>
-            </details>
-
-<h2 id="指针的作用"><a href="#指针的作用" class="headerlink" title="指针的作用"></a>指针的作用</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>函数传参或者方法中传递接收者时，如果要对原值进行修改，一般传递指针参数</li><li>如果结构体比较大的话，使用指针可以节省空间并提高效率</li></ul>
-              </div>
-            </details>
-
-<h2 id="介绍一下context"><a href="#介绍一下context" class="headerlink" title="介绍一下context"></a>介绍一下context</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>context用来管理上下文，具体有如下作用<ul><li>传递取消信号：可以用来传递取消信号，让一个正在执行的函数知道它应该提前终止</li><li>超时控制：可以设定一个超时时间，自动取消超过执行时间的操作</li><li>截止时间：与超时类似，但是是设定一个绝对时间点，而不是时间段</li><li>值传递：可以安全地在请求的上下文中传递数据，避免了使用全局变量或者参数列表不断增长</li></ul></li><li>Context是一个接口，该接口定义了四个需要实现的方法<ul><li>Deadline方法需要返回当前Context被取消的时间，也就是完成工作的截止时间（deadline）</li><li>Done方法需要返回一个Channel，这个Channel会在当前工作完成或者上下文被取消之后关闭，多次调用Done方法会返回同一个Channel</li><li>Err方法会返回当前Context结束的原因，它只会在Done返回的Channel被关闭时才会返回非空的值；</li><li>Value方法会从Context中返回键对应的值</li></ul></li><li>可以使用Background或Todo创建顶层上下文，使用WithCancel、WithDeadline、WithTimeout或WithValue创建派生上下文</li><li>当一个上下文被取消时，它派生的所有上下文也被取消</li></ul><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> Context <span class="keyword">interface</span> &#123;</span><br><span class="line">    Deadline() (deadline time.Time, ok <span class="type">bool</span>)</span><br><span class="line">    Done() &lt;-<span class="keyword">chan</span> <span class="keyword">struct</span>&#123;&#125;</span><br><span class="line">    Err() <span class="type">error</span></span><br><span class="line">    Value(key <span class="keyword">interface</span>&#123;&#125;) <span class="keyword">interface</span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
-              </div>
-            </details>
-
-<h1 id="Slice"><a href="#Slice" class="headerlink" title="Slice"></a>Slice</h1><h2 id="数组和切片的区别"><a href="#数组和切片的区别" class="headerlink" title="数组和切片的区别"></a>数组和切片的区别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li><strong>长度是否可变</strong><ul><li>数组是一个长度固定的数据类型，其长度在定义时就已经确定，不能动态改变</li><li>切片是一个长度可变的数据类型，其长度在定义时可以为空，也可以指定一个初始长度（和容量），后续可以自动扩容</li></ul></li><li><strong>内存分配时机</strong><ul><li>数组在编译时期确定内存分配</li><li>切片在运行时期动态分配内存</li></ul></li><li><strong>参数传递方式</strong><ul><li>本质上数组和切片都是值传递</li><li>当数组作为函数参数时，函数操作的是数组的一个副本，不会影响原始数组</li><li>当切片作为函数参数时，函数操作的是切片中底层数组的引用，会影响原始切片，<strong>但是存在特例</strong>，当切片在函数中进行扩容时，会导致这个切片的底层指针指向新的底层数组，不再和原切片共享一个底层数组，发生扩容后函数修改切片不会对原切片造成影响</li></ul></li></ul>
-              </div>
-            </details>
-
-<h2 id="slice底层原理"><a href="#slice底层原理" class="headerlink" title="slice底层原理"></a>slice底层原理</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li><strong>组成</strong><ul><li>指针、长度和容量。指针指向底层数组，长度代表slice当前的长度，容量代表底层数组的长度</li></ul></li><li><strong>append追加原则</strong><ul><li>假如slice容量够用，则追加新元素进去，返回原来的slice</li><li>若原容量不够，则slice 先扩容，扩容之后得到新的slice，将元素追加进新的slice，最后返回新的slice</li></ul></li><li><strong>扩容规则</strong><ul><li><strong>1.18之前</strong>：当切片容量小于1024时，扩容为原来的2倍，这样可以避免频繁扩容；当切片容量大于等于1024时，扩容为原来的1.25倍，这样可以避免内存浪费；如果扩容后还不够，则直接使用需要的容量</li><li>**1.18及之后：**当切片容量小于256时，扩容为原来的两倍；当切片容量大于等于256时，按照公式进行扩容<code>newcap+=(newcap+3*256)/4</code>；如果扩容后还不够，则直接使用需要的容量</li><li>改版之后扩容过程相对于原来更为平缓</li></ul></li></ul>
-              </div>
-            </details>
-
-<h2 id="切片的深浅拷贝"><a href="#切片的深浅拷贝" class="headerlink" title="切片的深浅拷贝"></a>切片的深浅拷贝</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>深浅拷贝都是进行复制，本质区别就是复制出来的对象与原对象的底层数组指针是否会指向同一个地址<ul><li>深拷贝会在内存中重新开辟一块内存，再让底层指针指向这片新的内存</li><li>浅拷贝会和原切片共享同一个底层数组</li></ul></li><li>具体应用<ul><li>使用**&#x3D;操作符<strong>和</strong>[ : ]下标**的方式拷贝切片是浅拷贝</li><li>使用<strong>copy()函数</strong>复制是深拷贝</li></ul></li></ul>
-              </div>
-            </details>
-
-<h2 id="零切片、nil切片、空切片"><a href="#零切片、nil切片、空切片" class="headerlink" title="零切片、nil切片、空切片"></a>零切片、nil切片、空切片</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li><strong>零切片</strong><ul><li>切片元素为相应的零值的切片</li></ul></li><li><strong>nil切片</strong><ul><li>长度和容量都为0</li><li>和nil比较的结果为true</li></ul></li><li><strong>空切片</strong><ul><li>长度和容量也都为0</li><li>和nil的比较结果为false，因为所有的空切片的底层指针都指向同一个地址</li></ul></li></ul><div class="tabs" id="tab-second"><ul class="nav-tabs"><li class="tab active"><a class="#second-1">零切片</a></li><li class="tab"><a class="#second-2">nil切片</a></li><li class="tab"><a class="#second-3">空切片</a></li></ul><div class="tab-content"><div class="tab-pane active" id="second-1"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line">slice := <span class="built_in">make</span>([]<span class="type">int</span>,<span class="number">5</span>) <span class="comment">// 0 0 0 0 0</span></span><br><span class="line">slice := <span class="built_in">make</span>([]*<span class="type">int</span>,<span class="number">5</span>) <span class="comment">// nil nil nil nil nil</span></span><br></pre></td></tr></table></figure></div></div><div class="tab-pane" id="second-2"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> slice []<span class="type">int</span></span><br><span class="line"><span class="keyword">var</span> slice = *<span class="built_in">new</span>([]<span class="type">int</span>)</span><br></pre></td></tr></table></figure></div></div><div class="tab-pane" id="second-3"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> slice = []<span class="type">int</span>&#123;&#125;</span><br><span class="line"><span class="keyword">var</span> slice = <span class="built_in">make</span>([]<span class="type">int</span>, <span class="number">0</span>)</span><br></pre></td></tr></table></figure></div></div></div></div>
-              </div>
-            </details>
-
-<h2 id="判断两个切片是否相等"><a href="#判断两个切片是否相等" class="headerlink" title="判断两个切片是否相等"></a>判断两个切片是否相等</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>可以调用reflect包下的DeepEqual()，但并不建议这么做，因为其底层使用了反射进行判断，比较影响性能</li><li>在知道切片类型的情况下，自己实现循环比较的性能更佳</li></ul>
-              </div>
-            </details>
-
-<h1 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h1><h2 id="map常识"><a href="#map常识" class="headerlink" title="map常识"></a>map常识</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>map基于key的维度进行去重</li><li>map的遍历是无序的，若想要顺序遍历，则需要先对key排序，再按照key的顺序遍历map</li><li>对map进行读、写、删的操作的时间复杂度为O(1)</li><li>key必须为可比较类型，go语言中slice、map、func三种类型不可比较</li><li>map不是并发安全的，读map时可以并发读，但是写map时并发读写都不被允许。若要实现map的并发读写，有两种方式<ul><li>map+互斥锁&#x2F;读写锁</li><li>使用go自带的并发安全的sync.Map</li></ul></li></ul>
-              </div>
-            </details>
-
-<h2 id="map为什么是无序的"><a href="#map为什么是无序的" class="headerlink" title="map为什么是无序的"></a>map为什么是无序的</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>其一，map在进行扩容的过程中可能打乱原始键值对的顺序</li><li>其二，官方在for-range遍历map时做了随机播种</li></ul>
-              </div>
-            </details>
-
-<h2 id="map中删除一个key，它的内存会释放么"><a href="#map中删除一个key，它的内存会释放么" class="headerlink" title="map中删除一个key，它的内存会释放么"></a>map中删除一个key，它的内存会释放么</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>如果删除的元素是值类型，如int，float，bool，string以及数组和struct，map的内存不会自动释放</li><li>如果删除的元素是引用类型，如指针，slice，map，chan等，map的内存会自动释放，但释放的内存是子元素应用类型的内存占用</li><li>将map设置为nil后，内存被回收</li></ul>
-              </div>
-            </details>
-
-<h2 id="map底层结构"><a href="#map底层结构" class="headerlink" title="map底层结构"></a>map底层结构</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>map在底层算法上通过哈希表实现</li><li>每个map都是一个指针，指向hmap结构体，hmap主要包含一个桶数组的指针（buckets），以及维护这个桶数组所需的一些字段</li><li>桶数组中每个元素都是一个bmap结构体，也就是所谓的桶，每个桶固定可以存放8个kv键值对以及一个指向下一个溢出桶的指针</li><li>每个kv键值对数据包含tophash(key的高8位哈希值)、key、val三部分</li></ul><div class="tabs" id="tab-third"><ul class="nav-tabs"><li class="tab active"><a class="#third-1">数据结构</a></li><li class="tab"><a class="#third-2">图示</a></li></ul><div class="tab-content"><div class="tab-pane active" id="third-1"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> hmap <span class="keyword">struct</span> &#123;</span><br><span class="line">	count     <span class="type">int</span>    <span class="comment">// map中kv键值对总数</span></span><br><span class="line">	flags     <span class="type">uint8</span>  <span class="comment">// 状态标志，标识出map是否被并发读写</span></span><br><span class="line">	B         <span class="type">uint8</span>  <span class="comment">// 桶数组长度的指数，桶数组长度为2^B</span></span><br><span class="line">	noverflow <span class="type">uint16</span> <span class="comment">// 溢出桶的数量</span></span><br><span class="line">	hash0     <span class="type">uint32</span> <span class="comment">// 随机因子，生成key的hash值时会用到</span></span><br><span class="line"></span><br><span class="line">	buckets    unsafe.Pointer <span class="comment">// 桶数组的指针</span></span><br><span class="line">	oldbuckets unsafe.Pointer <span class="comment">// 扩容过程中旧的桶数组</span></span><br><span class="line">	nevacuate  <span class="type">uintptr</span>        <span class="comment">// 扩容进度标识，小于此地址的buckets代表已搬迁完成。</span></span><br><span class="line"></span><br><span class="line">	extra *mapextra <span class="comment">// 预申请的溢出桶</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div><div class="tab-pane" id="third-2"><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/post/map-structure.png"
-                      alt="map structure"
-                ></p></div></div></div>
-              </div>
-            </details>
-
-<h2 id="map读写过程"><a href="#map读写过程" class="headerlink" title="map读写过程"></a>map读写过程</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li><p><strong>读流程</strong></p><ol><li>根据key取hash值</li><li>根据hash值以及B对桶数组长度取模，确定所在的桶</li><li>沿着桶链表依次遍历各个桶内的kv键值对</li><li>命中相同的key则返回value，若key不存在则返回零值</li></ol></li><li><p><strong>写流程</strong></p><ul><li>基本一致，只是如果发现map处在扩容过程中则会帮助推进渐进式扩容</li></ul></li></ul><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/post/map-process.png"
-                      alt="map process"
-                ></p>
-              </div>
-            </details>
-
-<h2 id="哈希冲突"><a href="#哈希冲突" class="headerlink" title="哈希冲突"></a>哈希冲突</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li><strong>产生原因</strong><ul><li>由于输入域（key）无穷大，输出域（hash 值）有限，因此必然存在不同 key 映射到相同 hash 值的情况，称之为 hash 冲突</li><li>再者，hash 值会对桶数组长度取模，因此不同 hash 值可能被打到同一个桶中</li></ul></li><li><strong>常见解决办法</strong><ul><li><strong>拉链法</strong><ul><li>将命中同一个位置的元素通过链表的形式进行链接</li><li>无需预先为元素分配内存，便于动态扩展</li></ul></li><li><strong>开放寻址法</strong><ul><li>在插入新条目时，会基于一定的探测策略持续寻找，直到找到一个可用于存放数据的空位为止</li><li>无需额外的指针用于链接元素；内存地址完全连续，可以基于局部性原理，充分利用 CPU 高速缓存</li></ul></li></ul></li><li><strong>go语言的处理方法</strong>（结合拉链法和开放寻址法两种思路）<ul><li>当 key 命中一个桶时，首先根据开放寻址法，在桶的 8 个位置中寻找空位进行插入</li><li>倘若桶的 8 个位置都已被占满，则基于桶的溢出桶指针，找到下一个桶，重复第上一步</li><li>倘若遍历到链表尾部，仍未找到空位，则基于拉链法，在桶链表尾部续接新桶，并插入kv对</li></ul></li></ul>
-              </div>
-            </details>
-
-<h2 id="扩容策略"><a href="#扩容策略" class="headerlink" title="扩容策略"></a>扩容策略</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li><strong>渐进式扩容</strong><ul><li>每次写操作都会帮助推进扩容的过程，避免因为一次性的全量数据迁移引发性能抖动</li></ul></li><li><strong>扩容类型</strong><ul><li><strong>增量扩容</strong><ul><li>扩容后，桶数组的长度增长为原长度的 2 倍</li><li>目的是降低每个桶中 key-value 对的数量，优化 map 操作的时间复杂度</li></ul></li><li><strong>等量扩容</strong><ul><li>扩容后，桶数组的长度和之前保持一致，但是溢出桶的数量会下降</li><li>目的是提高桶主体结构的数据填充率，减少溢出桶数量，避免发生内存泄漏</li></ul></li></ul></li><li><strong>扩容时机</strong><ul><li><strong>装载因子超出阈值6.5</strong><ul><li>map 中 key-value 对的数量超过 8 个，且大于桶数组长度的 6.5 倍，则进入增量扩容</li></ul></li><li><strong>溢出桶数量过多</strong><ul><li>若溢出桶的数量大于 2^B 个（即桶数组的长度；B 大于 15 时取15），则进入等量扩容</li></ul></li></ul></li></ul><div class="tabs" id="tab-fourth"><ul class="nav-tabs"><li class="tab active"><a class="#fourth-1">增量扩容</a></li><li class="tab"><a class="#fourth-2">等量扩容</a></li></ul><div class="tab-content"><div class="tab-pane active" id="fourth-1"><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/post/map-double-incr.png"
-                      alt="double incr"
-                ></p></div><div class="tab-pane" id="fourth-2"><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/post/map-equal-incr.png"
-                      alt="equal incr"
-                ></p></div></div></div>
-              </div>
-            </details>
-
-<h2 id="扩容过程"><a href="#扩容过程" class="headerlink" title="扩容过程"></a>扩容过程</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ol><li>计算新的存储桶数量：当map 的元素数量达到负载因子 (load factor)的上限时，会触发扩容。新的存储桶数量通常会是当前存储桶数量的两倍。</li><li>分配新的存储桶：创建新的存储桶和散列数组，大小为新的存储桶数量</li><li>重新散列元素：遍历当前 map 的每个存储桶，将其中的元素重新散列到新的存储桶中，这个过程是渐进式的</li><li>切换到新的存储桶：将 map 的内部数据结构指向新的存储桶和散列数组，这个过程是原子的，以确保在切换期间不会影响并发访问。</li><li>释放旧的存储桶：释放的存储桶和散列数组的内存空间，避免内存泄漏</li></ol>
-              </div>
-            </details>
-
-<h1 id="Channel"><a href="#Channel" class="headerlink" title="Channel"></a>Channel</h1><h2 id="无缓冲的channel和有缓冲的channel的区别"><a href="#无缓冲的channel和有缓冲的channel的区别" class="headerlink" title="无缓冲的channel和有缓冲的channel的区别"></a>无缓冲的channel和有缓冲的channel的区别</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li><strong>无缓冲channel是同步的，有缓冲channel是异步的</strong></li><li>对于无缓冲的channel<ul><li>发送方向channel发送数据，但没有接收方接受数据时，发送方阻塞</li><li>接收方从channel接收数据，但没有发送方发送数据时，接收方阻塞</li></ul></li><li>对于有缓冲的channel<ul><li>发送方只有在缓冲区满时阻塞</li><li>接收方只有在缓冲区空时阻塞</li></ul></li><li>无缓冲的channel其实可以看作缓冲区大小为0的channel，从这个角度看，无缓冲channel兼具了缓冲区满和缓冲区空的特点</li></ul>
-              </div>
-            </details>
-
-<h2 id="channel的底层原理"><a href="#channel的底层原理" class="headerlink" title="channel的底层原理"></a>channel的底层原理</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>channel的底层数据结构实际上是一个循环数组，每个channel都对应一个hchan结构体，结构体中包含一些维护这个循环数组的字段</li><li>比较重要的几个字段<ul><li>buf 指向底层循环数组，只有缓冲型的 channel 才有。</li><li>sendx，recvx 均指向底层循环数组，表示当前可以发送和接收的元素位置索引值（相对于底层数组）。</li><li>sendq，recvq 分别表示被阻塞的 goroutine的等待队列，这些 goroutine 由于尝试读取 channel 或向 channel 发送数据而被阻塞。</li><li>lock 用来保证每个读 channel 或写 channel 的操作都是原子的。</li></ul></li></ul><div class="tabs" id="tab-fifth"><ul class="nav-tabs"><li class="tab active"><a class="#fifth-1">channel数据结构</a></li><li class="tab"><a class="#fifth-2">图示</a></li></ul><div class="tab-content"><div class="tab-pane active" id="fifth-1"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> hchan <span class="keyword">struct</span> &#123;</span><br><span class="line">    <span class="comment">// chan 里元素数量</span></span><br><span class="line">    qcount <span class="type">uint</span></span><br><span class="line">    <span class="comment">// chan 底层循环数组的长度</span></span><br><span class="line">    dataqsiz <span class="type">uint</span></span><br><span class="line">    <span class="comment">// 指向底层循环数组的指针</span></span><br><span class="line">    <span class="comment">// 只针对有缓冲的 channel</span></span><br><span class="line">    buf unsafe.Pointer</span><br><span class="line">    <span class="comment">// chan 中元素大小</span></span><br><span class="line">    elemsize <span class="type">uint16</span></span><br><span class="line">    <span class="comment">// chan 是否被关闭的标志</span></span><br><span class="line">    closed <span class="type">uint32</span></span><br><span class="line">    <span class="comment">// chan 中元素类型</span></span><br><span class="line">    elemtype *_type  <span class="comment">// element type</span></span><br><span class="line">    <span class="comment">// 已发送元素在循环数组中的索引</span></span><br><span class="line">    sendx <span class="type">uint</span>  <span class="comment">// send index</span></span><br><span class="line">    <span class="comment">// 已接收元素在循环数组中的索引</span></span><br><span class="line">    recvx <span class="type">uint</span>  <span class="comment">// receive index</span></span><br><span class="line">    <span class="comment">// 等待接收的 goroutine 队列</span></span><br><span class="line">    recvq waitq  <span class="comment">// list of recv waiters</span></span><br><span class="line">    <span class="comment">// 等待发送的 goroutine 队列</span></span><br><span class="line">    sendq waitq  <span class="comment">// list of send waiters</span></span><br><span class="line">    <span class="comment">// 保护 hchan 中所有字段</span></span><br><span class="line">    lock mutex</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div><div class="tab-pane" id="fifth-2"><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/post/channel-structure.png"
-                      alt="channel structure"
-                ></p></div></div></div>
-              </div>
-            </details>
-
-<h2 id="channel发送和接收数据的过程"><a href="#channel发送和接收数据的过程" class="headerlink" title="channel发送和接收数据的过程"></a>channel发送和接收数据的过程</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>goroutine向channel发送数据<ul><li>goroutine首先获取channel的锁</li><li>如果channel缓冲区未满，则直接将数写入缓冲区，并更新sendx</li><li>如果缓冲区已满，则将当前goroutine挂到sendq等待队列中，并释放锁，等到有goroutine接受数据才会被唤醒</li></ul></li><li>channel从goroutine接收数据<ul><li>goroutine首先获取channel的锁</li><li>如果channel缓冲区非空，则直接从缓冲区读取数据，并更新recvx</li><li>如果缓冲区为空，则将当前goroutine挂到recvq等待队列中，并释放锁，等到有goroutine写入数据才会被唤醒</li></ul></li></ul>
-              </div>
-            </details>
-
-<h2 id="操作channel的情况"><a href="#操作channel的情况" class="headerlink" title="操作channel的情况"></a>操作channel的情况</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <table><thead><tr><th><strong>操作</strong></th><th align="center"><strong>nil channel</strong></th><th align="center"><strong>closed channel</strong></th><th align="center"><strong>not nil, not closed channel</strong></th></tr></thead><tbody><tr><td><strong>close</strong></td><td align="center">panic</td><td align="center">panic</td><td align="center">正常关闭</td></tr><tr><td><strong>读</strong></td><td align="center">阻塞</td><td align="center">读到对应类型的零值</td><td align="center">阻塞或正常读取数据。缓冲型 channel 为空或非缓冲型 channel 没有等待发送者时会阻塞</td></tr><tr><td><strong>写</strong></td><td align="center">阻塞</td><td align="center">panic</td><td align="center">阻塞或正常写入数据，非缓冲型 channel 没有等待接收者或缓冲型 channel buf 满时会被阻塞</td></tr></tbody></table>
-              </div>
-            </details>
-
-<h1 id="Mutex"><a href="#Mutex" class="headerlink" title="Mutex"></a>Mutex</h1><h2 id="mutex有几种模式"><a href="#mutex有几种模式" class="headerlink" title="mutex有几种模式"></a>mutex有几种模式</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li><strong>正常模式</strong><ul><li>在正常模式下，一个尝试加锁的goroutine会先自旋几次，尝试通过原子操作获得锁，若几次自旋之后仍不能获得锁，则通过信号量排队等待。但是当锁被释放，第一个等待者被唤醒后并不会直接拥有锁，而是需要和后来者竞争，也就是那些处于自旋阶段，尚未排队等待的goroutine。这种情况下后来者更有优势，一方面，它们正在CPU上运行，自然比刚被唤醒的goroutine更有优势，另一方面处于自旋状态的goroutine可以有很多，而被唤醒的goroutine每次只有一个，所以被唤醒的goroutine有很大概率拿不到锁。这种情况下它会被重新插入到队列的头部，而不是尾部。而当一个goroutine本次加锁等待时间超过了1ms后，它会把当前Mutex从正常模式切换至“饥饿模式”。</li></ul></li><li><strong>饥饿模式</strong><ul><li>在饥饿模式下，Mutex的所有权从执行Unlock的goroutine，直接传递给等待队列头部的goroutine，后来者不会自旋，也不会尝试获得锁，即使Mutex处于Unlocked的状态。它们会直接到队列的尾部排队等待。当一个等待者获得锁之后，它会在以下两种情况时，将Mutex由饥饿模式切换回正常模式。第一种情况是它的等待时间小于1ms，也就是它刚来不久；第二种情况是它是最后一个等待者，等待队列已经空了，后面自然就没有饥饿的goroutine了。</li></ul></li></ul>
-              </div>
-            </details>
-
-<h2 id="什么是CAS"><a href="#什么是CAS" class="headerlink" title="什么是CAS"></a>什么是CAS</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>CAS的全称为Compare And Swap，直译就是比较交换，是一条CPU的原子指令，其作用是让CPU先进行比较两个值是否相等，然后原子地更新某个位置的值</li><li>假设包含3个参数内存位置(V)、预期原值(A)和新值(B)。V表示要更新变量的值，E表示预期值，N表示新值。仅当V值等于E值时，才会将V的值设为N，如果V值和E值不同，则说明已经有其他线程在做更新，则当前线程什么都不做，最后CAS返回当前V的真实值。CAS操作时抱着乐观的态度进行的，它总是认为自己可以成功完成操作。基于这样的原理，CAS操作即使没有锁，也可以发现其他线程对于当前线程的干扰。</li></ul>
-              </div>
-            </details>
-
-<h1 id="GMP"><a href="#GMP" class="headerlink" title="GMP"></a>GMP</h1><h2 id="什么是GMP"><a href="#什么是GMP" class="headerlink" title="什么是GMP"></a>什么是GMP</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li><strong>Goroutine (G)</strong><ul><li>Goroutine是Go语言中的轻量级线程，能够与其他goroutine并发执行。</li><li>与传统的线程相比，goroutine的创建和销毁成本非常低。</li><li>Goroutine由Go的运行时系统调度，不依赖于操作系统的线程调度。</li></ul></li><li><strong>Machine (M)</strong><ul><li>Machine代表操作系统的线程。</li><li>M负责执行Goroutine。</li></ul></li><li><strong>Processor (P)</strong><ul><li>Processor是一个逻辑处理器，负责Goroutine的调度。</li><li>P维护一个本地队列，其中保存了准备运行的Goroutine。</li><li>每个P都绑定到一个M上，如果绑定后的M获取不到可执行的G，那么该M就会自旋，而其他绑定不到P的M会休眠</li></ul></li></ul><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/images/post/gmp.jpg"
-                      alt="gmp"
-                ></p>
-              </div>
-            </details>
-
-<h2 id="GMP的工作原理"><a href="#GMP的工作原理" class="headerlink" title="GMP的工作原理"></a>GMP的工作原理</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>首先通过go func()创建一个Goroutine</li><li>这个创建的G会优先放入当前P的本地队列中，如果本地队列满了，则会把本地队列中一半的G和这个创建的G放入全局队列中</li><li>然后M从P的本地队列中获取一个G来执行，如果本地队列已经没有可运行的G，则会从全局队列中获取，如果全局队列中获取不到，则采取work stealing机制，从其他P的本地队列中偷取一半的G，如果偷取不到，那么该M会进入自旋状态，等待新的goroutine执行</li><li>M在执行goroutine时会遇到3种情况<ul><li>正常情况下，当前goroutine执行完成后，M上运行的goroutine会切换成G0，G0负责调度时的协程切换，G0会从P的本地队列中再获取G，然后M从G0切换到这个G，并开始运行它</li><li>如果当前goroutine运行时间超过10ms，因为是抢占式调度，M会暂停执行该goroutine，将其放回本地队列尾部，转而执行其他的goroutine</li><li>如果M执行G时发生了阻塞，那么就会采用hand off机制，M会释放当前绑定的P，然后创建一个新的M服务这个P（如果有空闲的M就直接复用），当原来的M退出阻塞状态之后，它会尝试获取之前释放的P，如果无法获取，则获取空闲的P，如果依然没有，那么挂载在这个M上的G会被标记为可运行状态，放回到全局队列中，这个M进入休眠状态</li></ul></li></ul>
-              </div>
-            </details>
-
-<h2 id="P和-M的数量关系"><a href="#P和-M的数量关系" class="headerlink" title="P和 M的数量关系"></a>P和 M的数量关系</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>P 的数量：由 runtime 的 GOMAXPROCS 决定。</li><li>M 的数量：<ul><li>go 程序启动时，会设置 M 的最大数量，默认 10000，但是内核很难支持这么多的线程数，所以这个限制可以忽略。</li><li>runtime&#x2F;debug 中的 SetMaxThreads 函数，可以设置 M 的最大数量。</li></ul></li><li>M的数量&gt;&#x3D;P的数量，一个 M 阻塞，P 就会去创建或者切换另一个 M，所以，即使 P 的默认数量是 1，也有可能会创建很多个 M 出来</li></ul>
-              </div>
-            </details>
-
-<h2 id="P和-M何时会被创建"><a href="#P和-M何时会被创建" class="headerlink" title="P和 M何时会被创建"></a>P和 M何时会被创建</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>P 何时创建<ul><li>在确定了 P 的最大数量 n 后，runtime会根据这个数量创建 n 个 P</li></ul></li><li>M 何时创建<ul><li>没有足够的 M 来关联 P 并运行其中的可运行的 G</li><li>比如所有的 M 此时都阻塞住了，而 P 中还有很多就绪任务，就会去寻找空闲的 M，而没有空闲的，就会去创建新的 M。</li></ul></li></ul>
-              </div>
-            </details>
-
-<h2 id="M0和G0"><a href="#M0和G0" class="headerlink" title="M0和G0"></a>M0和G0</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>M0 是启动程序后的编号为 0 的主线程，这个 M 对应的实例会在全局变量 runtime.m0 中，不需要在 heap 上分配，M0 负责执行初始化操作和启动第一个 G， 在之后 M0 就和其他的 M 一样了</li><li>G0 是每次启动一个 M 都会创建的一个 goroutine，G0 仅用于负责调度的 G，G0 不指向任何可执行的函数，每个 M 都会有一个自己的 G0</li></ul>
-              </div>
-            </details>
-
-<h2 id="没有P会怎样"><a href="#没有P会怎样" class="headerlink" title="没有P会怎样"></a>没有P会怎样</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>Go语言早期的调度模型（GM模型）就是没有P的，这样的调度模型会存在一些性能问题</li><li>没有P也就没有本地队列，M想要执行和放回G都需要通过全局队列来完成，而多线程访问同一资源需要通过加锁来保证同步</li><li>创建、销毁、调度 G 都需要每个 M 获取锁，这就形成了激烈的锁竞争</li><li>M 转移 G 会造成延迟和额外的系统负载。比如当 G1 中创建新协程的时候，M1创建了 G2，为了继续执行 G1，需要把 G2交给M2执行，也造成了很差的局部性，因为 G2 和 G1 是相关的，最好放在 M1 上执行，而不是其他的M</li></ul>
-              </div>
-            </details>
-
-<h2 id="work-stealing机制为什么不需要加锁"><a href="#work-stealing机制为什么不需要加锁" class="headerlink" title="work stealing机制为什么不需要加锁"></a>work stealing机制为什么不需要加锁</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <p>P 从本地队列取 G 的这个操作，是一个 CAS 操作，它具有原子性，是由硬件直接支持的，不需要并发的竞争关系</p>
-              </div>
-            </details>
-
-<h1 id="并发编程"><a href="#并发编程" class="headerlink" title="并发编程"></a>并发编程</h1><h2 id="CSP并发模型"><a href="#CSP并发模型" class="headerlink" title="CSP并发模型"></a>CSP并发模型</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>CSP（Communicating Sequential Processes，通信顺序进程），其设计理念是<strong>通过通信来共享内存，而不是通过共享内存来通信</strong></li><li>go语言的并发模型基于CSP，通过goroutine和channel来实现</li></ul>
-              </div>
-            </details>
-
-<h2 id="原子操作"><a href="#原子操作" class="headerlink" title="原子操作"></a>原子操作</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <p>原子操作是一组不可分割的操作，用于在并发环境中安全地修改共享资源。Go语言的sync&#x2F;atomic包提供了一组原子操作函数，用于对基本数据类型（如整数）进行安全的读写，防止竞态条件。</p>
-              </div>
-            </details>
-
-<h2 id="什么时候会发生阻塞"><a href="#什么时候会发生阻塞" class="headerlink" title="什么时候会发生阻塞"></a>什么时候会发生阻塞</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>系统调用<ul><li>当Goroutine执行一个阻塞的系统调用（如文件I&#x2F;O、网络I&#x2F;O等）时，它会被阻塞，直到系统调用完成。</li></ul></li><li>通道操作<ul><li>Goroutine在执行通道（channel）操作时，如发送数据到一个已满的通道或从一个空的通道接收数据，可能会发生阻塞。阻塞会持续到通道中有足够的空间或数据可用。</li></ul></li></ul>
-              </div>
-            </details>
-
-<h2 id="如何处理阻塞"><a href="#如何处理阻塞" class="headerlink" title="如何处理阻塞"></a>如何处理阻塞</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>在创建通道时指定缓冲区大小，即创建⼀个缓冲通道<ul><li>当缓冲区未满时，发送数据不会阻塞</li><li>当缓冲区未空时，接收数据不会阻塞</li></ul></li><li>select 语句用于处理多个通道操作，使用default分支，可以在所有通道都阻塞的情况下执行非阻塞的操作</li><li>超时控制<ul><li>context.WithTimeOut()</li><li>time.After()</li></ul></li></ul>
-              </div>
-            </details>
-
-<h2 id="如何控制goroutine的生命周期"><a href="#如何控制goroutine的生命周期" class="headerlink" title="如何控制goroutine的生命周期"></a>如何控制goroutine的生命周期</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li><strong>启动</strong><ul><li>使用go关键字创建一个新的goroutine</li></ul></li><li><strong>退出</strong><ul><li>等待退出：使用sync.WaitGroup来实现等待进程自行结束</li><li>阻塞退出：通过channel发送一个信号使阻塞状态的goroutine退出</li><li>手动退出：使用context.WithCancel()手动结束goroutine</li><li>超时退出：使用context.WithTimeOut()可以实现超时强制退出</li></ul></li></ul>
-              </div>
-            </details>
-
-<h1 id="内存相关"><a href="#内存相关" class="headerlink" title="内存相关"></a>内存相关</h1><h2 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li><strong>含义</strong><ul><li>指程序在申请内存后，无法释放已申请的内存空间，一次内存泄露危害可以忽略，但内存泄露堆积后果很严重，无论多少内存，迟早会被占光</li></ul></li><li><strong>场景</strong><ul><li>字符串&#x2F;切片截取导致内存泄漏</li><li>goroutine被长期挂住，导致该协程中的内存也无法被释放，就会造成永久性的内存泄漏。比如协程结束时协程中的channel没有关闭，导致一直阻塞，再比如协程中有死循环等等</li></ul></li><li><strong>排查方式</strong><ul><li>pprof是Go的性能分析工具，在程序运行过程中，可以记录程序的运行信息，可以是CPU使用情况、内存使用情况、goroutine运行情况等</li></ul></li></ul><div class="tabs" id="tab-sixth"><ul class="nav-tabs"><li class="tab active"><a class="#sixth-1">字符串截取</a></li><li class="tab"><a class="#sixth-2">切片截取</a></li></ul><div class="tab-content"><div class="tab-pane active" id="sixth-1"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// 以下代码，会有10字节的内存泄漏，我们知道，str0和str1底层共享内存</span></span><br><span class="line">    <span class="comment">// 只要str1一直活跃，str0 就不会被回收，10字节的内存被使用</span></span><br><span class="line">    <span class="comment">// 剩下的10字节内存就造成了临时性的内存泄漏，直到str1不再活跃</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 如果str0足够大，str1截取足够小，或者在高并发场景中频繁使用</span></span><br><span class="line">    <span class="comment">// 那么可想而知，会造成临时性内存泄漏，对性能产生极大影响</span></span><br><span class="line">    <span class="keyword">var</span> str0 = <span class="string">&quot;12345678901234567890&quot;</span></span><br><span class="line">    str1 := str0[:<span class="number">10</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 解决方案 1</span></span><br><span class="line">    <span class="comment">// 将需要截取的部分先转换成[]byte，再转换成string</span></span><br><span class="line">    <span class="comment">// 但是这种方式会产生两个10字节的临时变量</span></span><br><span class="line">    <span class="comment">// string转换[]byte时产生一个10字节临时变量，[]byte转换string时产生一个10字节的临时变量</span></span><br><span class="line">    str1 := <span class="type">string</span>([]<span class="type">byte</span>(str0[:<span class="number">10</span>]))</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 解决方案 2</span></span><br><span class="line">    <span class="comment">// 仍然有一个字节的浪费</span></span><br><span class="line">    str1 := (<span class="string">&quot; &quot;</span> + str0[:<span class="number">10</span>])[<span class="number">1</span>:]</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 解决方案 3</span></span><br><span class="line">    str1 := strings.Repeat(str0[:<span class="number">10</span>], <span class="number">1</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div><div class="tab-pane" id="sixth-2"><div class="code-container" data-rel="Go"><figure class="iseeu highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// 这种情况与字符串截取引起的内存泄漏情况类似，s1活跃情况下，造成s0中部分内存泄漏</span></span><br><span class="line">	<span class="keyword">var</span> s0 = []<span class="type">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>&#125;</span><br><span class="line">	s1 := s0[:<span class="number">5</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 解决方案 append</span></span><br><span class="line">    s1 := <span class="built_in">append</span>(s0[:<span class="number">0</span>], s0[:<span class="number">5</span>]...)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></div></div></div>
-              </div>
-            </details>
-
-<h2 id="逃逸分析"><a href="#逃逸分析" class="headerlink" title="逃逸分析"></a>逃逸分析</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li><strong>是什么</strong><ul><li>通过指针的动态范围来决定一个变量分配在栈上还是堆上</li></ul></li><li><strong>为什么</strong><ul><li>总的来说就是让变量分配到合理的位置</li><li>栈区可以自动清理内存，效率高，但空间有限</li><li>堆区空间大，但不像栈可以自动清理，需要进行垃圾回收，导致运行效率低下</li><li>逃逸分析，把一次性的变量分配到栈区，把后续可能在外部引用的对象分配到堆区</li></ul></li><li><strong>内存逃逸</strong><ul><li>如果变量在函数外部没有被引用，则一般不发生内存逃逸，优先分配到栈区，如果栈区存不下会分配到堆区</li><li>如果变量在函数外部被引用（闭包也算作此种情况），则发生内存逃逸，一定分配到堆区</li><li>此外，如果不确定是否被外部引用，如fmt.Println(x)，由于函数参数为接口类型，不确定x是否为引用类型，也视为x发生逃逸</li></ul></li><li><strong>如何避免</strong><ul><li>尽量减少不必要的指针使用</li></ul></li></ul>
-              </div>
-            </details>
-
-<h2 id="GC垃圾回收"><a href="#GC垃圾回收" class="headerlink" title="GC垃圾回收"></a>GC垃圾回收</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
-              <div class='content'>
-              <ul><li>标记清除法（Go 1.3） </li><li>三色标记法（Go 1.5）</li><li>三色标记法+混合写屏障（Go 1.8）</li></ul><div class="tabs" id="tab-sixth"><ul class="nav-tabs"><li class="tab active"><a class="#sixth-1">标记清除法</a></li><li class="tab"><a class="#sixth-2">三色标记法</a></li><li class="tab"><a class="#sixth-3">三色标记法+混合写屏障</a></li></ul><div class="tab-content"><div class="tab-pane active" id="sixth-1"><ul><li><strong>过程</strong><ul><li>进行 STW（stop the world 即暂停程序业务逻辑），然后从 main 函数开始找到不可达的对象和可达的对象</li><li>开始标记，程序找出可达对象并做标记</li><li>标记结束清除未标记的对象</li><li>结束 STW 停止暂停，让程序继续运行，循环该过程直到 main 生命周期结束</li></ul></li><li><strong>缺点</strong><ul><li>STW会让程序暂停，程序会出现卡顿</li><li>进行标记需要扫描整个堆栈信息，效率低下</li></ul></li></ul></div><div class="tab-pane" id="sixth-2"><ul><li><strong>含义</strong><ul><li>三色标记算法将程序中的对象分成白色、黑色和灰色三类</li><li>白色对象表示暂无对象引用的潜在垃圾，灰色表示待处理的对象，黑色表示活跃的对象</li></ul></li><li><strong>过程</strong><ul><li>将所有对象标记为白色</li><li>从程序根节点集合出发，将第一次遍历到的节点标记为灰色放入集合列表中</li><li>遍历灰色集合，将灰色节点遍历到的白色节点标记为灰色，并把灰色节点标记为黑色</li><li>循环这个过程，直到灰色节点集合为空</li><li>回收所有的白色节点</li></ul></li><li><strong>缺陷</strong><ul><li>因为三色标记法是动态进行的，回收过程中若<strong>同时满足下面两个条件</strong>，则会出现<strong>丢失对象</strong>的问题<ul><li>一个白色对象被黑色对象引用</li><li>同时灰色对象到该白色对象的可达关系被破环</li></ul></li></ul></li><li><strong>应对办法</strong><ul><li>插入写屏障：<ul><li>对象被引用时触发的机制，当白色对象被黑色对象引用时，白色对象被标记为灰色</li><li>实现了强三色不变式，即不允许黑色对象引用白色对象（破坏第一个条件）</li><li>缺点是栈区没有屏障机制，最后会对栈执行STW，进行二次扫描</li></ul></li><li>删除写屏障：<ul><li>对象被删除时触发的机制，灰色对象对白色对象的引用被删除时，白色对象会被标记为灰色</li><li>实现了弱三色不变式，即黑色对象可以引用白色，但是该白色对象要处在灰色对象可达的链路当中（破坏第二个条件）</li><li>缺点是回收精度比较低，有些垃圾对象会到下一轮检测才被回收；同时也会进行STW二次扫描进行快照对比</li></ul></li></ul></li></ul></div><div class="tab-pane" id="sixth-3"><ul><li><strong>思想</strong><ul><li>结合了插入写屏障和删除写屏障的优点，通过变形的弱三色不变式，解决了STW所带来的性能瓶颈</li></ul></li><li><strong>过程</strong><ul><li>GC 开始时将栈上可达对象全部标记为黑色（不需要二次扫描，无需 STW）</li><li>GC 期间，任何栈上创建的新对象均为黑色</li><li>被删除引用的对象标记为灰色</li><li>被添加引用的对象标记为灰色</li></ul></li></ul></div></div></div>
-              </div>
-            </details>
-]]></content>
-      <categories>
-        <category>Interview</category>
-      </categories>
-      <tags>
-        <tag>Go</tag>
       </tags>
   </entry>
 </search>

@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/common/wall-paper-light.webp">
 <meta property="article:published_time" content="2025-01-18T03:19:50.000Z">
-<meta property="article:modified_time" content="2025-09-06T13:58:56.400Z">
+<meta property="article:modified_time" content="2025-09-10T15:39:32.463Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Interview">
 <meta name="twitter:card" content="summary">
@@ -573,8 +573,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-09-06 Saturday</span>
-            <span class="mobile">2025-09-06 Saturday</span>
+            <span class="desktop">2025-09-10 Wednesday</span>
+            <span class="mobile">2025-09-10 Wednesday</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -942,7 +942,7 @@
 
 <h1 id="GMP"><a href="#GMP" class="headerlink" title="GMP"></a>GMP</h1><h2 id="什么是GMP"><a href="#什么是GMP" class="headerlink" title="什么是GMP"></a>什么是GMP</h2><details class="green" data-header-exclude><summary><i class="fa-solid fa-chevron-right"></i>Answer </summary>
               <div class='content'>
-              <ul><li><strong>Goroutine (G)</strong><ul><li>Goroutine是Go语言中的轻量级线程，能够与其他goroutine并发执行。</li><li>与传统的线程相比，goroutine的创建和销毁成本非常低。</li><li>Goroutine由Go的运行时系统调度，不依赖于操作系统的线程调度。</li></ul></li><li><strong>Machine (M)</strong><ul><li>Machine代表操作系统的线程。</li><li>M负责执行Goroutine。</li></ul></li><li><strong>Processor (P)</strong><ul><li>Processor是逻辑处理器，负责Goroutine的调度，数量上一般与CPU核心数相同。</li><li>P维护一个本地队列，其中保存了准备运行的Goroutine。</li><li>每个P都绑定到一个M上，如果绑定后的M获取不到可执行的G，那么该M就会自旋，而其他绑定不到P的M会休眠</li></ul></li></ul><p><img  
+              <ul><li><strong>Goroutine (G)</strong><ul><li>Goroutine是Go语言中的轻量级线程，能够与其他goroutine并发执行。</li><li>与传统的线程相比，goroutine的创建和销毁成本非常低。</li><li>Goroutine由Go的运行时系统调度，不依赖于操作系统的线程调度。</li></ul></li><li><strong>Machine (M)</strong><ul><li>Machine代表操作系统的线程。</li><li>M负责执行Goroutine。</li></ul></li><li><strong>Processor (P)</strong><ul><li>Processor是逻辑处理器，负责Goroutine的调度，数量上一般与CPU核心数相同。</li><li>P维护一个本地队列，其中保存了准备运行的Goroutine。</li><li>每个M都绑定到一个P上，而其他绑定不到P的M会休眠</li></ul></li></ul><p><img  
                      lazyload
                      src="/images/loading.svg"
                      data-src="/images/post/gmp.jpg"
@@ -1048,7 +1048,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2025-09-06 Saturday
+                    :</strong> 2025-09-10 Wednesday
             </li>
         
         <li>

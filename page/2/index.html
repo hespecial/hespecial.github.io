@@ -13,7 +13,7 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/tags/"/>
+    <link rel="canonical" href="http://example.com/page/2/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
@@ -23,14 +23,12 @@
         
         <meta name="description" content="Welcome to My Blog.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Tags">
-<meta property="og:url" content="http://example.com/tags/index.html">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/page/2/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Welcome to My Blog.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/common/wall-paper-light.webp">
-<meta property="article:published_time" content="2025-01-16T07:24:47.000Z">
-<meta property="article:modified_time" content="2025-01-16T11:44:55.517Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/common/wall-paper-light.webp">
@@ -45,7 +43,7 @@
     
     <title>
         
-            Tags | Hespecial
+            Hespecial - Awesome Blog
         
     </title>
 
@@ -276,6 +274,41 @@
 <main class="page-container" id="swup">
 
 	
+	<style>
+    .home-article-item,
+    .sidebar-links,
+    .sidebar-content,
+    a.page-number,
+    a.extend,
+    .sidebar-links .links:hover,
+    .right-bottom-tools,
+    footer.footer {
+        background-color: var(--background-color-transparent-80) !important;
+    }
+    .right-bottom-tools:hover,
+    a.page-number:hover,
+    a.extend:hover {
+        background-color: var(--primary-color) !important;
+    }
+    .site-info,
+    .home-article-sticky-label {
+        background-color: var(--background-color-transparent-15) !important;
+    }
+    .home-article-sticky-label {
+        backdrop-filter: none !important;
+    }
+    .home-banner-background {
+        filter: blur(15px);
+    }
+</style>
+
+<div class="home-banner-background transition-fade fixed top-0 left-0 w-screen h-screen scale-125 sm:scale-110 box-border will-change-transform bg-cover">
+    <img src="/images/common/wall-paper-light.webp" alt="home-banner-background" class="w-full h-full object-cover dark:hidden">
+    <img src="/images/common/wall-paper-dark.webp" alt="home-banner-background" class="w-full h-full object-cover hidden dark:block">
+</div>
+
+
+	
 
 	<div class="main-content-container flex flex-col justify-between min-h-dvh">
 		<div class="main-content-header">
@@ -284,9 +317,9 @@
         <div class="left">
             
             <a class="logo-title" href="/">
-                
+                <h1>
                 Hespecial
-                
+                </h1>
             </a>
         </div>
 
@@ -300,7 +333,7 @@
 
                             <li class="navbar-item">
                                 <!-- Menu -->
-                                <a class=""
+                                <a class="active"
                                    href="/"
                                         >
                                     <i class="fa-regular fa-house fa-fw"></i>
@@ -334,7 +367,7 @@
 
                             <li class="navbar-item">
                                 <!-- Menu -->
-                                <a class="active"
+                                <a class=""
                                    href="/tags"
                                         >
                                     <i class="fa-regular fa-tags fa-fw"></i>
@@ -409,7 +442,7 @@
 
                     <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
                         
-                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
                            href="/"
                         >
                             <span>
@@ -449,7 +482,7 @@
 
                     <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
                         
-                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
                            href="/tags"
                         >
                             <span>
@@ -540,59 +573,87 @@
 			
 
 			<div class="main-content">
-				<div class="page-template-container">
-	
+				<div class="home-content-container">
+    <ul class="home-article-list">
+        
+            <li class="home-article-item">
 
-	
-	
-	<h1 class="page-title-header">
-		Tags
-	</h1>
+                
 
-	
-	<div class="tagcloud-content">
-		<ul class="tag-list" data-show-value="true">
-			
-				<li>
-					<a data-weight="2" href="/tags/Docker/">
-						<i class="fa-solid fa-hashtag"></i>Docker
-					</a>
-				</li>
-			
-				<li>
-					<a data-weight="5" href="/tags/Coding/">
-						<i class="fa-solid fa-hashtag"></i>Coding
-					</a>
-				</li>
-			
-				<li>
-					<a data-weight="4" href="/tags/Interview/">
-						<i class="fa-solid fa-hashtag"></i>Interview
-					</a>
-				</li>
-			
-		</ul>
-	</div>
-	
+                
 
+                
+                <div class="flex flex-col gap-5 px-7 pb-7 pt-7">
+                    <h3 class="home-article-title">
+                        <a href="/Interview/go-interview/">
+                            Go 面试题
+                        </a>
+                    </h3>
 
-	
+                    <div class="home-article-content markdown-body">
+                        
+                            <p>自己整理的一些go语言常见面试题。</p>
 
-	<div class="page-template-content markdown-body">
-		
+                        
+                    </div>
 
-		
-	</div>
+                    <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Sat Jan 18 2025 11:19:50 GMT+0800">
+                
+                    2025-01-18
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category">
+                <i class="fa-solid fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/Interview/">Interview</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/Interview/">Interview</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
 
-	<div class="page-template-comments">
-		
-	</div>
+    <a href="/Interview/go-interview/">Read more<span class="seo-reader-text">Go 面试题</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
-<div class="paginator">
-	
+                </div>
+            </li>
+        
+    </ul>
+
+    <div class="home-paginator px-7 py-5">
+        <div class="paginator">
+	<a class="extend prev" rel="prev" href="/"><i class="fa-regular fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
 </div>
   
+    </div>
+</div>
+
 			</div>
 
 			
@@ -748,6 +809,7 @@
         containers: ["#swup"],
     });
 </script>
+
 
 
 
